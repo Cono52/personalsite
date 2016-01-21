@@ -1,0 +1,75 @@
+.intro{
+	 min-height:100px;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in{
+	 /*fade in effect */
+  	opacity:0;  /* make things invisible upon start */
+	
+  	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  	-moz-animation:fadeIn ease-in 1;
+  	animation:fadeIn ease-in 1;
+
+ 	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ 	-moz-animation-fill-mode:forwards;
+ 	animation-fill-mode:forwards;
+
+  	-webkit-animation-duration:1.5s;
+ 	-moz-animation-duration:1.5s;
+  	animation-duration:1.5s;
+}
+
+.fade-in.Title{
+	display: block;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 250%;
+	top: 50;
+    left: 0;
+    position: fixed;
+    right: 0;
+	margin:auto;
+	text-align: center;
+	margin-bottom: 30px
+
+	-webkit-animation-delay: 2s;
+ 	-moz-animation-delay: 2s;
+ 	animation-delay: 2s;
+}
+
+.fade-in.headCon{
+	bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+	max-width:25%;
+	margin-top: 10px;
+	margin:auto;
+	fill: #004187;
+	fill-rule: evenodd;
+	transition: all 1s;
+	transition-ro
+	padding-bottom: 0px;
+
+	-webkit-animation-delay: 0.2s;
+ 	-moz-animation-delay: 0.2s;
+ 	animation-delay: 0.2s;
+}
+
+svg{
+	display: block;
+  	max-width: 100%;
+ 	height: auto;
+}
+
+.headCon.permahover{
+	-webkit-transform: scale(10);
+	-webkit-transition: transform 2s ease-in;
+ 	-moz-transition: transform 2s ease-in;
+}
+
+
