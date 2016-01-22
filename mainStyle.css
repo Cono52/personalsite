@@ -1,3 +1,87 @@
-.profile{
-	display:none;
+body{
+	margin-left: 0;
+	margin-right: 0;
 }
+
+.mainPage{
+	display:none;
+	
+	font-family: 'Sanchez', serif;
+}
+nav{
+	text-align: center;
+	padding-right: 40px;
+	margin-left:auto;
+	margin-right:auto;
+}
+nav ul li{
+	text-align: center;
+	display:inline;
+}
+
+nav ul li.nav{
+	margin-left:1%;
+	margin-right:1%;
+	margin-bottom:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+ 	width: 100px;
+	background: #ffffff;
+ 	
+}
+
+nav ul li.line{
+	font-size: 200%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media all and (min-width: 960px) {
+nav ul li.nav{
+    font-size: 1.5;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 585px) {
+nav ul li.nav{
+    font-size: 1.5svw;
+  }
+}
+
+@media all and (max-width: 584px) and (min-width: 50px) {
+nav ul li.nav, .line{
+    display:none;
+  }
+}
+
+
+.desk{
+	position:relative;
+}
+
+.desk_pic{
+	position: absolute;
+	width: 100%;
+    height: auto;
+}
+
+.name{
+	color: white;
+	font-size: 5.9vw;
+    position:absolute;
+    text-align:center;
+    margin-top: 10%;
+    margin-bottom:50%;
+    width: 100%
+}
+
+.under_name{
+	color: white;
+	font-size: 2.9vw;
+    position:absolute;
+    text-align:center;
+    margin-top: 25%;
+    margin-bottom:50%;
+    width: 100%
+}
+

@@ -1,5 +1,6 @@
 .intro{
 	 min-height:100px;
+	 font-family: 'Sanchez', serif;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -24,20 +25,26 @@
 }
 
 .fade-in.Title{
+	font-size: 7.0vw;
 	display: block;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 250%;
-	top: 50;
-    left: 0;
-    position: fixed;
-    right: 0;
-	margin:auto;
 	text-align: center;
+	
+	position: relative;
 	margin-bottom: 30px
+	-webkit-animation-delay: 1.5s;
+ 	-moz-animation-delay: 1.5s;
+ 	animation-delay: 1.5s;
+}
 
-	-webkit-animation-delay: 2s;
- 	-moz-animation-delay: 2s;
- 	animation-delay: 2s;
+.fade-in.Title2{
+	font-size: 7.0vw;
+	display: block;
+	text-align: center;
+	position: relative;
+	margin-bottom: 30px
+	-webkit-animation-delay: 3.0s;
+ 	-moz-animation-delay: 3.0s;
+ 	animation-delay: 3.0s;
 }
 
 .fade-in.headCon{
@@ -68,8 +75,10 @@ svg{
 
 .headCon.permahover{
 	-webkit-transform: scale(10);
-	-webkit-transition: transform 2s ease-in;
- 	-moz-transition: transform 2s ease-in;
+	-moz-transform: scale(10);
+
+	-webkit-transition: transform 4s ease-in;
+ 	-moz-transition: transform 4s ease-in;
 }
 
 

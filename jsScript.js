@@ -7,11 +7,11 @@ $(document).ready(function(){
 
 	});
 
-	$(".headCon").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", 
-		function(){ 
+
+	$(".headCon").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ 
 		$(".intro").fadeOut("slow", function(){
 			$(this).remove();
-			$(".profile").fadeIn("slow");
+			$(".mainPage").fadeIn("slow");
 			console.log("done"); 
 			console.log( $('.background-blackout').length );
 		});
