@@ -1,87 +1,137 @@
 body{
-	margin-left: 0;
-	margin-right: 0;
+	width:100%;
+	margin-left:auto;
+	margin-right: auto;
+	diplay:block;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+::-moz-scrollbar { 
+    display: none; 
 }
 
 .mainPage{
 	display:none;
-	
 	font-family: 'Sanchez', serif;
 }
 nav{
+	color:#00448D;
 	text-align: center;
-	padding-right: 40px;
 	margin-left:auto;
 	margin-right:auto;
 }
 nav ul li{
-	text-align: center;
 	display:inline;
+
 }
 
 nav ul li.nav{
-	margin-left:1%;
-	margin-right:1%;
 	margin-bottom:10px;
-	padding-top:5px;
-	padding-bottom:5px;
- 	width: 100px;
+	padding-top:2.5%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	padding-bottom:2%;
 	background: #ffffff;
  	
 }
 
 nav ul li.line{
-	font-size: 200%;
+	font-size: 150%;
+	max-width:100%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-@media all and (min-width: 960px) {
-nav ul li.nav{
-    font-size: 1.5;
-  }
-}
-
-@media all and (max-width: 959px) and (min-width: 585px) {
-nav ul li.nav{
-    font-size: 1.5svw;
-  }
-}
-
-@media all and (max-width: 584px) and (min-width: 50px) {
-nav ul li.nav, .line{
-    display:none;
-  }
-}
-
-
 .desk{
-	position:relative;
+	display:inline-block;
+	width: 100%
 }
+
 
 .desk_pic{
-	position: absolute;
 	width: 100%;
+	position:relative;
+	float: left;
     height: auto;
 }
 
 .name{
+	position: absolute;
 	color: white;
 	font-size: 5.9vw;
-    position:absolute;
     text-align:center;
     margin-top: 10%;
-    margin-bottom:50%;
-    width: 100%
+    width:100%;
 }
 
-.under_name{
+.under_name_container{
+	position: absolute;
 	color: white;
-	font-size: 2.9vw;
-    position:absolute;
+	font-size: 2.7vw;
     text-align:center;
     margin-top: 25%;
-    margin-bottom:50%;
-    width: 100%
+    width:100%;
 }
 
+.under_name_container h3{
+	display:inline;
+}
+
+.fa-cog {
+  color: white;
+}
+
+.about_me{
+	margin-top:2.5%;
+}
+
+.about_me_title{
+	color:#00448D;
+	text-align: center;
+	font-size:3.5vw;
+}
+
+.about_me_text{
+	height:100%;
+	padding:1% 5% 5% 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 960px) {
+nav ul li.nav{
+    font-size: 100%;
+  }
+
+.about_me_text p{
+   font-size: 250%;
+ }
+}
+
+
+@media only screen and (max-width: 960px){
+nav ul li.nav{
+    font-size: 75%;
+    padding-left: 1.0%;
+	padding-right: 2.0%;
+  }
+
+.about_me_text p{
+    font-size: 150%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+nav ul li.nav, .line{
+    display:none;
+  }
+
+.about_me_text p{
+    font-size: 150%;
+  }
+}

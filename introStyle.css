@@ -56,7 +56,7 @@
 	max-width:25%;
 	margin-top: 10px;
 	margin:auto;
-	fill: #004187;
+	fill: #2263BA;
 	fill-rule: evenodd;
 	transition: all 1s;
 	transition-ro
@@ -74,8 +74,8 @@ svg{
 }
 
 .headCon.permahover{
-	-webkit-transform: scale(10);
-	-moz-transform: scale(10);
+	-webkit-transform:translateY(-900px) scale(20);
+	-moz-transform:translateY(-900px) scale(20);
 
 	-webkit-transition: transform 4s ease-in;
  	-moz-transition: transform 4s ease-in;
