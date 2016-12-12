@@ -1,2 +1,4 @@
 *.png
 *min.css
+node_modules/
+static/
