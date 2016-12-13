@@ -2,14 +2,14 @@
   "name": "pportfolio",
   "version": "1.0.0",
   "description": "Personal Portfolio Site",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "build-css": "stylus src/stylesheets/index.styl -o static/css",
-    "watch-css": "stylus src/stylesheets/index.styl -o static/css -w",
-    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build-css": "stylus src/stylesheets/index.styl -o ./public/css",
+    "watch-css": "stylus src/stylesheets/index.styl -o ./public/css -w",
+    "clean": "rm -rf public/css && mkdir -p public/css",
     "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon server -e js,pug",
-    "start": "node server"
+    "watch": "npm run clean && npm run watch-css & nodemon app -e js,pug",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "morgan": "^1.7.0",
     "nodemon": "^1.11.0",
     "pug": "^2.0.0-beta6",
+    "serve-favicon": "^2.3.2",
     "stylus": "^0.54.5"
   }
 }

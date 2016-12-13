@@ -1,10 +1,15 @@
 const express = require('express')
   , logger = require('morgan')
   , app = express()
+  , favicon = require('serve-favicon')
   , template = require('pug').compileFile(__dirname + '/src/templates/homepage.pug')
 
+
 app.use(logger('dev'))
-app.use(express.static(__dirname + '/static'))
+app.use(favicon(__dirname + '/public/imgs/favicon.ico'));
+app.use('/', express.static(__dirname + '/public'))
+app.use('/', express.static(__dirname + '/public/imgs'))
+
 
 app.get('/', function (req, res, next) {
   try {
