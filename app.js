@@ -2,7 +2,7 @@ const express = require('express')
   , logger = require('morgan')
   , app = express()
   , favicon = require('serve-favicon')
-  , template = require('pug').compileFile(__dirname + '/src/templates/homepage.pug')
+  , template = require('pug').compileFile(__dirname + '/src/views/homepage.pug')
 
 
 app.use(logger('dev'))
