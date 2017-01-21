@@ -1,42 +1,114 @@
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Rubik')
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif')
+@import url('https://fonts.googleapis.com/css?family=Nunito')
+//font-family: 'Nunito', sans-serif
 
 html, body
 	margin: 0px
 	padding: 0px
-	background: #073642
-// 	height: 100vh
-// 	overflow:hidden
-// 	background-image:url('/background.jpg')
-// 	background-position: center center
-// 	background-repeat:  no-repeat
-// 	background-attachment: fixed
-// 	background-size:  cover
-// 	background-color: #999
-// 	color: white
+	height: 100vh
+	overflow-y: hidden
+	background-image:url('/owl.jpg')
+	background-position: center center
+	background-repeat:	no-repeat
+	background-attachment: fixed
+	background-size:	cover
+	background-color: #999
+	color: white
+
 
 a
 	text-decoration: none
-	color: rgb(200, 200, 200)
-	animation: glow 1s ease-in-out infinite alternate
-p
-	color: rgb(200, 200, 200)
-	
+	color: white
 
-.info
-	max-width: 560px
-	font-family: 'Droid Sans', sans-serif
-	padding: 30px 40px 40px 50px
-	margin: auto;
-	margin-top: 200px
-	text-shadow: 0px 0px 40px rgba(0,0,0,0.5)
-	border-radius: 2px
-	-webkit-box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.24)
-	-moz-box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.24)
-	box-shadow: 0px 6px 20px 3px rgba(0,0,0,0.24)
+p, u 
+	font-family: 'Nunito', sans-serif
 
-@keyframes glow
-	0% 
-		text-shadow: 0px 0px 10px rgba(255,255,255, 0.0)
-	100%
-		text-shadow: 0px 0px 10px rgba(255,255,255, 1.0)
+
+
+//Intro Section
+
+.container-intro
+	padding: 200px;
+
+.welcome 
+	margin-left: auto
+	margin-right: auto
+	font-size: 32px
+	max-width: 600px
+	text-align: center
+
+.welcome p
+	display: block
+	margin: 0px
+
+
+.image-cropper 
+	width: 150px
+	height: 150px
+	position: relative
+	overflow: hidden
+	border-radius: 50%
+	margin-left: auto
+	margin-right: auto
+
+
+.image-cropper img 
+	display: inline
+	margin: 0 auto
+	height: 100%
+	width: auto
+
+.profile 
+	padding-top: 50px
+	padding-bottom: 50px
+
+
+// About section
+
+.container-about
+	padding: 10px 50px 10px 50px
+	font-size: 1.2rem
+	max-width: 900px
+	margin: auto
+
+.title
+	font-size: 50px
+	text-align: center
+
+.para1
+	display: inline-block
+	max-width: 400px
+	float: left;
+	margin-right: 1.1rem
+
+.para2
+	padding-top: 1rem
+	display: inline-block
+	max-width: 400px;
+	float: right;
+	margin-left: 1.1rem
+
+// contact section 
+.title-contact
+	font-size: 50px
+	text-align: center
+
+.container-contact
+	clear: both
+	padding: 200px 50px 400px 50px
+	font-size: 1.2rem
+	max-width: 400px
+	margin: auto
+	text-align: center
+
+
+boxShadowHelper(level)
+	if (level == 1)
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+	if (level == 2)
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+	if (level == 3)
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+	if (level == 4)
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+	 	if (level == 5)
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
