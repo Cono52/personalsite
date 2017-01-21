@@ -1,11 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito')
 //font-family: 'Nunito', sans-serif
 
+//shades of center color: (90, 43, 109) (205, 98, 249) (142, 68, 173) (152, 73, 186) (121, 58, 147)
+//complement of center colors: (76, 28, 96) (212, 123, 249) (142, 68, 173) (75, 96, 19) (144, 173, 68)
+
+
+boxShadowHelper(level)
+	if level == 1
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+	else if level == 2 
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+	else if level == 3
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+	else if level == 4
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+	else if level == 5
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,1)
+
 html, body
+	-webkit-font-smoothing: antialiased
+	overflow-y: scroll
+	overflow-x: hidden
 	margin: 0px
 	padding: 0px
 	height: 100vh
-	overflow-y: hidden
 	background-image:url('/owl.jpg')
 	background-position: center center
 	background-repeat:	no-repeat
@@ -13,6 +31,14 @@ html, body
 	background-size:	cover
 	background-color: #999
 	color: white
+
+::-moz-selection
+	background-color: rgba(230,224,203,0.3)
+	color: #fff8e1
+
+::selection
+	background-color: rgba(230,224,203,0.3)
+	color: #fff8e1
 
 
 a
@@ -22,24 +48,52 @@ a
 p, u 
 	font-family: 'Nunito', sans-serif
 
+//hide scroller / style
+::-webkit-scrollbar
+{
+  width: 1px  /* for vertical scrollbars */
+  height: 12px /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.0)
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5)
+  border-radius: 5px
+}
 
 
 //Intro Section
 
 .container-intro
-	padding: 200px 0px 200px 0px;
+	height: 100vh
+	position: relative
+	background-color: rgba(90, 43, 109 ,0.5)
 
-.welcome 
+.container-content
+	position: absolute
+	width: 500px
+	height: 500px
+	left: 50%
+	top: 50%
+	margin-left: -250px
+	margin-top: -250px
+	text-align: center
+
+.welcome
 	margin-left: auto
 	margin-right: auto
-	font-size: 32px
+	font-size: 40px
 	max-width: 600px
 	text-align: center
 
 .welcome p
 	display: block
 	margin: 0px
-
 
 .image-cropper 
 	width: 150px
@@ -49,9 +103,9 @@ p, u
 	border-radius: 50%
 	margin-left: auto
 	margin-right: auto
+	boxShadowHelper(3)
 
-
-.image-cropper img 
+.image-cropper img
 	display: inline
 	margin: 0 auto
 	height: 100%
@@ -65,49 +119,94 @@ p, u
 // About section
 
 .container-about
-	padding: 10px 50px 70px 50px
-	font-size: 1.2rem
+	background-color:  rgba(144, 173, 68, 0.6)
+	height: auto;
+	padding-top: 3em
+	padding-bottom: 1em
 	margin-left: 0
 	margin-right: 0
-	background-color: #8e44ad
+	
 
-.title
-	font-size: 50px
+.container-about-content
+	font-size: 1.5rem
+	position: relative
+	height: 50%
+	padding-top: 4em
+	padding-bottom: 12em
+
+.title p
+	font-size: 3rem
 	text-align: center
+	padding-bottom: 0.5em
 
 .para1
 	display: block
 	max-width: 400px
-	margin: auto;
+	margin: auto
+
+.renai
 
 .para2
-	padding-top: 1rem
 	display: block
-	max-width: 400px;
-	margin: auto;
+	max-width: 400px
+	margin: auto
 
 // contact section 
+.container-contact
+	background-color: rgba(121, 58, 147, 0.8)
+	clear: both
+	height: auto
+	padding-top: 3em
+	padding-bottom: 1em
+	font-size: 1.5rem
+	margin: auto
+	text-align: center
+
 .title-contact
 	font-size: 50px
 	text-align: center
 
-.container-contact
-	clear: both
-	padding: 200px 50px 400px 50px
-	font-size: 1.2rem
+.check-links
 	max-width: 400px
 	margin: auto
-	text-align: center
+
+.icons
+	margin-top: 2em
+	display: relative
+
+.icon1
+	display: inline-block
+	content: url("/githubIcon.svg"); 
+	width: 160px 
+	height: 160px
+	max-width: 200px
+
+.icon2
+	display: inline-block
+	content: url("/linkedin_circle_black.svg")
+	background-color: white 
+	width: 100px 
+	height: 100px
+	margin-bottom: 50px
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+}
 
 
-boxShadowHelper(level)
-	if (level == 1)
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-	if (level == 2)
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
-	if (level == 3)
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
-	if (level == 4)
-		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
-	 	if (level == 5)
-		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+.shake 
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 2.0s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
