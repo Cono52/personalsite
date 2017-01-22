@@ -77,8 +77,6 @@ p, u
 	background: -moz-linear-gradient(top,  rgba(142,68,173,0.5) 43%, rgba(32,124,202,0.5) 100%) /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%)/* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	
-
 
 .container-content
 	position: absolute
@@ -89,6 +87,11 @@ p, u
 	margin-left: -250px
 	margin-top: -250px
 	text-align: center
+	transition: all 0.5s ease-out 
+	
+
+.pop:hover 
+	transform: scale(1.04)
 
 .welcome
 	margin-left: auto
@@ -115,6 +118,12 @@ p, u
 	margin-left: auto
 	margin-right: auto
 	boxShadowHelper(3)
+	transition: all 1s ease-out 
+	
+
+.image-cropper:hover 
+	transform: scale(1.05)
+
 
 .image-cropper img
 	display: inline
@@ -135,7 +144,6 @@ p, u
 	background: -moz-linear-gradient(top,  rgba(199,34,0,0.7) 0%, rgba(205,81,255,0.7) 100%) /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
 	height: auto;
 	padding-top: 3em
 	padding-bottom: 1em
@@ -195,6 +203,7 @@ p, u
 	margin-top: 2em
 	display: relative
 	margin-bottom: 2em
+	transform: translateX(10px)
 
 .icon1
 	display: inline-block
@@ -204,12 +213,14 @@ p, u
 	max-width: 200px
 	margin-right:-20px
 	margin-bottom:-42px
+	transition: all ease-in 0.1s
 
 .icon2
 	display: inline-block
 	content: url("/linkedin_circle_black.svg") 
 	width: 160px 
 	height: 120px
+	transition: all ease-in 0.1s
 
 @-webkit-keyframes spaceboots {
 	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
@@ -232,3 +243,30 @@ p, u
 	-webkit-transform-origin:50% 50%;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
+
+@media screen and (max-width: 600px)
+	//intro
+	.welcome
+		font-size: 25px
+		margin-top: 50px;
+	.mini
+		font-size: 1.0rem
+		max-width: 300px
+		margin: auto;
+	//about
+	.container-about-content
+		font-size: 1.0rem
+		padding-top: 0
+		padding-bottom: 20px;
+		margin-left: 12px
+		margin-right: 12px
+	.title p
+		font-size: 2.0rem
+
+	//contact
+	.container-contact
+		font-size: 1.0rem
+		padding-left: 10px
+		padding-right: 10px
+	.title-contact
+		font-size: 1.7rem
