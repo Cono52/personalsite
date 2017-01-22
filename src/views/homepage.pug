@@ -23,12 +23,15 @@ head
 	meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
 	meta(name='theme-color', content='#ffffff')
 	title #{title}
+	script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
 body
 	section.container-intro
-		.container-content
+		canvas#top
+		.container-content.pop
 			.welcome
 				p Hello, my name is Conor.
-				p.mini I'm a full stack developer, currently based in Dublin.
+				.mini 
+					p I'm a full stack developer, currently based in Dublin.
 			.profile
 				.image-cropper
 					img(src="https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/14289892_1101182033312207_6677832604112832138_o.jpg?oh=b23b867a9f6d05ac2dd652194120ce2a&oe=591884A4", alt="")
@@ -56,5 +59,9 @@ body
 			p Want to work with me on your next web project, join to your team, just looking? 
 				| Feel free to checkout my github and linkedIn profiles if you're interested.
 		.icons
-				.icon1
-				.icon2
+				a(href="https://github.com/Cono52" target="_blank")
+					.icon1.pop
+				a(href="https://ie.linkedin.com/in/conor-e-o-flanagan-6470b5ab" target="_blank")
+					.icon2.pop
+	script(src='js/canvas.js', type='text/javascript')
+	
