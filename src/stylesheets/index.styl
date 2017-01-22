@@ -15,7 +15,7 @@ boxShadowHelper(level)
 	else if level == 4
 		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
 	else if level == 5
-		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,1)
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.5)
 
 html, body
 	-webkit-font-smoothing: antialiased
@@ -72,7 +72,13 @@ p, u
 .container-intro
 	height: 100vh
 	position: relative
-	background-color: rgba(90, 43, 109 ,0.5)
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8e44ad+43,207cca+100 */
+	background: rgb(142,68,173)/* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(142,68,173,0.5) 43%, rgba(32,124,202,0.5) 100%) /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%)/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	
+
 
 .container-content
 	position: absolute
@@ -119,7 +125,12 @@ p, u
 // About section
 
 .container-about
-	background-color:  rgba(144, 173, 68, 0.6)
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,c72200+100 */
+	background: rgb(199,34,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(199,34,0,0.7) 0%, rgba(205,81,255,0.7) 100%) /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 	height: auto;
 	padding-top: 3em
 	padding-bottom: 1em
@@ -153,7 +164,12 @@ p, u
 
 // contact section 
 .container-contact
-	background-color: rgba(121, 58, 147, 0.8)
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90ff00+0,a3e6ff+100 */
+	background: rgb(144,255,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(144,255,0,0.5) 0%, rgba(163,230,255,0.5) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 	clear: both
 	height: auto
 	padding-top: 3em
