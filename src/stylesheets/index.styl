@@ -17,6 +17,9 @@ boxShadowHelper(level)
 	else if level == 5
 		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.5)
 
+
+html
+	width: 100%
 body
 	-webkit-font-smoothing: antialiased
 	overflow-y: scroll
@@ -79,13 +82,9 @@ p, u
 	background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 .container-content
-	position: absolute
 	width: 500px
 	height: 500px
-	left: 50%
-	top: 50%
-	margin-left: -250px
-	margin-top: -250px
+	margin: auto;
 	text-align: center
 	transition: all 0.5s ease-out 
 	
@@ -203,7 +202,7 @@ p, u
 	margin-top: 2em
 	display: relative
 	margin-bottom: 2em
-	transform: translateX(10px)
+	
 
 .icon1
 	display: inline-block
@@ -246,6 +245,8 @@ p, u
 
 @media screen and (max-width: 600px)
 	//intro
+	.container-content
+		width: 300px
 	.welcome
 		font-size: 25px
 		margin-top: 50px;
