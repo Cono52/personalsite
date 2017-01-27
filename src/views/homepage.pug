@@ -29,12 +29,14 @@ head
 body
 	section.container-intro.pop
 		canvas#top
-		.container-content.pop
+		.container-content
 			.welcome
-				p.head Hello, my name is Conor.
-				.mini 
+				.head 
+					p.hello Hello
+					p.fadeIn , my name is Conor.
+				.mini.fadeIn 
 					p I'm a software developer, currently based in Dublin.
-			.profile
+			.profile.fadeInL
 				.image-cropper
 					img(src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAjNAAAAJGRmODMzYmQxLWM3MzMtNDY1Ny1hZTIzLTVhZTcyZDcyNjhmNg.jpg", alt="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAjNAAAAJGRmODMzYmQxLWM3MzMtNDY1Ny1hZTIzLTVhZTcyZDcyNjhmNg.jpghttps://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/14289892_1101182033312207_6677832604112832138_o.jpg?oh=b23b867a9f6d05ac2dd652194120ce2a&oe=591884A4")
 	section.container-about.pop
@@ -47,7 +49,8 @@ body
 				p Having experienced and moved through many tools of my craft, my prefered set ("at the moment") include 
 					| JavaScript/ES6, HTML, CSS, React, Node, Python, Mongo and SQL.
 			.para2
-				u What am I up to at the moment?
+				.upto
+					u What am I up to at the moment?
 				ul
 					li
 						p Sharpening my skills primarily focusing on ES6.
@@ -65,7 +68,7 @@ body
 				| Feel free to check out my github and linkedIn profiles if you need more info.
 		.icons
 				a(href="https://github.com/Cono52" target="_blank")
-					.icon1.pop
+					.icon1.pop1
 				a(href="https://ie.linkedin.com/in/conor-e-o-flanagan-6470b5ab" target="_blank")
-					.icon2.pop
+					.icon2.pop1
 	script(src='js/canvas.js', type='text/javascript')

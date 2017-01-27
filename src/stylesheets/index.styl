@@ -7,15 +7,15 @@
 //Mixins
 boxShadowHelper(level)
 	if level == 1
-		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+		box-shadow: 0px 0px 3px rgba(0,0,0,0.12), 1px 1px 2px rgba(0,0,0,0.24)
 	else if level == 2 
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+		box-shadow: 0px 0px 6px rgba(0,0,0,0.16), 3px 3px 6px rgba(0,0,0,0.23)
 	else if level == 3
-		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+		box-shadow: 0px 0px 20px rgba(0,0,0,0.19), 6px 6px 6px rgba(0,0,0,0.23)
 	else if level == 4
-		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+		box-shadow: 0px 0px 28px rgba(0,0,0,0.25), 10px 10px 10px rgba(0,0,0,0.22)
 	else if level == 5
-		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.5)
+		box-shadow: 0px 0px 38px rgba(0,0,0,0.30), 15px 15px 12px rgba(0,0,0,0.5)
 
 
 html
@@ -87,18 +87,37 @@ ul li
 	// background: -webkit-linear-gradient(top,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%)/* Chrome10-25,Safari5.1-6 */
 	// background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	transition: all 0.5s ease-out
-	boxShadowHelper(2)
+	background: #ffffff
 
 .container-content
 	width: 500px
 	height: 500px
 	margin: 15% auto auto auto;
 	text-align: center
-	transition: all 0.5s ease-out 
-	
+	transition: all 0.5s ease-out
+
+.fadeIn
+	animation: fadeIn 3.0s cubic-bezier(0.42, 0, 0.73, 1.23) 0.0s forwards
+
+.fadeInL
+	animation: fadeIn 4.0s cubic-bezier(0.42, 0, 0.73, 1.23) 0.0s forwards
+
+
+@keyframes fadeIn
+	0%
+		opacity: 0
+	50%
+		opacity: 0
+	100%
+		opacity: 1
+		
 
 .pop:hover 
 	transform: scale(1.04)
+	boxShadowHelper(2)
+
+.pop1:hover 
+	transform: scale(1.03)
 
 .welcome
 	margin-left: auto
@@ -106,15 +125,31 @@ ul li
 	font-size: 40px
 	max-width: 600px
 	text-align: center
-
-.head
-	font-family: 'Nunito', sans-serif
-	font-weight: lighter
 	
 .welcome p
-	display: block
 	padding-top: 1rem
 	margin: 0px
+
+.hello
+	animation: fadeInSlide 1.5s cubic-bezier(0.42, 0, 0.73, 1.23) 0.0s forwards
+	
+@keyframes fadeInSlide
+	0%
+		opacity: 0
+		transform: translateX(198%)
+	50%
+		opacity: 1
+		transform: translateX(198%)
+	60%
+		opacity: 1
+		transform: translateX(198%)
+	100%
+		transform: translateX(0px)
+
+.head p 
+	display: inline-block
+	font-family: 'Nunito', sans-serif
+	font-weight: lighter
 
 .mini
 	margin-top: 10px
@@ -128,13 +163,8 @@ ul li
 	border-radius: 50%
 	margin-left: auto
 	margin-right: auto
-	boxShadowHelper(3)
+	boxShadowHelper(2)
 	transition: all 1s ease-out 
-	
-
-.image-cropper:hover 
-	transform: scale(1.05)
-
 
 .image-cropper img
 	display: inline
@@ -161,7 +191,8 @@ ul li
 	margin-left: 0
 	margin-right: 0
 	transition: all 0.5s ease-out
-	boxShadowHelper(2)
+	background-color: #3a0256
+	color: white
 	
 
 .container-about-content
@@ -182,8 +213,13 @@ ul li
 	display: block
 	max-width: 400px
 	margin: auto
+	padding-left: 2rem
+	padding-right: 2rem
 
-.renai
+
+.upto
+	text-align: center
+	padding: 1rem
 
 .para2
 	display: block
@@ -206,7 +242,8 @@ ul li
 	margin: auto
 	text-align: center
 	transition: all 0.5s ease-out
-	boxShadowHelper(2)
+	background-color: #b9006e
+	color: white
 
 .title-contact p
 	font-size: 50px
@@ -217,10 +254,13 @@ ul li
 .check-links
 	max-width: 400px
 	margin: auto
+	padding-left: 2rem
+	padding-right: 2rem
 
 .icons
 	margin-top: 2em
 	display: relative
+	margin-left: 1rem
 	margin-bottom: 2em
 	
 
@@ -230,7 +270,7 @@ ul li
 	width: 160px 
 	height: 160px
 	max-width: 200px
-	margin-right:-20px
+	margin-right:-30px
 	margin-bottom:-42px
 	transition: all ease-in 0.1s
 
@@ -240,28 +280,6 @@ ul li
 	width: 160px 
 	height: 120px
 	transition: all ease-in 0.1s
-
-@-webkit-keyframes spaceboots {
-	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
-	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
-	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
-	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
-	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
-	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
-	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
-	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
-	100% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
-}
-
-
-.shake 
-	-webkit-animation-name: spaceboots;
-	-webkit-animation-duration: 2.0s;
-	-webkit-transform-origin:50% 50%;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
 
 @media screen and (max-width: 600px)
 	//intro
