@@ -27,13 +27,12 @@ body
 	margin: 0px
 	padding: 0px
 	height: 100vh
-	background-image:url('/owl.jpg')
+	//background-image:url('/owl.jpg')
 	background-position: center center
 	background-repeat:	no-repeat
 	background-attachment: fixed
 	background-size: cover
-	background-color: #999
-	color: white
+	color: black
 	-webkit-overflow-scrolling: touch;
 
 ::-moz-selection
@@ -83,10 +82,12 @@ ul li
 	height: 100vh
 	position: relative
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8e44ad+43,207cca+100 */
-	background: rgb(142,68,173)/* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(142,68,173,0.5) 43%, rgba(32,124,202,0.5) 100%) /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%)/* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// background: rgb(142,68,173)/* Old browsers */
+	// background: -moz-linear-gradient(top,  rgba(142,68,173,0.5) 43%, rgba(32,124,202,0.5) 100%) /* FF3.6-15 */
+	// background: -webkit-linear-gradient(top,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%)/* Chrome10-25,Safari5.1-6 */
+	// background: linear-gradient(to bottom,  rgba(142,68,173,0.5) 43%,rgba(32,124,202,0.5) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	transition: all 0.5s ease-out
+	boxShadowHelper(2)
 
 .container-content
 	width: 500px
@@ -150,15 +151,17 @@ ul li
 
 .container-about
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,c72200+100 */
-	background: rgb(199,34,0); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(199,34,0,0.7) 0%, rgba(205,81,255,0.7) 100%) /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// background: rgb(199,34,0); /* Old browsers */
+	// background: -moz-linear-gradient(top,  rgba(199,34,0,0.7) 0%, rgba(205,81,255,0.7) 100%) /* FF3.6-15 */
+	// background: -webkit-linear-gradient(top,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* Chrome10-25,Safari5.1-6 */
+	// background: linear-gradient(to bottom,  rgba(199,34,0,0.7) 0%,rgba(205,81,255,0.7) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	height: auto;
 	padding-top: 3em
 	padding-bottom: 1em
 	margin-left: 0
 	margin-right: 0
+	transition: all 0.5s ease-out
+	boxShadowHelper(2)
 	
 
 .container-about-content
@@ -190,10 +193,10 @@ ul li
 // contact section 
 .container-contact
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#90ff00+0,a3e6ff+100 */
-	background: rgb(144,255,0); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(144,255,0,0.5) 0%, rgba(163,230,255,0.5) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// background: rgb(144,255,0); /* Old browsers */
+	// background: -moz-linear-gradient(top,  rgba(144,255,0,0.5) 0%, rgba(163,230,255,0.5) 100%); /* FF3.6-15 */
+	// background: -webkit-linear-gradient(top,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+	// background: linear-gradient(to bottom,  rgba(144,255,0,0.5) 0%,rgba(163,230,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 	clear: both
 	height: auto
@@ -202,6 +205,8 @@ ul li
 	font-size: 1.5rem
 	margin: auto
 	text-align: center
+	transition: all 0.5s ease-out
+	boxShadowHelper(2)
 
 .title-contact p
 	font-size: 50px
