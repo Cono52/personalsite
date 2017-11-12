@@ -4,12 +4,9 @@
   "description": "Personal Portfolio Site",
   "main": "app.js",
   "scripts": {
-    "build-css": "stylus src/stylesheets/index.styl -o ./public/css",
-    "watch-css": "stylus src/stylesheets/index.styl -o ./public/css -w",
-    "clean": "rm -rf ./public/css && mkdir -p ./public/css/",
-    "build": "npm run clean && npm run build-css",
-    "watch": "npm run clean && npm run watch-css & nodemon app -e js,pug",
-    "start": "node app"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -22,17 +19,11 @@
   },
   "homepage": "https://github.com/Cono52/pportfolio#readme",
   "dependencies": {
-    "autoprefixer": "^6.7.0",
-    "express": "^4.14.0",
-    "morgan": "^1.7.0",
-    "nodemon": "^1.11.0",
-    "pug": "^2.0.0-beta6",
-    "serve-favicon": "^2.3.2",
-    "stylus": "^0.54.5"
+    "babel-plugin-styled-components": "^1.3.0",
+    "next": "^4.1.4",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "styled-components": "^2.2.3"
   },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-postcss": "^6.3.0",
-    "gulp-sourcemaps": "^2.4.0"
-  }
+  "devDependencies": {}
 }
