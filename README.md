@@ -1,2 +1,2 @@
 # pportfolio
-Personal Portfolio Site 
+Personal Portfolio Site using React and Next.js 
