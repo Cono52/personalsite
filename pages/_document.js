@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
                 margin: 0;
                 padding: 0;
                 border: 0;
+                box-shadow: 0px 0px 0px 1px hsl(0, 0%, 95%);
                 font-size: 100%;
                 font: inherit;
                 vertical-align: baseline;
@@ -42,6 +43,7 @@ export default class MyDocument extends Document {
                 display: block;
               }
               html {
+                font-family: Helvetica;
                 box-sizing: border-box;
               }
               *, *:before, *:after {
@@ -67,11 +69,41 @@ export default class MyDocument extends Document {
                 border-collapse: collapse;
                 border-spacing: 0;
               }
+
+              #style-2::-webkit-scrollbar-track
+              {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                border-radius: 10px;
+                background-color: #F5F5F5;
+              }
+              
+              #style-2::-webkit-scrollbar
+              {
+                width: 5px;
+                background-color: #F5F5F5;
+              }
+              
+              #style-2::-webkit-scrollbar-thumb
+              {
+                border-radius: 10px;
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                background-color: grey;
+              }
+
+              canvas.drawer {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100vh;
+                z-index: -1;
+              }
+
           `}</style>
           {this.props.styleTags}
           <title>Conor O'Flanagan</title>
         </Head>
-        <body>
+        <body id="style-2">
           <Main />
           <NextScript />
         </body>
