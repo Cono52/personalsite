@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
-import Link from 'next/link'
+import Nav from '../components/nav'
 import Footer from '../components/footer'
 
 
@@ -10,16 +10,32 @@ const HomeContainer = styled.div`
 `;
 
 const Section = styled.div`
-    background-color: brown;
+    background-color: fuchsia;
+    display: flex;
+    align-items: center;
+    padding: 1em;
+`;
+
+const SectionText = styled.div`
+  font-size: 3em;
+  font-family: 'Helvetica';
+  color: white;
+  font-weight: bold;
+  > p {
+    margin-bottom: 2em;
+  }
 `;
 
 class Home extends Component {
   render() {
     return (
       <HomeContainer>
+        <Nav />
         <Section>
-          <p>Hello, my name is Conor.</p>
-          <p>I'm a software developer currently based in London</p>
+          <SectionText>
+            <p>Hello, my name is Conor.</p>
+            <p>I'm a software developer currently based in London</p>
+          </SectionText>  
         </Section>
         <Footer />
       </HomeContainer>

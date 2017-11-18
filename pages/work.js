@@ -5,7 +5,7 @@ import Nav from '../components/nav'
 import Footer from '../components/footer'
 
 
-const AboutContainer = styled.div`
+const WorkContainer = styled.div`
     position: relative;
 `;
 
@@ -26,20 +26,19 @@ const SectionText = styled.div`
   }
 `;
 
-class About extends Component {
+class Work extends Component {
   render() {
     return (
-      <AboutContainer>
+      <WorkContainer>
         <Nav />
         <Section>
           <SectionText>
-            <p>I work at a startup called When You Move</p>
-            <p>I'm working mainly with front-end tools such as React and React Native</p>
+            Small bits I have from interviews and POC's.
           </SectionText>  
         </Section>
         <Footer />
-      </AboutContainer>
+      </WorkContainer>
     )
   }
 }
-export default About
+export default Work
