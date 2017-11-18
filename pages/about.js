@@ -10,7 +10,6 @@ const AboutContainer = styled.div`
 `;
 
 const Section = styled.div`
-    background-color: fuchsia;
     display: flex;
     align-items: center;
     padding: 1em;
@@ -18,8 +17,6 @@ const Section = styled.div`
 
 const SectionText = styled.div`
   font-size: 3em;
-  font-family: 'Helvetica';
-  color: white;
   font-weight: bold;
   > p {
     margin-bottom: 2em;
