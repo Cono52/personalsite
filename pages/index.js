@@ -17,7 +17,7 @@ const Section = styled.div`
 `;
 
 const SectionText = styled.div`
-  font-size: 10em;
+  font-size: 8em;
   line-height: 1.2em;
   font-weight: bold;
   > p {
@@ -33,9 +33,8 @@ class Home extends Component {
         <Nav />
         <Section>
           <SectionText>
-            <p>Hello</p>
-            <p>My name is Conor</p>
-            <p>I'm a software developer currently based in London</p>
+            <p>I'm Conor O'Flanagan</p>
+            <p>— A software developer</p>
           </SectionText>  
         </Section>
       </HomeContainer>
