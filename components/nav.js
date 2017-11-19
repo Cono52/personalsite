@@ -9,7 +9,9 @@ const NavContainer = styled.div`
 `;
 
 const StyledLink = styled.div`
-  font-size: 1em;
+  font-size: 2em;
+  margin-left: 1em;
+  background-color: hsla(0, 100%, 100%, 0.3);
   padding: 1em;
 `;
 
