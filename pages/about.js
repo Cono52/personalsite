@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-
+import Swirler from '../components/swirler'
 
 const AboutContainer = styled.div`
     position: relative;
@@ -27,6 +27,7 @@ class About extends Component {
   render() {
     return (
       <AboutContainer>
+        <Swirler />
         <Nav />
         <Section>
           <SectionText>
@@ -34,7 +35,6 @@ class About extends Component {
             <p>I'm working mainly with front-end tools such as React and React Native</p>
           </SectionText>  
         </Section>
-        <Footer />
       </AboutContainer>
     )
   }

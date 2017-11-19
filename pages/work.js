@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Nav from '../components/nav'
 import WorkSquare from '../components/work-square'
 import Footer from '../components/footer'
+import Swirler from '../components/swirler'
 
 const WORK_LINKS = [
     '1',
@@ -19,7 +20,6 @@ const WorkContainer = styled.div`
 `;
 
 const Section = styled.div`
-  background-color: white;
   padding: 1em;
 `;
 
@@ -50,6 +50,7 @@ class Work extends Component {
   render() {
     return (
       <WorkContainer>
+        <Swirler />
         <Nav />
         <Section>
           <SectionText>
@@ -59,7 +60,6 @@ class Work extends Component {
             {WORK_LINKS.map((item, index) => <WorkSquare key={index} source={item} />)}
           </WorkSquareContainer>
         </Section>
-        <Footer />
       </WorkContainer>
     )
   }
