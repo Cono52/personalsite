@@ -53,6 +53,7 @@ export default class MyDocument extends Document {
                 line-height: 1;
                 height: 100%;
                 font-size:16px;
+                overflow-y: scroll;
               }
               ol, ul {
                 list-style: none;
