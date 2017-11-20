@@ -25,7 +25,7 @@ class Swirler extends Component {
             
             application.addActor(vfield);
             
-            let maxNum = 1000;
+            let maxNum = 400;
             let num = 0;
             
             let addTracer = (position, colour)=> {
@@ -54,7 +54,7 @@ class Swirler extends Component {
               return tracer;
             }
             let seed = addTracer(new Vector(window.innerWidth / 2, window.innerHeight / 2), 'RGBA(255, 100, 100, 1.0)');
-            seed.branchChance = 2.5;
+            seed.branchChance = 5.0;
             seed.friction = 0.985;
             seed.onBranch = addTracer;
             
@@ -475,7 +475,7 @@ class Swirler extends Component {
             }
             
             onAnimate(e) {
-              let force = this.field.solveForPosition(this.position).multiplyScalar(0.01);
+              let force = this.field.solveForPosition(this.position).multiplyScalar(0.011);
               let app = e.detail.application;
               let oldPosition = this.position.clone();
               let draw = true;
