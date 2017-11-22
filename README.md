@@ -1,2 +1,1 @@
-# pportfolio
-Personal Portfolio Site using React and Next.js 
+Portfolio site made with React

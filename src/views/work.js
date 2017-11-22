@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
-import Nav from '../components/nav'
 import WorkSquare from '../components/work-square'
-import Footer from '../components/footer'
-import Swirler from '../components/swirler'
 
 const WORK_LINKS = [
     '1',
@@ -15,11 +11,13 @@ const WORK_LINKS = [
     '6'
 ]
 
-const WorkContainer = styled.div`
-    position: relative;
-`;
-
 const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-around;
   padding: 1em;
 `;
 
@@ -27,11 +25,8 @@ const SectionText = styled.div`
   width: 100%;
   height: 4em;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
-  > p {
-    margin-bottom: 2em;
-  }
 `;
 
 const WorkSquareContainer = styled.div`
@@ -49,18 +44,14 @@ const WorkSquareContainer = styled.div`
 class Work extends Component {
   render() {
     return (
-      <WorkContainer>
-        <Swirler />
-        <Nav />
-        <Section>
+      <Section>
           <SectionText>
             Small bits I have from interviews and POC's.
           </SectionText>
           <WorkSquareContainer>
             {WORK_LINKS.map((item, index) => <WorkSquare key={index} source={item} />)}
           </WorkSquareContainer>
-        </Section>
-      </WorkContainer>
+      </Section>
     )
   }
 }

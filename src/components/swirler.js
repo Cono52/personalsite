@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -15,7 +14,7 @@ class Swirler extends Component {
             let application = new Application();
             // application.scaleFactor = 2;
             application.clearOnRedraw = Application.FADE;
-            application.fadeColour = 'rgba(255,255,255,0.10)';
+            application.fadeColour = 'rgba(255,255,255,0)';
             application.fillColour = 'rgba(255,255,255,0)';
             application.onResize();
             let vfield = new VectorField();
@@ -43,7 +42,7 @@ class Swirler extends Component {
               if(colour) {
                 tracer.colour = colour;
               } else {
-                tracer.colour = 'RGBA('+ Math.round(Math.random() * 255) +','+ 100 + Math.round(Math.random() * 155) +',255,0.6)';  
+                tracer.colour = 'RGBA('+ Math.round(Math.random() * 255) +','+ 100 + Math.round(Math.random() * 155) +',255,0.3)';  
               }
               
               
@@ -53,8 +52,8 @@ class Swirler extends Component {
               application.addActor(tracer);
               return tracer;
             }
-            let seed = addTracer(new Vector(window.innerWidth / 2, window.innerHeight / 2), 'RGBA(255, 100, 100, 1.0)');
-            seed.branchChance = 5.0;
+            let seed = addTracer(new Vector(window.innerWidth / 2, window.innerHeight / 2), 'RGBA(255, 100, 100, 0.8)');
+            seed.branchChance = 10.0;
             seed.friction = 0.985;
             seed.onBranch = addTracer;
             
@@ -147,9 +146,9 @@ class Swirler extends Component {
             render() {
               let dims = this.dimensions;
               
-              if(this.clearOnRedraw == Application.CLEAR) {
+              if(this.clearOnRedraw === Application.CLEAR) {
                 this.context.clearRect(0, 0, dims.width, dims.height);
-              } else if(this.clearOnRedraw == Application.FADE) {
+              } else if(this.clearOnRedraw === Application.FADE) {
                 this.context.fillStyle = this.fadeColour;
                 this.context.fillRect(0,0, dims.width, dims.height);
               }
@@ -160,7 +159,6 @@ class Swirler extends Component {
             }
             
             onResize(e) {
-              console.log('resize')
               this.dimensions = new Vector(window.innerWidth, window.innerHeight);
             }
             onPointerDown(e) {
@@ -175,14 +173,15 @@ class Swirler extends Component {
             }
             
             triggerEvent(event, data) {
+              let custEvent;
               if (window.CustomEvent) {
-                var event = new CustomEvent(event, {detail: data});
+                custEvent = new CustomEvent(event, {detail: data});
               } else {
-                var event = document.createEvent('CustomEvent');
-                event.initCustomEvent(event, true, true, data);
+                custEvent = document.createEvent('CustomEvent');
+                custEvent.initCustomEvent(event, true, true, data);
               }
           
-              document.dispatchEvent(event);
+              document.dispatchEvent(custEvent);
             }
             
             get actors() {
@@ -349,7 +348,7 @@ class Swirler extends Component {
               v.y -= window.innerHeight / 2;
               
               let scale = this.scale;
-              let amp = this.amplitude;
+              //let amp = this.amplitude;
               
           //     let waveform = new Vector(Math.cos(v.x / scale) * amp, Math.sin(v.y / scale) * amp);
           //     return new Vector(waveform.y - waveform.x, -waveform.x - waveform.y);
@@ -365,17 +364,17 @@ class Swirler extends Component {
               transV.angle = noise1 * 10;
               return transV;
                   
-              let transv = v.subtractNew(this.mousepos);
-              transv = new Vector(transv.y - transv.x, -transv.x - transv.y);
+              // let transv = v.subtractNew(this.mousepos);
+              // transv = new Vector(transv.y - transv.x, -transv.x - transv.y);
               
-              transv.length *= 0.03;
-              if(transv.length > 50) {
-                transv.length = 50;
-              }
-              transv.length -= 50;
-              transv.length *= -1;
+              // transv.length *= 0.03;
+              // if(transv.length > 50) {
+              //   transv.length = 50;
+              // }
+              // transv.length -= 50;
+              // transv.length *= -1;
               
-              return transv;
+              // return transv;
             }
             
             onPointerMove(e) {
@@ -387,24 +386,7 @@ class Swirler extends Component {
             }
             
             onResize(e) {
-              if(!this.debug) return;
-              
-              this.helpers.forEach((helper)=> {
-                helper.destroy();
-              })
-              this.helpers = [];
-              
-              let w = this.sampleWidth;
-              let curpos = new Vector(0, 0);
-              
-              while(curpos.y < window.innerHeight + w) {
-                curpos.x = 0;
-                while(curpos.x < window.innerWidth + w) {
-                  this.helpers.push(new Arrow(curpos.x, curpos.y, 10, 10, this.solveForPosition(curpos)))
-                  curpos.x += w;
-                }
-                curpos.y += w;
-              }
+
             }
             
             set scale(value) {
@@ -503,7 +485,7 @@ class Swirler extends Component {
               
               if(draw) {
                 let context = app.context;
-                let opacity = Math.abs( (this.momentum.length - 10) / 20 );
+                //let opacity = Math.abs( (this.momentum.length - 10) / 20 );
                 // console.log(opacity, this.momentum.length);
                 // console.log(oldPosition, this.position);
                 
@@ -537,7 +519,7 @@ class Swirler extends Component {
             }
             
             set onBranch(value) {
-              if(typeof value == 'function') this._onBranch = value.bind(this);
+              if(typeof value === 'function') this._onBranch = value.bind(this);
             }
             get onBranch() {
               return this._onBranch || function() { }
@@ -562,17 +544,17 @@ class Swirler extends Component {
           
           class Noise {
             constructor(r) {
-              if (r == undefined) r = Math;
+              if (r === undefined) r = Math;
               this.grad3 = [[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0], 
                                              [1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1], 
                                              [0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]]; 
               this.p = [];
-              for (var i=0; i<256; i++) {
+              for (let i=0; i<256; i++) {
                 this.p[i] = Math.floor(r.random()*256);
               }
               // To remove the need for index wrapping, double the permutation table length 
               this.perm = []; 
-              for(var i=0; i<512; i++) {
+              for(let i=0; i<512; i++) {
                 this.perm[i]=this.p[i & 255];
               }
             }
@@ -582,7 +564,7 @@ class Swirler extends Component {
             }
             
             mix(a, b, t) {
-              return (1.0-t)*a + t*b; 
+              return (0.8-t)*a + t*b; 
             }
             
             fade(t) {
@@ -1011,7 +993,7 @@ class Swirler extends Component {
              * Alias of {@link Vector#rotateDegNew__anchor rotateDegNew}
              */
             rotateDegByNew(radian) {
-              return tjos.rotateDegNew(radian);
+             // return tjos.rotateDegNew(radian);
             }
           
             /**
@@ -1159,7 +1141,7 @@ class Swirler extends Component {
              * @default 0
              */
             set x(x) {
-              if(typeof x == 'number') {
+              if(typeof x === 'number') {
                 this._x = x;
               } else {
                 throw new TypeError('X should be a number');
@@ -1176,7 +1158,7 @@ class Swirler extends Component {
               * @default 0
               */
             set y(y) {
-              if(typeof y == 'number') {
+              if(typeof y === 'number') {
                 this._y = y;
               } else {
                 throw new TypeError('Y should be a number');
@@ -1195,7 +1177,7 @@ class Swirler extends Component {
               */
             set lengthSquared(length) {
               var factor;
-              if(typeof length == 'number') {
+              if(typeof length === 'number') {
                 factor = length / this.lengthSquared;
                 this.multiplyScalar(factor);
               } else {
@@ -1214,7 +1196,7 @@ class Swirler extends Component {
               */
             set length(length) {
               var factor;
-              if(typeof length == 'number') {
+              if(typeof length === 'number') {
                 factor = length / this.length;
                 this.multiplyScalar(factor);
               } else {
@@ -1232,7 +1214,7 @@ class Swirler extends Component {
               * @default 0
               */
             set angle(radian) {
-              if(typeof radian == 'number') {
+              if(typeof radian === 'number') {
                 this.rotateTo(radian);
               } else {
                 throw new TypeError('angle should be a number');
@@ -1249,7 +1231,7 @@ class Swirler extends Component {
               * @default 0
               */
             set angleInDegrees(degrees) {
-              if(typeof degrees == 'number') {
+              if(typeof degrees === 'number') {
                 this.rotateToDeg(degrees);
               } else {
                 throw new TypeError('angle should be a number');
