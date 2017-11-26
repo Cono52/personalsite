@@ -9,7 +9,7 @@ const Container = styled.div`
     display: flex;
     position: sticky;
     opacity: 0;
-    padding: 0 3.5em;
+    padding: 0 5em;
     top: 0px;
     z-index: 5;
     font-size: 1.2em;
@@ -17,8 +17,7 @@ const Container = styled.div`
     align-items: center;
     height: 4em;
     width: 100%;
-    animation: 1.0s ${fadeIn}  5.5s ease-in forwards
-    
+    animation: 1.0s ${fadeIn}  2.5s ease-in forwards;
 `;
 
 const Link = styled.span`
@@ -40,6 +39,9 @@ const Link = styled.span`
         transform: scaleX(0);
         animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
         transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+    }
+    &:hover {
+       color: hsla(345, 100%, 30%, 0.8);
     }
     &:hover:after {
         transform: scaleX(1);

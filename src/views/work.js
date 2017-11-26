@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import WorkSquare from '../components/work-square'
 
-
-import Swirler from '../components/swirler'
-
-
 const WORK_LINKS = [
     '1',
     '2',
