@@ -19,10 +19,11 @@ const HomeContainer = styled.div`
 
 const Section = styled.div`
     display: flex;
-    width: 90vw;
-    height: calc(100vh - 5em);
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 20vh;
+    height: calc(90vh - 5em);
     align-items: center;
-    justify-content: space-around;
 `;
 
 const expandIn = keyframes`
@@ -61,6 +62,7 @@ const CardWrapper = styled.div`
     font-family: Helvetica;
     font-size: 20em;
   }
+  padding-bottom: 4em;
 `;
 
 const Card = styled.div`
@@ -118,7 +120,6 @@ class Home extends Component {
           <source src="assets/imgs/343645551.mp4" type="video/mp4" />
         </video>
         <Section>
-        <iframe src="https://open.spotify.com/embed?uri=spotify:track:3ZOEytgrvLwQaqXreDs2Jx" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             <CardWrapper>
               <Card>
                 <CardText>
@@ -132,6 +133,9 @@ class Home extends Component {
                 </HeadShot>
               </Card>  
             </CardWrapper>
+            <FadeIn delay={'6s'}>
+              <iframe src="https://open.spotify.com/embed?uri=spotify:track:3ZOEytgrvLwQaqXreDs2Jx" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+            </FadeIn>
         </Section>
       </HomeContainer>
     )
