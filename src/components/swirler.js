@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
-
-const Container = styled.div`
-
-`;
 
 class Swirler extends Component {
 
     componentDidMount(){
-        if(document.querySelector('.drawer') === null){
-        //Credit to Liam Egan @shubniggurath source: https://codepen.io/shubniggurath/pen/xPPxQv
         let initialise = function() {
             let application = new Application();
             // application.scaleFactor = 2;
             application.clearOnRedraw = Application.FADE;
-            application.fadeColour = 'rgba(255,255,255,0)';
-            application.fillColour = 'rgba(255,255,255,0)';
+            application.fadeColour = 'hsla(345, 100%, 7.1%, 0.2';
+            application.fillColour = 'hsla(345, 100%, 7.1%, 0.2';
             application.onResize();
             let vfield = new VectorField();
             vfield.scale = 300;
@@ -24,7 +17,7 @@ class Swirler extends Component {
             
             application.addActor(vfield);
             
-            let maxNum = 400;
+            let maxNum = 500;
             let num = 0;
             
             let addTracer = (position, colour)=> {
@@ -37,12 +30,12 @@ class Swirler extends Component {
               let momentum = new Vector(Math.random(), Math.random());
               momentum.length = Math.random() * 2;
               tracer.momentum = momentum;
-              tracer.friction = 0.97;
+              tracer.friction = 0.95;
               
               if(colour) {
                 tracer.colour = colour;
               } else {
-                tracer.colour = 'RGBA('+ Math.round(Math.random() * 255) +','+ 100 + Math.round(Math.random() * 155) +',255,0.3)';  
+                tracer.colour = 'hsla(0,100%,100%, 1.0)';  
               }
               
               
@@ -52,9 +45,9 @@ class Swirler extends Component {
               application.addActor(tracer);
               return tracer;
             }
-            let seed = addTracer(new Vector(window.innerWidth / 2, window.innerHeight / 2), 'RGBA(255, 100, 100, 0.8)');
-            seed.branchChance = 10.0;
-            seed.friction = 0.985;
+            let seed = addTracer(new Vector(window.innerWidth / 2, window.innerHeight / 2), 'hsla(0,100%,100%, 1.0)');
+            seed.branchChance = 100.0;
+            seed.friction = 0.95;
             seed.onBranch = addTracer;
             
             setInterval(()=> {
@@ -84,8 +77,7 @@ class Swirler extends Component {
           
           class Application {
             constructor() {
-              this.stage = document.createElement('canvas');
-              
+              this.stage = document.querySelector('.drawer');
               this.animate = this.animate.bind(this);
               
               this.onResize = this.onResize.bind(this);
@@ -503,7 +495,7 @@ class Swirler extends Component {
               this._colour = value;
             }
             get colour() {
-              return this._colour || 'RGBA(255,255,255,0.1)';
+              return this._colour || 'RGBA(255,255,255,0.0)';
             }
           }
           
@@ -1279,18 +1271,12 @@ class Swirler extends Component {
           
           }
           
-          
-          
-          
           initialise();
-        }
     }
 
     render () {
         return (
-            <Container>
-
-            </Container>
+              <canvas className='drawer'></canvas>
         )
     }
 }

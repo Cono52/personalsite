@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import WorkSquare from '../components/work-square'
 
+
+import Swirler from '../components/swirler'
+
+
 const WORK_LINKS = [
     '1',
     '2',
@@ -12,6 +16,7 @@ const WORK_LINKS = [
 ]
 
 const Section = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -23,9 +28,10 @@ const Section = styled.div`
 
 const SectionText = styled.div`
   border-radius: 1px;
-  background-color: white;
+  background-color: #800020;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: lighter;
+  color: white;
   padding: 2em;
   > p {
     line-height: 1.5em;
@@ -50,12 +56,9 @@ class Work extends Component {
   render() {
     return (
       <Section>
-          <SectionText>
-            Here are a few bits I have from interviews and POC's.
-          </SectionText>
-          <WorkSquareContainer>
-            {WORK_LINKS.map((item, index) => <WorkSquare key={index} source={item} />)}
-          </WorkSquareContainer>
+        <WorkSquareContainer>
+          {WORK_LINKS.map((item, index) => <WorkSquare key={index} source={item} />)}
+        </WorkSquareContainer>
       </Section>
     )
   }

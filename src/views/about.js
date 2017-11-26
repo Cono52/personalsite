@@ -33,8 +33,8 @@ class About extends Component {
       <AboutContainer>
         <Section>
           <SectionText>
-            <p>I work at a startup called When You Move<br/>
-            I'm working mainly with front-end tools such as React and React Native</p>
+            <p>I work at a startup called When You Move.<br/>
+            I'm working mainly with front-end tools such as React and React Native.</p>
           </SectionText>  
         </Section>
       </AboutContainer>

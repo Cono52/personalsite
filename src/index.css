@@ -77,10 +77,8 @@
 
   canvas.drawer {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
+    top: 199.5vh;
+    height: 200vh;
     width: 100%;
-    overflow: hidden;
     z-index: -1;
   }
