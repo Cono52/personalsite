@@ -21,8 +21,8 @@ const Section = styled.div`
     display: flex;
     flex-direction: column;
     width: 100vw;
-    margin-top: 20vh;
-    height: calc(90vh - 5em);
+    padding-top: 10em;
+    height: calc(100vh - 5em);
     align-items: center;
 `;
 
