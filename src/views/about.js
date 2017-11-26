@@ -10,15 +10,20 @@ const Section = styled.div`
   display: flex;
   height: 100vh;
   width: 100vw;
+  background-image: url("assets/imgs/background.jpg");
+  background-size: cover;
   align-items: center;
-  padding: 1em;
 `;
 
 const SectionText = styled.div`
+  border-radius: 1px;
+  background-color: #800020;
+  color: white;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 100;
+  padding: 2em;
   > p {
-    margin-bottom: 2em;
+    line-height: 1.5em;
   }
 `;
 
@@ -28,8 +33,8 @@ class About extends Component {
       <AboutContainer>
         <Section>
           <SectionText>
-            <p>I work at a startup called When You Move</p>
-            <p>I'm working mainly with front-end tools such as React and React Native</p>
+            <p>I work at a startup called When You Move<br/>
+            I'm working mainly with front-end tools such as React and React Native</p>
           </SectionText>  
         </Section>
       </AboutContainer>
