@@ -15,25 +15,30 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
-  align-items: center;
+  width: 100%;
+  padding: 3em 0em;
+  align-items: left;
   justify-content: space-around;
-  padding: 1em;
 `;
 
 const SectionText = styled.div`
-  width: 100%;
-  height: 4em;
-  align-items: center;
+  border-radius: 1px;
+  background-color: white;
   font-size: 1.5em;
   font-weight: bold;
+  padding: 2em;
+  > p {
+    line-height: 1.5em;
+  }
 `;
 
 const WorkSquareContainer = styled.div`
     width: 100%;
+    max-width: 1450px;
+    margin: auto;
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-around;
     > * {
         margin: 2em;
@@ -46,7 +51,7 @@ class Work extends Component {
     return (
       <Section>
           <SectionText>
-            Small bits I have from interviews and POC's.
+            Here are a few bits I have from interviews and POC's.
           </SectionText>
           <WorkSquareContainer>
             {WORK_LINKS.map((item, index) => <WorkSquare key={index} source={item} />)}

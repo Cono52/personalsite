@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    width: 15em;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    width: 20em;
     height: 13em;
     background-color: white;
 `;
