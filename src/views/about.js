@@ -58,8 +58,8 @@ class About extends Component {
         <Grid>
           <Copy>
             <SectionText>
-              <p>I work at a startup called When You Move.<br/>
-              I'm  mainly with front-end tools such as React and React Native.</p>
+              <p>Right now, I'm a front-end developer at When You Move.<br/>
+              </p>
             </SectionText>
           </Copy>
         </Grid>
