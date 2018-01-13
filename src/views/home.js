@@ -12,10 +12,10 @@ const bounceIn = keyframes`
   to { transform: scale(1);}
 `;
 
-const fadeIn = keyframes`
-  from { opactiy: 0 }
-  to { opacity: 1 }
-`;
+// const fadeIn = keyframes`
+//   from { opactiy: 0 }
+//   to { opacity: 1 }
+// `;
 
 const bracketsExpand = keyframes`
   from {
@@ -43,7 +43,7 @@ const HomeContainer = styled.div`
       position: fixed;
       right: 0;
       bottom: 0;
-      min-width: 100%; 
+      min-width: 100%;
       min-height: 100%;
       width: auto;
       height: auto;
@@ -56,7 +56,7 @@ const Overlay = styled.div`
    right: 0;
    bottom: 0;
    background-color: rgb(5, 159, 167);;
-   min-width: 100%; 
+   min-width: 100%;
    min-height: 100%;
    width: auto;
    height: auto;
@@ -123,16 +123,16 @@ const CardText = styled.div`
   color: white;
 `;
 
-const FadeIn = styled.div`
-  opacity: 0;
-  animation: 1s ${fadeIn} ${props => props.delay ? props.delay : '0s' } linear forwards;
-`;
+// const FadeIn = styled.div`
+//   opacity: 0;
+//   animation: 1s ${fadeIn} ${props => props.delay ? props.delay : '0s' } linear forwards;
+// `;
 
-const Widget = styled.div`
-  grid-area: w;
-  align-self: start;
-  justify-self: center;
-`;
+// const Widget = styled.div`
+//   grid-area: w;
+//   align-self: start;
+//   justify-self: center;
+// `;
 
 class Home extends Component {
   render() {

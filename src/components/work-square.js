@@ -23,6 +23,6 @@ class WorkSquare extends Component {
 
 export default WorkSquare;
 
-WorkSquare.PropTypes = {
+WorkSquare.propTypes = {
     source: PropTypes.string.isRequired
 }

@@ -11,8 +11,8 @@ const AboutContainer = styled.div`
 const Grid = styled.div`
     height: 140vh;
     display: grid;
-    grid-gap: 5px;   
-    width: 100vw; 
+    grid-gap: 5px;
+    width: 100vw;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 200px 0px auto;
     grid-template-areas:
@@ -30,9 +30,9 @@ const Overlay = styled.div`
   top: 0;
   position: absolute;
   background-color: rgb(5, 159, 167);;
-  min-width: 100%; 
+  min-width: 100%;
   min-height: 100%;
-  width: auto; 
+  width: auto;
   z-index: 0;
   height: auto;
   opacity: 0.4;
@@ -60,7 +60,7 @@ class About extends Component {
             <SectionText>
               <p>I work at a startup called When You Move.<br/>
               I'm  mainly with front-end tools such as React and React Native.</p>
-            </SectionText> 
+            </SectionText>
           </Copy>
         </Grid>
       </AboutContainer>
