@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components';
 import Typist from 'react-typist';
 
-import Nav from '../components/nav';
-
 const expandIn = keyframes`
   from { transform: rotateY(90deg);}
   to { transform: rotateY(0deg);}
@@ -37,7 +35,7 @@ const HomeContainer = styled.div`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px auto 100px;
     grid-template-areas:
-        ". . . n n n n n n . . ."
+        ". . . . . . . . . . . ."
         ". . . c c c c c c . . ."
         ". . . . . w w . . . . .";
     position: relative;
@@ -45,8 +43,7 @@ const HomeContainer = styled.div`
       position: fixed;
       right: 0;
       bottom: 0;
-      filter: brightness(.2) grayscale(100%);
-      min-width: 100%;
+      min-width: 100%; 
       min-height: 100%;
       width: auto;
       height: auto;
@@ -58,12 +55,13 @@ const Overlay = styled.div`
    position: fixed;
    right: 0;
    bottom: 0;
-   min-width: 100%;
+   background-color: rgb(5, 159, 167);;
+   min-width: 100%; 
    min-height: 100%;
    width: auto;
    height: auto;
    z-index: -99;
-   opacity: 0.5;
+   opacity: 1;
 `;
 
 const Section = styled.div`
@@ -76,7 +74,7 @@ const CardWrapper = styled.div`
     &::before {
     animation: 1s ${bracketsExpand} 1.6s ease-out forwards;
     position: absolute;
-    color: hsla(345, 0%, 50%, 0.8);
+    color: white;
     transform: translate(142px, -38px);
     content: '{}';
     letter-spacing: 0em;
@@ -94,8 +92,7 @@ const Card = styled.div`
   height: 300px;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: white;
-  font-weight: bold;
+  background-color: transparent;
   padding: 6em 2em;
 `;
 
@@ -123,7 +120,7 @@ const CardText = styled.div`
   width: 16em;
   font-size: 1.2em;
   line-height: 1.3em;
-  color: #5f5f5f;
+  color: white;
 `;
 
 const FadeIn = styled.div`
@@ -140,13 +137,11 @@ const Widget = styled.div`
 class Home extends Component {
   render() {
     return (
-      <FadeIn delay={'0.5s'}>
        <HomeContainer>
-          <video autoPlay loop id="video-background" muted plays-inline='true'>
+          {/* <video autoPlay loop id="video-background" muted plays-inline='true'>
             <source src="assets/imgs/343645551.mp4" type="video/mp4" />
-          </video>
+          </video> */}
           <Overlay />
-          <Nav />
           <Section>
             <CardWrapper>
               <Card>
@@ -168,7 +163,6 @@ class Home extends Component {
             </FadeIn>
           </Widget> */}
         </HomeContainer>
-      </FadeIn>
     )
   }
 }
