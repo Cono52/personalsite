@@ -20,18 +20,7 @@ const Section = styled.div`
   padding: 3em 0em;
   align-items: left;
   justify-content: space-around;
-`;
-
-const SectionText = styled.div`
-  border-radius: 1px;
-  background-color: #800020;
-  font-size: 1.5em;
-  font-weight: lighter;
-  color: white;
-  padding: 2em;
-  > p {
-    line-height: 1.5em;
-  }
+  background-color: black;
 `;
 
 const WorkSquareContainer = styled.div`

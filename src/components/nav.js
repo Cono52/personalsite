@@ -7,23 +7,20 @@ to { opacity: 1 }`;
 
 const Container = styled.div`
     display: flex;
-    position: sticky;
+    flex-direction: row;
     opacity: 0;
-    padding: 0 5em;
-    top: 0px;
-    z-index: 5;
-    font-size: 1.2em;
-    color: ${ props => props.scroll > 1300 ? 'black': 'white'};
+    color: white;
+    font-size: 1.0em;
     align-items: center;
-    height: 4em;
+    justify-content: space-around;
     width: 100%;
+    height: 100%;
     animation: 1.0s ${fadeIn}  2.5s ease-in forwards;
+    grid-area: n;
 `;
 
 const Link = styled.span`
     cursor: pointer;
-    margin-top: 2em;
-    margin-right: 6.0em;
     display: inline-block;
 	position: relative;
 	transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
@@ -41,7 +38,7 @@ const Link = styled.span`
         transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
     }
     &:hover {
-       color: hsla(345, 100%, 30%, 0.8);
+       color: hsla(345, 0%, 50%, 0.8);
     }
     &:hover:after {
         transform: scaleX(1);
@@ -51,24 +48,24 @@ const Link = styled.span`
 
 class Nav extends Component {
 
-    scroll = (distance) => { 
+    scroll = (distance) => {
         window.scroll({
-        top: distance, 
-        left: 0, 
-        behavior: 'smooth' 
+        top: distance,
+        left: 0,
+        behavior: 'smooth'
       });
     }
 
     render () {
         return (
-            <Container scroll={window.scrollY}>
+            <Container grid-area={this.props.gridArea} scroll={window.scrollY}>
                 <Link onClick={() => this.scroll(0)}>
                  Home
                 </Link>
-                <Link onClick={() => this.scroll(770)}>
+                <Link onClick={() => this.scroll(773)}>
                 About
                 </Link>
-                <Link onClick={() => this.scroll(1543)}>
+                <Link onClick={() => this.scroll(1553)}>
                 Work
                 </Link>
             </Container>
