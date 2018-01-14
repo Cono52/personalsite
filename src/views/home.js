@@ -92,7 +92,7 @@ const Card = styled.div`
   height: 300px;
   box-sizing: border-box;
   flex-direction: column;
-  background-color: transparent;
+  background: black;
   padding: 6em 2em;
 `;
 
@@ -101,7 +101,7 @@ const HeadShot = styled.div`
   animation: 1s ${bounceIn} 2.6s cubic-bezier(0, 0, 0.28, 1.22) forwards;
   width: 110px;
   height: 110px;
-  top: 4.9em;
+  top: 5.1em;
   right: 2em;
   border-radius: 50%;
   position: absolute;
@@ -117,10 +117,12 @@ const HeadShot = styled.div`
 `;
 
 const CardText = styled.div`
-  width: 16em;
-  font-size: 1.2em;
-  line-height: 1.3em;
-  color: white;
+  width: 20em;
+  font-size: 1.0em;
+  font-weight: bold;
+  line-height: 1.6em;
+  color: #91ff00;
+
 `;
 
 // const FadeIn = styled.div`
