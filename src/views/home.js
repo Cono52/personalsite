@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components';
 import Typist from 'react-typist';
 
+import ContactForm from '../components/contact-form'
+
 const expandIn = keyframes`
   from { transform: rotateY(90deg);}
   to { transform: rotateY(0deg);}
@@ -71,6 +73,9 @@ const Section = styled.div`
 `;
 
 const CardWrapper = styled.div`
+    overflow: auto;
+    max-height: 300px;
+
     &::before {
     animation: 1s ${bracketsExpand} 1.6s ease-out forwards;
     position: absolute;
@@ -78,7 +83,7 @@ const CardWrapper = styled.div`
     transform: translate(142px, -38px);
     content: '{}';
     letter-spacing: 0em;
-    z-index: 0;
+    z-index: -1;
     font-family: Helvetica;
     font-size: 20em;
   }
@@ -89,7 +94,7 @@ const Card = styled.div`
   animation: 1.2s ${expandIn} 1.75s ease-out forwards;
   display: flex;
   width: 500px;
-  height: 300px;
+  height: 500px;
   box-sizing: border-box;
   flex-direction: column;
   background: black;
@@ -122,7 +127,6 @@ const CardText = styled.div`
   font-weight: bold;
   line-height: 1.6em;
   color: #91ff00;
-
 `;
 
 // const FadeIn = styled.div`
@@ -157,6 +161,7 @@ class Home extends Component {
                   <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAjNAAAAJGRmODMzYmQxLWM3MzMtNDY1Ny1hZTIzLTVhZTcyZDcyNjhmNg.jpg" alt="pic"/>
                 </HeadShot>
               </Card>
+              <ContactForm />
             </CardWrapper>
           </Section>
           {/* <Widget>
