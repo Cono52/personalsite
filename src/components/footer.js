@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const FooterContainer = styled.div`
   position: absolute;
@@ -7,12 +7,8 @@ const FooterContainer = styled.div`
 `;
 
 class Footer extends Component {
-  render () {
-    return (
-      <FooterContainer>
-        © 2017 Conor O'Flanagan
-      </FooterContainer>
-    )
+  render() {
+    return <FooterContainer>© 2017 Conor O'Flanagan</FooterContainer>;
   }
 }
 

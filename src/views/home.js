@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import styled, { keyframes } from 'styled-components';
-import Typist from 'react-typist';
+import React, { Component } from "react";
+import styled, { keyframes } from "styled-components";
+import Typist from "react-typist";
 
-import ContactForm from '../components/contact-form'
+import ContactForm from "../components/contact-form";
 
 const expandIn = keyframes`
   from { transform: rotateY(90deg);}
@@ -13,11 +13,6 @@ const bounceIn = keyframes`
   from { transform: scale(0);}
   to { transform: scale(1);}
 `;
-
-// const fadeIn = keyframes`
-//   from { opactiy: 0 }
-//   to { opacity: 1 }
-// `;
 
 const bracketsExpand = keyframes`
   from {
@@ -31,57 +26,62 @@ const bracketsExpand = keyframes`
 `;
 
 const HomeContainer = styled.div`
-    height: 100vh;
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100px auto 100px;
-    grid-template-areas:
-        ". . . . . . . . . . . ."
-        ". . . c c c c c c . . ."
-        ". . . . . w w . . . . .";
-    position: relative;
-    > video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -100;
-    }
+  height: 100vh;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". . . c c c c c c . . ."
+    ". . . . . w w . . . . .";
+  position: relative;
+  > video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+  }
 `;
 
 const Overlay = styled.div`
-   position: fixed;
-   right: 0;
-   bottom: 0;
-   background-color: rgb(5, 159, 167);;
-   min-width: 100%;
-   min-height: 100%;
-   width: auto;
-   height: auto;
-   z-index: -99;
-   opacity: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(5, 159, 167);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -99;
+  opacity: 1;
+  @media (max-width: 750px) {
+    background: black;
+  }
 `;
 
 const Section = styled.div`
-    grid-area: c;
-    align-self: center;
-    justify-self: center;
+  grid-area: c;
+  align-self: center;
+  justify-self: center;
 `;
 
 const CardWrapper = styled.div`
-    overflow: auto;
-    max-height: 300px;
-
-    &::before {
+  overflow: auto;
+  max-height: 300px;
+  &::before {
     animation: 1s ${bracketsExpand} 1.6s ease-out forwards;
     position: absolute;
     color: white;
     transform: translate(142px, -38px);
-    content: '{}';
+    content: "{}";
+    @media (max-width: 750px) {
+      color: black;
+    }
     letter-spacing: 0em;
     z-index: -1;
     font-family: Helvetica;
@@ -99,6 +99,10 @@ const Card = styled.div`
   flex-direction: column;
   background: black;
   padding: 6em 2em;
+  @media (max-width: 750px) {
+    height: 520px;
+    padding: 3em 2em;
+  }
 `;
 
 const HeadShot = styled.div`
@@ -110,6 +114,10 @@ const HeadShot = styled.div`
   right: 2em;
   border-radius: 50%;
   position: absolute;
+  @media (max-width: 750px) {
+    position: static;
+    margin-top: 20px;
+  }
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -123,54 +131,44 @@ const HeadShot = styled.div`
 
 const CardText = styled.div`
   width: 20em;
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: bold;
+  @media (max-width: 750px) {
+    width: 71%;
+    margin: 0 auto;
+  }
   line-height: 1.6em;
   color: #91ff00;
 `;
 
-// const FadeIn = styled.div`
-//   opacity: 0;
-//   animation: 1s ${fadeIn} ${props => props.delay ? props.delay : '0s' } linear forwards;
-// `;
-
-// const Widget = styled.div`
-//   grid-area: w;
-//   align-self: start;
-//   justify-self: center;
-// `;
-
 class Home extends Component {
   render() {
     return (
-       <HomeContainer>
-          {/* <video autoPlay loop id="video-background" muted plays-inline='true'>
-            <source src="assets/imgs/343645551.mp4" type="video/mp4" />
-          </video> */}
-          <Overlay />
-          <Section>
-            <CardWrapper>
-              <Card>
-                <CardText>
-                  <Typist>
-                    <Typist.Delay ms={2500} />
-                    Hi, my name is Conor O'Flanagan.<br/>I'm a software developer currently based in London.
-                  </Typist>
-                </CardText>
-                <HeadShot>
-                  <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAjNAAAAJGRmODMzYmQxLWM3MzMtNDY1Ny1hZTIzLTVhZTcyZDcyNjhmNg.jpg" alt="pic"/>
-                </HeadShot>
-              </Card>
-              <ContactForm />
-            </CardWrapper>
-          </Section>
-          {/* <Widget>
-            <FadeIn delay={'6s'}>
-                <iframe title='spot' src="https://open.spotify.com/embed?uri=spotify:track:3ZOEytgrvLwQaqXreDs2Jx" width="300" height="80" frameBorder="0" allowtransparency="true"></iframe>
-            </FadeIn>
-          </Widget> */}
-        </HomeContainer>
-    )
+      <HomeContainer>
+        <Overlay />
+        <Section>
+          <CardWrapper>
+            <Card>
+              <CardText>
+                <Typist>
+                  <Typist.Delay ms={2500} />
+                  Hi, my name is Conor O'Flanagan.
+                  <br />
+                  I'm a software developer currently based in London.
+                </Typist>
+              </CardText>
+              <HeadShot>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/10832455?s=460&v=4"
+                  alt="pic"
+                />
+              </HeadShot>
+            </Card>
+            <ContactForm />
+          </CardWrapper>
+        </Section>
+      </HomeContainer>
+    );
   }
 }
 

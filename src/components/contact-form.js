@@ -3,8 +3,12 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
+  @media (max-width: 750px) {
+    width: 59%;
+    margin: 0 auto;
+  }
   font-size: 1em;
-  height: 600px;
+  height: 100px;
   background-color: black;
   font-weight: bold;
   line-height: 1.6em;
@@ -18,34 +22,34 @@ const StyledForm = styled.form`
   font-family: inherit;
 `;
 
-const StyledInput = styled.textarea`
-  box-shadow: 0px 0px 1px 1px;
-  width: ${props => (props.large ? "100%" : "auto")};
-  font-family: inherit;
-  font-size: 1em;
-  font-weight: bold;
+const SubmitButton = styled.a`
   background-color: black;
-  color: #91ff00;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  outline-width: 0px;
-  resize: none;
+  outline: 0;
+  border: 1px solid #7ad700;
+  height: 35px;
+  width: 200px;
+  color: inherit;
+  font-family: inherit;
+  box-shadow: 0px 4px 0px 0px;
+  font-weight: inherit;
+  font-size: 1.5rem;
 
-  &:focus {
-    outline-width: 8px;
-    outline-color: #91ff00;
-    color: #91ff00;
-  }
-`;
+  padding-top: 4px;
+  text-decoration: none;
+  text-align: center;
 
-const InputContainer = styled.div`
-  display: flex;
-  flex-direction: ${props => (props.direction ? props.direction : "row")};
-  align-items: ${props => (props.direction ? "left" : "center")};
-  > label {
-    width: 75px;
+  &:active {
+    box-shadow: 0px 0px 0px 0px;
+    border: 1px solid #7ad700;
+    transform: translateY(4px);
   }
+
+  &:focus,
+  :visited {
+    border: 1px solid #7ad700;
+  }
+
+  transition: all 0.03s ease-in;
 `;
 
 class ContactForm extends Component {
@@ -70,40 +74,18 @@ class ContactForm extends Component {
     this.setState({ message: e.target.value });
   };
 
-  handleSubmit = event => {};
+  handleSubmit = e => {
+    e.preventDefault();
+  };
 
   render() {
     return (
       <Container>
         Interested in working with me?
-        <StyledForm onSubmit={this.handleSubmit}>
-          <InputContainer>
-            <label>Name:</label>
-            <StyledInput
-              rows="1"
-              value={this.state.value}
-              onChange={this.handleNameChange}
-            />
-          </InputContainer>
-          <InputContainer>
-            <label>Email:</label>
-            <StyledInput
-              rows="1"
-              value={this.state.email}
-              onChange={this.handleEmailChange}
-            />
-          </InputContainer>
-          <InputContainer direction={"column"}>
-            <label>Message:</label>
-            <StyledInput
-              large
-              rows="8"
-              columns="20"
-              value={this.state.message}
-              onChange={this.handleMessageChange}
-            />
-          </InputContainer>
-          <input type="submit" value="Submit" />
+        <StyledForm onSubmit={this.handleSubmit} autocomplete="on">
+          <SubmitButton href="mailto:conorboflanagan@hotmail.com">
+            Email me!
+          </SubmitButton>
         </StyledForm>
       </Container>
     );

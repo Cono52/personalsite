@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const AboutContainer = styled.div`
   position: relative;
@@ -9,27 +8,27 @@ const AboutContainer = styled.div`
 `;
 
 const Grid = styled.div`
-    height: 140vh;
-    display: grid;
-    grid-gap: 5px;
-    width: 100vw;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto 200px 0px auto;
-    grid-template-areas:
-      ". . . . . . . . . . . ."
-      ". w w w w w . . . . . ."
-      ". . . . . . . . . . . ."
-      ". . . . . . . . . . . .";
+  height: 140vh;
+  display: grid;
+  grid-gap: 5px;
+  width: 100vw;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 200px 0px auto;
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". w w w w w . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . .";
 `;
 
 const Copy = styled.div`
-    grid-area: w;
+  grid-area: w;
 `;
 
 const Overlay = styled.div`
   top: 0;
   position: absolute;
-  background-color: rgb(5, 159, 167);;
+  background-color: rgb(5, 159, 167);
   min-width: 100%;
   min-height: 100%;
   width: auto;
@@ -58,13 +57,15 @@ class About extends Component {
         <Grid>
           <Copy>
             <SectionText>
-              <p>Right now, I'm a front-end developer at When You Move.<br/>
+              <p>
+                Right now, I'm a front-end developer at When You Move.
+                <br />
               </p>
             </SectionText>
           </Copy>
         </Grid>
       </AboutContainer>
-    )
+    );
   }
 }
-export default About
+export default About;
