@@ -1,6 +1,18 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import styled from "styled-components";
 
 import animation from "./Animation";
+
+const LogoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  margin-top: 60vh;
+  svg {
+    position: absolute;
+    left: 53%;
+    transform: translate(-50%, -100%);
+  }
+`;
 
 class LogoStack extends Component {
   componentDidMount() {
@@ -9,7 +21,7 @@ class LogoStack extends Component {
 
   render() {
     return (
-      <Fragment>
+      <LogoContainer>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="265"
@@ -134,7 +146,7 @@ class LogoStack extends Component {
             d="m580.8 889.7l-257-141.3v-280l257 148.4v272.9m36.7 0l257-141.3v-280l-257 148.4v272.9m-276.3-453.7l258-141.9 258 141.9-258 149-258-149"
           />
         </svg>
-      </Fragment>
+      </LogoContainer>
     );
   }
 }

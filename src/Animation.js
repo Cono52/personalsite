@@ -1,4 +1,4 @@
-import { TimelineMax, Elastic } from "gsap";
+import { TimelineMax, Elastic, Power2 } from "gsap";
 
 const logos = [
   "#react_logo",
@@ -11,6 +11,24 @@ const logos = [
 ];
 
 export default {
+  levitate(cb) {
+    const tl = new TimelineMax({ delay: 1 });
+    tl.fromTo(
+      "#impossible_shape",
+      5,
+      { opacity: 0 },
+      { opacity: 1, ease: Power2.easeInOut }
+    );
+    const tl2 = new TimelineMax({ repeat: -1 });
+    tl2
+      .fromTo(
+        "#impossible_shape",
+        2,
+        { y: -7, ease: Power2.easeInOut },
+        { y: 7, ease: Power2.easeInOut }
+      )
+      .to("#impossible_shape", 2, { y: -7, ease: Power2.easeInOut });
+  },
   show(cb) {
     logos.forEach((logo, i) => {
       const tl = new TimelineMax({

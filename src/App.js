@@ -1,33 +1,22 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import LogoStack from "./LogoStack";
+import HoveringShapeBackground from "./hoveringShape";
 
 const Main = styled.main`
-  height: calc(100vh - 2rem);
-  padding: 1rem;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
 `;
 
 const Introduction = styled.div`
-  font-size: 25px;
+  font-size: 16px;
   font-family: Helvetica, monospace;
+  letter-spacing: 2px;
   font-weight: 600;
-  position: static;
-  text-align: center;
+  color: white;
   p {
-    padding-top: 30px;
-    line-height: 35px;
-    margin: auto;
-  }
-`;
-
-const LogoContainer = styled.div`
-  position: relative;
-  width: 100%;
-  top: 62%;
-  svg {
-    position: absolute;
-    left: 53%;
-    transform: translate(-50%, -100%);
+    padding: 10px 0 0 10px;
+    margin-top: 0;
   }
 `;
 
@@ -36,11 +25,9 @@ class App extends Component {
     return (
       <Main>
         <Introduction>
-          <p>Conor O'Flanagan Software Developer</p>
+          <p>Conor O'Flanagan</p>
         </Introduction>
-        <LogoContainer>
-          <LogoStack />
-        </LogoContainer>
+        <HoveringShapeBackground />
       </Main>
     );
   }
