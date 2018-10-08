@@ -34,11 +34,10 @@ const ShapeContainer = styled.div`
 // const color1_2 = "rgb(184, 200, 231)";
 // const color1_1 = "rgb(0, 138, 176)";
 
-let randomOffset = Math.round(Math.random() * 360);
-let color1 = `hsla(${198 + randomOffset}, 76%, 52%, 1)`;
-let color2 = `hsla(${197 + randomOffset}, 100%, 29%, 1)`;
-let color1_2 = `hsla(${220 + randomOffset}, 49%, 81%, 1)`;
-let color1_1 = `hsla(${193 + randomOffset}, 100%, 35%, 1)`;
+let color1 = `hsla(${198}, 76%, 52%, 1)`;
+let color2 = `hsla(${197}, 100%, 29%, 1)`;
+let color1_2 = `hsla(${220}, 49%, 81%, 1)`;
+let color1_1 = `hsla(${193}, 100%, 35%, 1)`;
 
 class HoveringShapeBackground extends Component {
   componentDidMount() {
@@ -63,8 +62,8 @@ class HoveringShapeBackground extends Component {
               y2="165.9371"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_17_"
@@ -79,8 +78,8 @@ class HoveringShapeBackground extends Component {
               y2="105.3085"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_12_"
@@ -95,8 +94,8 @@ class HoveringShapeBackground extends Component {
               y2="149.3606"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_16_"
@@ -111,8 +110,8 @@ class HoveringShapeBackground extends Component {
               y2="110.0881"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1_2} />
-              <stop offset="1" stopColor={color1_1} />
+              <stop offset="0" className="color12" stopColor={color1_2} />
+              <stop offset="1" className="color11" stopColor={color1_1} />
             </linearGradient>
             <path
               id="XMLID_9_"
@@ -127,8 +126,8 @@ class HoveringShapeBackground extends Component {
               y2="184.4378"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_15_"
@@ -143,8 +142,8 @@ class HoveringShapeBackground extends Component {
               y2="117.6916"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_11_"
@@ -159,8 +158,8 @@ class HoveringShapeBackground extends Component {
               y2="60.9634"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_13_"
@@ -175,8 +174,8 @@ class HoveringShapeBackground extends Component {
               y2="195.563"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_14_"
@@ -191,8 +190,8 @@ class HoveringShapeBackground extends Component {
               y2="44.4151"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_1_"
@@ -207,8 +206,8 @@ class HoveringShapeBackground extends Component {
               y2="164.9243"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1_2} />
-              <stop offset="1" stopColor={color1_1} />
+              <stop offset="0" className="color12" stopColor={color1_2} />
+              <stop offset="1" className="color11" stopColor={color1_1} />
             </linearGradient>
             <path
               id="XMLID_5_"
@@ -223,8 +222,8 @@ class HoveringShapeBackground extends Component {
               y2="69.4154"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_8_"
@@ -239,8 +238,8 @@ class HoveringShapeBackground extends Component {
               y2="176.4318"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_6_"
@@ -255,8 +254,8 @@ class HoveringShapeBackground extends Component {
               y2="206.6728"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_7_"
@@ -271,8 +270,8 @@ class HoveringShapeBackground extends Component {
               y2="85.7338"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stopColor={color1} />
-              <stop offset="1" stopColor={color2} />
+              <stop className="color1" offset="0" stopColor={color1} />
+              <stop className="color2" offset="1" stopColor={color2} />
             </linearGradient>
             <path
               id="XMLID_10_"
