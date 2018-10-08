@@ -5,22 +5,21 @@ import animation from "./Animation";
 
 const ShapeContainer = styled.div`
   position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
   display: flex;
+  top: 0px;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+  box-sizing: border-box; /* 2 */
+  flex-direction: column;
   align-items: center;
   background-color: black;
-  color: rgb(39, 170, 225);
-  color: rgb(0, 106, 147);
-  color: rgb(184, 200, 231);
-  color: rgb(0, 138, 176);
-  justify-content: center;
+  justify-content: space-around;
   overflow: hidden;
   #impossible_shape {
     width: 500px;
     max-height: 600px;
+    max-width: 100%;
   }
   @media (max-width: 400px) {
     #impossible_shape {
