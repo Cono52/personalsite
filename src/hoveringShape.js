@@ -9,17 +9,15 @@ const ShapeContainer = styled.div`
   top: 0px;
   width: 100vw;
   min-height: 100vh;
+  height: 100px;
   z-index: -1;
-  box-sizing: border-box; /* 2 */
-  flex-direction: column;
   align-items: center;
   background-color: black;
   justify-content: space-around;
   overflow: hidden;
   #impossible_shape {
     width: 500px;
-    max-height: 600px;
-    max-width: 100%;
+    max-height: 400px;
   }
   @media (max-width: 400px) {
     #impossible_shape {
