@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import HoveringShapeBackground from "./hoveringShape";
+import LogoStack from "./LogoStack";
 
 const Container = styled.div`
   position: absolute;
@@ -24,7 +25,9 @@ const Hamburger = () => (
   </Container>
 );
 
-const Main = styled.main``;
+const Main = styled.main`
+  font-family: Helvetica, monospace;
+`;
 
 const Block = styled.main`
   min-height: 100vh;
@@ -46,7 +49,6 @@ const Introduction = styled.div`
     letter-spacing: 2px;
     font-weight: 600;
     margin-top: 0;
-    font-family: Helvetica, monospace;
     color: #cccccc;
   }
 
@@ -61,10 +63,29 @@ const Introduction = styled.div`
   }
 `;
 
+const About = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  p {
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 0;
+    color: #555;
+  }
+`;
+
 class App extends Component {
   render() {
     return (
       <Main>
+        <Block>
+          <About>
+            <p>About</p>
+            <LogoStack />
+          </About>
+        </Block>
         <Block nopad>
           <Introduction>
             <p className="name">CONOR O'FLANAGAN</p>
@@ -73,7 +94,6 @@ class App extends Component {
           <Hamburger onClick={() => console.log("openMenu")} />
           <HoveringShapeBackground />
         </Block>
-        {/* <Block>About</Block>*/}
         <Block>Contact</Block>
       </Main>
     );
