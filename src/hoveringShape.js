@@ -7,7 +7,7 @@ const ShapeContainer = styled.div`
   position: absolute;
   display: flex;
   top: 0px;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   height: 100px;
   z-index: -1;
@@ -38,7 +38,7 @@ let color1_1 = `hsla(${193}, 100%, 35%, 1)`;
 
 class HoveringShapeBackground extends Component {
   componentDidMount() {
-    animation.levitate();
+    //animation.levitate();
   }
 
   render() {

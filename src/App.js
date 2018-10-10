@@ -13,35 +13,32 @@ const Line = styled.div`
   width: 100%;
   margin-bottom: 5px;
   height: 2px;
-  background-color: #ccc
+  background-color: #ccc;
 `;
 
 const Hamburger = () => (
   <Container>
-      <Line />
-      <Line />
-      <Line />
-    </Container>
-)
+    <Line />
+    <Line />
+    <Line />
+  </Container>
+);
 
-
-const Main = styled.main`
-
-`;
+const Main = styled.main``;
 
 const Block = styled.main`
   min-height: 100vh;
-  min-width: 100vw;
   position: relative;
   box-sizing: border-box;
-  padding: ${({ nopad }) => nopad ? '0' : '2rem' };
+  padding: ${({ nopad }) => (nopad ? "0" : "2rem")};
 `;
 
 const Introduction = styled.div`
   height: 100vh;
+  max-width: 100vw;
   display: flex;
   padding: 2rem;
-  box-sizing: border-box
+  box-sizing: border-box;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1rem;
@@ -51,6 +48,11 @@ const Introduction = styled.div`
     margin-top: 0;
     font-family: Helvetica, monospace;
     color: #cccccc;
+  }
+
+  .name {
+    width: 5ch;
+    line-height: 1.25rem;
   }
 
   .tag {
@@ -65,18 +67,14 @@ class App extends Component {
       <Main>
         <Block nopad>
           <Introduction>
-            <p>CONOR O'FLANAGAN</p>
+            <p className="name">CONOR O'FLANAGAN</p>
             <p className="tag">Cloud Artisan</p>
           </Introduction>
-          <Hamburger onClick={() => console.log('openMenu')} />
+          <Hamburger onClick={() => console.log("openMenu")} />
           <HoveringShapeBackground />
         </Block>
-        <Block>
-            About
-        </Block>
-        <Block>
-            Contact
-        </Block>
+        {/* <Block>About</Block>*/}
+        <Block>Contact</Block>
       </Main>
     );
   }
