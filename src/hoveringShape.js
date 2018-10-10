@@ -21,7 +21,7 @@ const ShapeContainer = styled.div`
   }
   @media (max-width: 400px) {
     #impossible_shape {
-      transform: rotate(90deg);
+      transform: rotate(90.5deg);
     }
   }
 `;
