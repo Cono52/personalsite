@@ -27,10 +27,12 @@ const Hamburger = () => (
 
 const Main = styled.main`
   font-family: Helvetica, monospace;
+  height: 100%;
 `;
 
 const Block = styled.main`
   min-height: 100vh;
+  height: 100%;
   position: relative;
   box-sizing: border-box;
   padding: ${({ nopad }) => (nopad ? "0" : "2rem")};
@@ -66,13 +68,31 @@ const Introduction = styled.div`
 const About = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
+  padding-bottom: 50%;
+  align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   p {
-    margin-top: 0;
     letter-spacing: 2px;
     font-weight: 600;
     margin-top: 0;
     color: #555;
+  }
+
+  .about {
+    font-size: 1.5rem;
+  }
+
+  .info {
+    font-weight: 200;
+    max-width: 50ch;
+  }
+
+  div {
+    min-width: 175px;
+    min-height: 175px;
+    margin: auto;
   }
 `;
 
@@ -80,12 +100,6 @@ class App extends Component {
   render() {
     return (
       <Main>
-        <Block>
-          <About>
-            <p>About</p>
-            <LogoStack />
-          </About>
-        </Block>
         <Block nopad>
           <Introduction>
             <p className="name">CONOR O'FLANAGAN</p>
@@ -93,6 +107,18 @@ class App extends Component {
           </Introduction>
           <Hamburger onClick={() => console.log("openMenu")} />
           <HoveringShapeBackground />
+        </Block>
+        <Block>
+          <About>
+            <p className="about">About</p>
+            <div>
+              <LogoStack width={"50%"} />
+            </div>
+            <p className="info">
+              Based in London, I have a passion for contructing elegant
+              solutions.
+            </p>
+          </About>
         </Block>
         <Block>Contact</Block>
       </Main>

@@ -6,6 +6,7 @@ import animation from "./Animation";
 const LogoContainer = styled.div`
   position: relative;
   width: ${props => (props.width ? props.width : "100%")};
+  max-width: 500px;
   svg {
     position: absolute;
     top: 0;
