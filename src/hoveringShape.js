@@ -8,21 +8,17 @@ const ShapeContainer = styled.div`
   display: flex;
   top: 0px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   height: 100px;
   z-index: -1;
   align-items: center;
-  background-color: black;
+  background-color: transparent;
   justify-content: space-around;
   overflow: hidden;
   #impossible_shape {
     width: 500px;
     max-height: 400px;
-  }
-  @media (max-width: 400px) {
-    #impossible_shape {
-      transform: rotate(90.5deg);
-    }
+    transform: rotate(90.5deg);
   }
 `;
 
