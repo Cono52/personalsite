@@ -20,10 +20,10 @@ export default {
     var elementArray11 = document.querySelectorAll(".color11");
     var elementArray12 = document.querySelectorAll(".color12");
 
-    const color1 = { h: 198, s: 76, l: 52 };
-    const color2 = { h: 197, s: 100, l: 29 };
-    const color12 = { h: 220, s: 49, l: 81 };
-    const color11 = { h: 193, s: 100, l: 35 };
+    const color1 = { h: 198, s: 76, l: 42 };
+    const color2 = { h: 197, s: 100, l: 19 };
+    const color12 = { h: 220, s: 49, l: 71 };
+    const color11 = { h: 193, s: 100, l: 25 };
 
     TweenMax.to([color1, color2, color12, color11], 20, {
       h: 360 + 193,

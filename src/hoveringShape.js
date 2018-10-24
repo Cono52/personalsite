@@ -27,14 +27,14 @@ const ShapeContainer = styled.div`
 // const color1_2 = "rgb(184, 200, 231)";
 // const color1_1 = "rgb(0, 138, 176)";
 
-let color1 = `hsla(${198}, 76%, 52%, 1)`;
-let color2 = `hsla(${197}, 100%, 29%, 1)`;
-let color1_2 = `hsla(${220}, 49%, 81%, 1)`;
-let color1_1 = `hsla(${193}, 100%, 35%, 1)`;
+let color1 = `hsla(${198}, 76%, 42%, 1)`;
+let color2 = `hsla(${197}, 100%, 19%, 1)`;
+let color1_2 = `hsla(${220}, 49%, 71%, 1)`;
+let color1_1 = `hsla(${193}, 100%, 25%, 1)`;
 
 class HoveringShapeBackground extends Component {
   componentDidMount() {
-    //animation.levitate();
+    //  animation.levitate();
   }
 
   render() {
