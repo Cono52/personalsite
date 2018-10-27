@@ -31,7 +31,7 @@ const Hamburger = () => (
 const Main = styled.main`
   font-family: Cabin, monospace;
   position: relative;
-  height: 3600px;
+  height: 3800px;
   width: 100%;
   top: 0;
   left: 0;
@@ -46,7 +46,6 @@ const Main = styled.main`
 const Block = styled.main`
   min-height: 100vh;
   height: 100vh;
-  box-sizing: border-box;
 `;
 
 const LinkBlock = styled.div`
@@ -77,15 +76,12 @@ const Introduction = styled.div`
 
   .tag {
     margin-top: 10px;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 12px;
     font-weight: normal;
   }
 `;
 
 const About = styled.div`
-  box-sizing: border-box;
   .about {
     font-size: 2rem;
     padding: 2rem;
@@ -101,7 +97,6 @@ const About = styled.div`
     position: absolute;
     top: 1300px;
     width: 100%;
-    box-sizing: border-box;
     display: flex;
     padding: 2rem;
     flex-direction: column;
@@ -156,7 +151,6 @@ const Stuff = styled.div`
   position: absolute;
   top: 2500px;
   padding: 2rem;
-  box-sizing: border-box;
   z-index: 5;
   .stuff {
     color: lightgrey;
@@ -176,6 +170,40 @@ const Stuff = styled.div`
     }
     a {
       word-break: break-all;
+    }
+  }
+`;
+
+const Contact = styled.div`
+  padding: 2rem;
+  z-index: 4;
+  position: absolute;
+  top: 3400px;
+  width: 100%;
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #ccc;
+  a {
+    background: red;
+    width: 170px;
+    box-shadow: 0px 3px 0px 0px #a80000;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+    &:active {
+      transform: translateY(3px);
+      box-shadow: none;
     }
   }
 `;
@@ -269,7 +297,17 @@ class App extends Component {
             </div>
           </Stuff>
         </Block>
-        <Block>Contact</Block>
+        <Block>
+          <Contact>
+            <h2>Want me to help your team or product?</h2>
+            <a
+              href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
+              target="_top"
+            >
+              Email
+            </a>
+          </Contact>
+        </Block>
       </Main>
     );
   }

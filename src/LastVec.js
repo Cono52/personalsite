@@ -15,7 +15,7 @@ const LastVec = () => {
     <LastVecContainer>
       <svg
         width="2600px"
-        height="1900px"
+        height="2000px"
         style={{
           transform: "translate(-1px, 3px)"
         }}
