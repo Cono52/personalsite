@@ -4,10 +4,11 @@ import HoveringShapeBackground from "./hoveringShape";
 import LogoStack from "./LogoStack";
 import FirstVec from "./FirstVec";
 import LastVec from "./LastVec";
-import { GitHubIcon, LinkedInIcon, Trio } from "./SvgLib";
+import { GitHubIcon, LinkedInIcon, Trio, CodePenIcon } from "./SvgLib";
 
 const Container = styled.div`
   position: absolute;
+  z-index: 4;
   top: 2.05rem;
   right: 2rem;
   width: 30px;
@@ -20,8 +21,8 @@ const Line = styled.div`
   background-color: #ccc;
 `;
 
-const Hamburger = () => (
-  <Container>
+const Hamburger = ({ toggle }) => (
+  <Container onClick={toggle}>
     <Line />
     <Line />
     <Line />
@@ -29,23 +30,18 @@ const Hamburger = () => (
 );
 
 const Main = styled.main`
-  font-family: Cabin, monospace;
-  position: relative;
-  height: 3800px;
   width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -3;
+  overflow-x: hidden;
+  position: relative;
   background: linear-gradient(
     90deg,
     hsla(205, 57%, 5%, 1),
     hsla(205, 57%, 20%, 1)
   );
-`;
 
-const Block = styled.main`
-  min-height: 100vh;
-  height: 100vh;
+  h2 {
+    font-family: Cabin, monospace;
+  }
 `;
 
 const LinkBlock = styled.div`
@@ -54,7 +50,7 @@ const LinkBlock = styled.div`
   position: absolute;
   top: 1.95rem;
   left: 1.3rem;
-  width: 70px;
+  width: 120px;
 `;
 
 const Introduction = styled.div`
@@ -67,11 +63,11 @@ const Introduction = styled.div`
   top: 82vh;
   h1,
   p {
+    font-family: Cabin, monospace;
     font-size: 16px;
     letter-spacing: 5px;
     font-weight: 600;
     margin-top: 0;
-    color: #cccccc;
   }
 
   .tag {
@@ -82,31 +78,29 @@ const Introduction = styled.div`
 `;
 
 const About = styled.div`
+  position: relative;
+  min-height: 500px;
+  padding-top: 20px;
+  margin-top: calc(950px - 95vh);
   .about {
     font-size: 2rem;
-    padding: 2rem;
-    font-weight: normal;
-    position: absolute;
-    top: 1045px;
-    transform: rotate(21deg);
-    color: lightgrey;
+    width: 100%;
+    text-align: center;
+    padding-left: 20px;
     letter-spacing: 20px;
   }
 
   .infoLogoBlock {
-    position: absolute;
-    top: 1300px;
     width: 100%;
     display: flex;
+    margin-top: 130px;
     padding: 2rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     .info {
       width: 100%;
-      font-weight: 200;
       max-width: 50ch;
-      color: lightgrey;
       margin-bottom: 50px;
       text-align: center;
     }
@@ -115,21 +109,21 @@ const About = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 200px;
       min-width: 200px;
     }
   }
 
   .skills {
-    position: absolute;
-    top: 1800px;
     display: flex;
+    margin-top: 20px;
     padding: 2rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     p {
-      color: white;
       text-align: center;
+      max-width: 500px;
       margin-bottom: 3rem;
     }
     .skillIconsContainer {
@@ -137,7 +131,7 @@ const About = styled.div`
       align-items: center;
       justify-content: center;
       position: relative;
-      width: 100%;
+      width: 75%;
       svg {
         max-width: 350px;
       }
@@ -147,46 +141,52 @@ const About = styled.div`
 
 const Stuff = styled.div`
   display: flex;
+  margin-top: 250px;
+  overflow: hidden;
+  min-height: 500px;
   flex-direction: column;
-  position: absolute;
-  top: 2500px;
+  align-items: flex-end;
+  position: relative;
   padding: 2rem;
-  z-index: 5;
-  .stuff {
-    color: lightgrey;
+  .stuffTitle {
     font-weight: normal;
-    position: absolute;
-    top: -120px;
     right: 2rem;
-    transform: rotate(-18deg);
+    letter-spacing: 10px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
   }
   .article {
+    align-self: flex-start;
     display: flex;
     word-wrap: break-word;
     flex-direction: column;
-    margin-bottom: 2rem;
-    p {
-      color: white;
-    }
+    margin-bottom: 3rem;
     a {
+      color: lightblue;
       word-break: break-all;
+      font-size: 10px;
+      line-height: 1.5;
     }
   }
 `;
 
 const Contact = styled.div`
   padding: 2rem;
-  z-index: 4;
-  position: absolute;
-  top: 3400px;
+  position: relative;
   width: 100%;
-  height: 570px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  color: #ccc;
-  a {
+  justify-content: center;
+  align-items: center;
+  h2 {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .but {
+    margin-top: 80px;
     background: red;
     width: 170px;
     box-shadow: 0px 3px 0px 0px #a80000;
@@ -196,7 +196,6 @@ const Contact = styled.div`
     justify-content: center;
     text-align: center;
     text-decoration: none;
-    color: white;
     letter-spacing: 2px;
     font-weight: bold;
     text-align: center;
@@ -208,106 +207,254 @@ const Contact = styled.div`
   }
 `;
 
+const SliderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  ${props =>
+    !props.show ? "transform: translate(100%)" : "transform: translate(0%)"};
+  min-width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+
+  > div {
+    color: white;
+    margin-top: 25vh;
+    font-family: Cabin, monospace;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    > a {
+      text-decoration: none;
+    }
+  }
+`;
+
+const Slider = ({ toggle, show }) => {
+  return (
+    <SliderContainer show={show}>
+      <div>
+        <a onClick={toggle} href="#aboutHandle">
+          ABOUT
+        </a>
+        <a onClick={toggle} href="#stuffHandle">
+          RECENT PICKS
+        </a>
+        <a onClick={toggle} href="#contactHandle">
+          CONTACT
+        </a>
+      </div>
+    </SliderContainer>
+  );
+};
+
+const EndLinkBlock = styled.div`
+  margin-top: 100px;
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+  > a svg {
+    opacity: 0.7;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+`;
+
 class App extends Component {
+  state = {
+    openMenu: false
+  };
+
+  handleMenuToggle = () => {
+    const el = document.getElementById("root");
+    el.scrollTop = "0px";
+    if (el.style.overflow === "hidden") {
+      el.style.overflow = "auto";
+    } else {
+      el.style.overflow = "hidden";
+    }
+    this.setState(prev => {
+      return {
+        openMenu: !this.state.openMenu
+      };
+    });
+  };
+
   render() {
     return (
-      <Main>
+      <Main lock={this.state.openMenu}>
         <FirstVec />
         <LastVec className="lastVec" />
-        <Block className="homeBlock" nopad>
-          <LinkBlock>
+        <HoveringShapeBackground />
+        <LinkBlock>
+          <a
+            href="https://github.com/Cono52"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <GitHubIcon />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/conoroflanagan"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <LinkedInIcon />
-          </LinkBlock>
-          <Introduction>
-            <h1 className="name">CONOR O'FLANAGAN</h1>
-            <p className="tag">CLOUD ARTISAN</p>
-          </Introduction>
-          <Hamburger onClick={() => console.log("openMenu")} />
-          <HoveringShapeBackground />
-        </Block>
-        <Block className="aboutBlock">
-          <About>
-            <h2 className="about">ABOUT</h2>
-            <div className="infoLogoBlock">
-              <p className="info">
-                Based in London, I have a passion for designing and building
-                elegant and engaging web solutions.
-              </p>
-              <div className="logoContainer">
-                <LogoStack width={"70%"} />
-              </div>
+          </a>
+          <a
+            href="https://codepen.io/Cono52"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <CodePenIcon />
+          </a>
+        </LinkBlock>
+        <Introduction>
+          <h1 className="name">CONOR O'FLANAGAN</h1>
+          <p className="tag">CLOUD ARTISAN</p>
+        </Introduction>
+        <Hamburger toggle={this.handleMenuToggle} />
+        <Slider toggle={this.handleMenuToggle} show={this.state.openMenu} />
+        <About id="aboutHandle">
+          <h2 className="about">ABOUT</h2>
+          <div className="infoLogoBlock">
+            <p className="info">
+              Based in London, I have a passion for designing and building
+              elegant and engaging web solutions.
+            </p>
+            <div className="logoContainer">
+              <LogoStack width={"70%"} />
             </div>
-            <div className="skills">
-              <p>
-                In unison with my expertise of the web landscape I enjoy being
-                able to leverage a formal blend of skills in computer science,
-                business and design to solve big problems
-              </p>
-              <div className="skillIconsContainer">
-                <Trio />
-              </div>
+          </div>
+          <div className="skills">
+            <p>
+              In unison with my expertise of the web landscape I enjoy being
+              able to leverage a formal blend of skills in computer science,
+              business and design to solve big problems.
+            </p>
+            <div className="skillIconsContainer">
+              <Trio />
             </div>
-          </About>
-        </Block>
-        <Block className="stuffBlock">
-          <Stuff>
-            <h2 className="stuff">RECENT PICKS</h2>
-            <div className="article">
-              <p>The new syntax on top of javascript: ReasonML</p>
-              <a href="https://reasonml.github.io/">
-                https://reasonml.github.io/
-              </a>
-            </div>
-            <div className="article">
-              <p>Designing Perceptions Instead of Solutions</p>
-              <a href="https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5">
-                https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5
-              </a>
-            </div>
-            <div className="article">
-              <p>You Probably Don't Need Derived State</p>
-              <a href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html">
-                https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-              </a>
-            </div>
-            <div className="article">
-              <p>Web Performance with Webpack</p>
-              <a href="https://frontendmasters.com/courses/performance-webpack/">
-                https://frontendmasters.com/courses/performance-webpack/
-              </a>
-            </div>
-            <div className="article">
-              <p>How To Sell Strategy Without Design or Visuals</p>
-              <a href="https://www.youtube.com/watch?v=dKIyObgkBVI">
-                https://www.youtube.com/watch?v=dKIyObgkBVI
-              </a>
-            </div>
-            <div className="article">
-              <p>JavaScript&#8202;: The Hard Parts</p>
-              <a href="https://frontendmasters.com/courses/javascript-hard-parts/">
-                https://frontendmasters.com/courses/javascript-hard-parts/
-              </a>
-            </div>
-            <div className="article">
-              <p>Advanced SVG Animation</p>
-              <a href="https://frontendmasters.com/courses/svg-animation/">
-                https://frontendmasters.com/courses/svg-animation/
-              </a>
-            </div>
-          </Stuff>
-        </Block>
-        <Block>
-          <Contact>
-            <h2>Want me to help your team or product?</h2>
+          </div>
+        </About>
+        <Stuff id="stuffHandle">
+          <h2 className="stuffTitle">RECENT PICKS</h2>
+          <div className="article">
+            <p>The new syntax on top of javascript: ReasonML</p>
             <a
-              href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
-              target="_top"
+              rel="noopener noreferrer"
+              arget="_blank"
+              href="https://reasonml.github.io/"
             >
-              Email
+              https://reasonml.github.io/
             </a>
-          </Contact>
-        </Block>
+          </div>
+          <div className="article">
+            <p>Designing Perceptions Instead of Solutions</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5"
+            >
+              https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5
+            </a>
+          </div>
+          <div className="article">
+            <p>You Probably Don't Need Derived State</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html"
+            >
+              https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+            </a>
+          </div>
+          <div className="article">
+            <p>Web Performance with Webpack</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://frontendmasters.com/courses/performance-webpack/"
+            >
+              https://frontendmasters.com/courses/performance-webpack/
+            </a>
+          </div>
+          <div className="article">
+            <p>How To Sell Strategy Without Design or Visuals</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.youtube.com/watch?v=dKIyObgkBVI"
+            >
+              https://www.youtube.com/watch?v=dKIyObgkBVI
+            </a>
+          </div>
+          <div className="article">
+            <p>JavaScript&#8202;: The Hard Parts</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://frontendmasters.com/courses/javascript-hard-parts/"
+            >
+              https://frontendmasters.com/courses/javascript-hard-parts/
+            </a>
+          </div>
+          <div className="article">
+            <p>Advanced SVG Animation</p>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://frontendmasters.com/courses/svg-animation/"
+            >
+              https://frontendmasters.com/courses/svg-animation/
+            </a>
+          </div>
+        </Stuff>
+        <Contact id="contactHandle">
+          <h2>Want me to help your team or product?</h2>
+          <a
+            className="but"
+            href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
+            target="_top"
+          >
+            Send Email
+          </a>
+          <EndLinkBlock>
+            <a
+              href="https://github.com/Cono52"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/conoroflanagan"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href="https://codepen.io/Cono52"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <CodePenIcon />
+            </a>
+          </EndLinkBlock>
+        </Contact>
       </Main>
     );
   }

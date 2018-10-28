@@ -6,7 +6,6 @@ const FirstVecContainer = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  z-index: -2;
   overflow: hidden;
 `;
 
@@ -15,7 +14,7 @@ const FirstVec = () => {
     <FirstVecContainer>
       <svg
         width="2600px"
-        height="1900px"
+        height="1500px"
         viewBox="0 0 320 885"
         fill="none"
         preserveAspectRatio="none"

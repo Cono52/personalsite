@@ -6,7 +6,6 @@ const LastVecContainer = styled.div`
   width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 2;
   overflow: hidden;
 `;
 

@@ -4,13 +4,10 @@ import styled from "styled-components";
 import animation from "./Animation";
 
 const ShapeContainer = styled.div`
-  position: absolute;
   display: flex;
-  top: 0px;
   width: 100%;
   min-height: 95vh;
   height: 100px;
-  z-index: -1;
   align-items: center;
   background-color: transparent;
   justify-content: space-around;
@@ -34,7 +31,7 @@ let color1_1 = `hsla(${193}, 100%, 25%, 1)`;
 
 class HoveringShapeBackground extends Component {
   componentDidMount() {
-    //  animation.levitate();
+    animation.levitate();
   }
 
   render() {
