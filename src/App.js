@@ -4,30 +4,8 @@ import HoveringShapeBackground from "./hoveringShape";
 import LogoStack from "./LogoStack";
 import FirstVec from "./FirstVec";
 import LastVec from "./LastVec";
+import Hamburger from "./Hamburger";
 import { GitHubIcon, LinkedInIcon, Trio, CodePenIcon } from "./SvgLib";
-
-const Container = styled.div`
-  position: absolute;
-  z-index: 4;
-  top: 2.05rem;
-  right: 2rem;
-  width: 30px;
-`;
-
-const Line = styled.div`
-  width: 100%;
-  margin-bottom: 5px;
-  height: 2px;
-  background-color: #ccc;
-`;
-
-const Hamburger = ({ toggle }) => (
-  <Container onClick={toggle}>
-    <Line />
-    <Line />
-    <Line />
-  </Container>
-);
 
 const Main = styled.main`
   width: 100%;
@@ -93,7 +71,7 @@ const About = styled.div`
   .infoLogoBlock {
     width: 100%;
     display: flex;
-    margin-top: 130px;
+    margin-top: 100px;
     padding: 2rem;
     flex-direction: column;
     align-items: center;
@@ -141,7 +119,7 @@ const About = styled.div`
 
 const Stuff = styled.div`
   display: flex;
-  margin-top: 250px;
+  margin-top: 200px;
   overflow: hidden;
   min-height: 500px;
   flex-direction: column;
@@ -217,7 +195,7 @@ const SliderContainer = styled.div`
     !props.show ? "transform: translate(100%)" : "transform: translate(0%)"};
   min-width: 100%;
   min-height: 100vh;
-  transition: all 0.3s;
+  transition: all 0.6s ease;
 
   > div {
     color: white;
@@ -280,10 +258,10 @@ class App extends Component {
   handleMenuToggle = () => {
     const el = document.getElementById("root");
     el.scrollTop = "0px";
-    if (el.style.overflow === "hidden") {
-      el.style.overflow = "auto";
+    if (el.style.overflowY === "hidden") {
+      el.style.overflowY = "auto";
     } else {
-      el.style.overflow = "hidden";
+      el.style.overflowY = "hidden";
     }
     this.setState(prev => {
       return {
@@ -325,7 +303,10 @@ class App extends Component {
           <h1 className="name">CONOR O'FLANAGAN</h1>
           <p className="tag">CLOUD ARTISAN</p>
         </Introduction>
-        <Hamburger toggle={this.handleMenuToggle} />
+        <Hamburger
+          isOpen={this.state.openMenu}
+          toggle={this.handleMenuToggle}
+        />
         <Slider toggle={this.handleMenuToggle} show={this.state.openMenu} />
         <About id="aboutHandle">
           <h2 className="about">ABOUT</h2>

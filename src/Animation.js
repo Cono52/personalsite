@@ -1,4 +1,4 @@
-import { TimelineMax, TweenMax, Elastic, Linear, Power2 } from "gsap";
+import { TimelineMax, TweenMax, Elastic, Linear, Power2, Ease } from "gsap";
 
 const logos = [
   "#react_logo",
@@ -12,7 +12,7 @@ const logos = [
 
 export default {
   levitate(cb) {
-    const fadeIn = new TimelineMax({ delay: 1 });
+    const fadeIn = new TimelineMax({ delay: -1 });
     const upDown = new TimelineMax({ repeat: -1 });
 
     var elementArray1 = document.querySelectorAll(".color1");
@@ -57,7 +57,7 @@ export default {
 
     fadeIn.fromTo(
       "#impossible_shape",
-      5,
+      4,
       { opacity: 0 },
       { opacity: 1, ease: Power2.easeInOut }
     );
@@ -92,5 +92,25 @@ export default {
       });
       tl.timeScale(0.75);
     });
+  },
+  hamChange(cb) {
+    const tlTop = new TimelineMax({ delay: 0 });
+    const tlBottom = new TimelineMax({ delay: 0 });
+    return {
+      fire: function() {
+        tlTop.to("#topline", 0.2, { y: 7 }).to("#topline", 0.2, {
+          rotation: "45deg",
+          transformOrigin: "50% 50%",
+          ease: Ease.ease
+        });
+        tlBottom
+          .to("#bottomline", 0.2, { y: -7 })
+          .to(["#bottomline", "#middleline"], 0.2, {
+            rotation: "-45deg",
+            transformOrigin: "50% 50%",
+            ease: Ease.ease
+          });
+      }
+    };
   }
 };

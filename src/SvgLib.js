@@ -415,6 +415,9 @@ export const Trio = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       viewBox="0 0 420 335"
+      style={{
+        transform: "translateX(-3px)"
+      }}
       preserveAspectRatio="xMidYMid meet"
       fill="none"
     >
