@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
-import animation from "./Animation";
+import { TimelineMax, Elastic } from "gsap";
 
 const LogoContainer = styled.div`
   position: relative;
@@ -17,8 +16,39 @@ const LogoContainer = styled.div`
 `;
 
 class LogoStack extends Component {
+
+  constructor(props) {
+    super(props);
+    this.logos = [
+      "#react_logo",
+      "#webpack_logo",
+      "#html_logo",
+      "#js_logo",
+      "#node_logo",
+      "#redux_logo",
+      "#css_logo"
+    ];    
+  }
+
   componentDidMount() {
-    animation.show();
+    this.logos.forEach((logo, i) => {
+      new TimelineMax({
+        delay: i * 1,
+        repeat: -1,
+        repeatDelay: this.logos.length - 2
+      }).set(logo, {
+        scale: 0,
+        autoAlpha: 0
+      }).to(logo, 1, {
+        scale: 1,
+        autoAlpha: 1,
+        ease: Elastic.easeOut.config(1, 1)
+      }).to(logo, 1, {
+        scale: 0,
+        autoAlpha: 0,
+        ease: Elastic.easeOut.config(1, 1)
+      }).timeScale(0.75);
+    })
   }
 
   render() {
