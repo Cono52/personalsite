@@ -61,11 +61,11 @@ const About = styled.div`
   padding-top: 20px;
   margin-top: calc(950px - 95vh);
   .about {
-    font-size: 2rem;
+    font-size: 1.7rem;
     width: 100%;
     text-align: center;
     padding-left: 20px;
-    letter-spacing: 20px;
+    letter-spacing: 16px;
   }
 
   .infoLogoBlock {
@@ -165,6 +165,7 @@ const Contact = styled.div`
   }
   .but {
     margin-top: 80px;
+    color: white;
     background: red;
     width: 170px;
     box-shadow: 0px 3px 0px 0px #a80000;
@@ -404,7 +405,7 @@ class App extends Component {
           </div>
         </Stuff>
         <Contact id="contactHandle">
-          <h2>Want me to help your team or product?</h2>
+          <h2>SO WILL THAT BE CASH OR CARD?</h2>
           <a
             className="but"
             href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
