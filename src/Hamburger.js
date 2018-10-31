@@ -18,11 +18,17 @@ const Line = styled.div`
 `;
 
 class Hamburger extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fire: animation.hamChange()
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     const { isOpen } = this.props;
     if (isOpen !== nextProps.isOpen) {
-      console.log("hit");
-      animation.hamChange().fire();
+      this.state.fire();
     }
   }
 
