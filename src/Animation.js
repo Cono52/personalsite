@@ -1,4 +1,4 @@
-import { TimelineMax, TweenMax, Elastic, Linear, Power2, Ease } from "gsap";
+import { TimelineMax, TweenMax, Elastic, Linear, Power2 } from "gsap";
 
 const logos = [
   "#react_logo",
@@ -92,31 +92,5 @@ export default {
       });
       tl.timeScale(0.75);
     });
-  },
-  hamChange() {
-    let tlTop;
-    let tlBottom;
-    return () => {
-      if(!tlTop) {
-        tlTop = new TimelineMax({ paused: true })
-        .to("#topline", 0.2, { y: 7 })
-        .to("#topline", 0.2, {
-          rotation: "45deg",
-          transformOrigin: "50% 50%",
-          ease: Power2.easeInOut
-        }).reversed(true);
-      }
-      if(!tlBottom) {
-        tlBottom = new TimelineMax({ paused: true })
-          .to("#bottomline", 0.2, { y: -7 })
-          .to(["#bottomline", "#middleline"], 0.2, {
-            rotation: "-45deg",
-            transformOrigin: "50% 50%",
-            ease: Power2.easeInOut
-          }).reversed(true);
-      }
-      tlTop.reversed() ? tlTop.play() : tlTop.reverse();
-      tlBottom.reversed() ? tlBottom.play() : tlBottom.reverse();
-    }
   }
 };

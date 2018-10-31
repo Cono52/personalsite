@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import animation from "./Animation";
+import { TimelineMax, Power2 } from "gsap";
 
 const Container = styled.div`
   position: absolute;
@@ -18,17 +18,34 @@ const Line = styled.div`
 `;
 
 class Hamburger extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = {
-      fire: animation.hamChange()
-    }
+    this.tlTop = new TimelineMax({ paused: true });
+    this.tlBottom = new TimelineMax({ paused: true });
+  }
+  componentDidMount() {
+    this.tlTop
+      .to("#topline", 0.2, { y: 7 })
+      .to("#topline", 0.2, {
+        rotation: "45deg",
+        transformOrigin: "50% 50%",
+        ease: Power2.easeInOut
+    }).pause(false).reversed(true);
+    this.tlBottom.to("#bottomline", 0.2, { y: -7 })
+    .to(["#bottomline", "#middleline"], 0.2, {
+      rotation: "-45deg",
+      transformOrigin: "50% 50%",
+      ease: Power2.easeInOut
+    }).pause(false).reversed(true);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { isOpen } = this.props;
-    if (isOpen !== nextProps.isOpen) {
-      this.state.fire();
+  componentDidUpdate(){
+    if (!this.props.isOpen) {
+      this.tlTop.reverse();
+      this.tlBottom.reverse();
+    } else {
+      this.tlTop.play();
+      this.tlBottom.play();
     }
   }
 
