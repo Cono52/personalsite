@@ -37,6 +37,13 @@ const LinkBlock = styled.div`
   top: 1.95rem;
   left: 1.3rem;
   width: 120px;
+  @media (min-width: 600px) {
+    width: 200px;
+    > a > svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
 const Introduction = styled.div`
@@ -80,7 +87,10 @@ const About = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    line-height: 1.3;
     align-items: flex-start;
+    max-width: 1300px;
+    margin: auto;
   }
   .infoLogoBlock {
     flex-grow: 1;
@@ -91,6 +101,7 @@ const About = styled.div`
     justify-content: center;
     .info {
       width: 100%;
+      font-size: 1.125rem;
       max-width: 50ch;
       margin-bottom: 50px;
       text-align: center;
@@ -117,6 +128,9 @@ const About = styled.div`
       text-align: center;
       max-width: 500px;
       margin-bottom: 3rem;
+    }
+    span {
+      padding: 3px;
     }
     .skillIconsContainer {
       display: flex;
@@ -382,8 +396,40 @@ class App extends Component {
             <div className="skills">
               <p>
                 In unison with my expertise of the web landscape I enjoy being
-                able to leverage a formal blend of skills in computer science,
-                business and design to solve big problems.
+                able to leverage a formal blend of skills in{" "}
+                <span
+                  style={{
+                    fontFamily: "'Press Start 2P', cursive",
+                    fontWeight: 1000,
+                    whiteSpace: "nowrap",
+                    color: "#05c205"
+                  }}
+                >
+                  computer&#8239;science
+                </span>
+                ,{" "}
+                <span
+                  style={{
+                    fontFamily: "Prata, serif",
+                    fontWeight: 1000,
+                    color: "hsla(28, 100%, 89%, 1)",
+                    fontSize: "1.5rem"
+                  }}
+                >
+                  business
+                </span>{" "}
+                and{" "}
+                <span
+                  style={{
+                    fontFamily: "Helvetica",
+                    fontWeight: 1000,
+                    fontSize: "1.5rem",
+                    color: "hsl(4, 100%, 58%)"
+                  }}
+                >
+                  design
+                </span>{" "}
+                to solve big problems.
               </p>
               <div className="skillIconsContainer">
                 <Trio />
@@ -394,6 +440,19 @@ class App extends Component {
         <Stuff id="stuffHandle">
           <h2 className="stuffTitle">RECENT PICKS</h2>
           <div className="articleContainer">
+            <div className="article">
+              <div className="articleIcon">
+                <BookIcon />
+              </div>
+              <p>React Docs: Introducing Hooks</p>
+              <a
+                rel="noopener noreferrer"
+                arget="_blank"
+                href="https://reasonml.github.io/"
+              >
+                https://reactjs.org/docs/hooks-intro.html
+              </a>
+            </div>
             <div className="article">
               <div className="articleIcon">
                 <BookIcon />
