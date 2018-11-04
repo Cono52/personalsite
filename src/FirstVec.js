@@ -4,18 +4,19 @@ import styled from "styled-components";
 const FirstVecContainer = styled.div`
   position: absolute;
   width: 100%;
+  height: 150vh;
   top: 0;
   left: 0;
   overflow: hidden;
+  > svg { height: 150vh }
 `;
 
 const FirstVec = () => {
   return (
     <FirstVecContainer>
       <svg
-        width="2600px"
-        height="1500px"
-        viewBox="0 0 320 885"
+        width="3800px"
+        viewBox="0 0 320 640"
         fill="none"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"

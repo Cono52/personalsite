@@ -5,7 +5,15 @@ import LogoStack from "./LogoStack";
 import FirstVec from "./FirstVec";
 import LastVec from "./LastVec";
 import Hamburger from "./Hamburger";
-import { GitHubIcon, LinkedInIcon, Trio, CodePenIcon } from "./SvgLib";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  Trio,
+  CodePenIcon,
+  BookIcon,
+  VideoIcon,
+  ContactIcon
+} from "./SvgLib";
 
 const Main = styled.main`
   width: 100%;
@@ -59,19 +67,24 @@ const About = styled.div`
   position: relative;
   min-height: 500px;
   padding-top: 20px;
-  margin-top: calc(950px - 95vh);
+  margin-top: 400px;
   .about {
     font-size: 1.7rem;
     width: 100%;
     text-align: center;
     padding-left: 20px;
+    margin-bottom: 100px;
     letter-spacing: 16px;
   }
-
-  .infoLogoBlock {
-    width: 100%;
+  .aboutContainer {
     display: flex;
-    margin-top: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .infoLogoBlock {
+    flex-grow: 1;
+    display: flex;
     padding: 2rem;
     flex-direction: column;
     align-items: center;
@@ -93,9 +106,10 @@ const About = styled.div`
   }
 
   .skills {
+    flex-grow: 1;
     display: flex;
-    margin-top: 20px;
     padding: 2rem;
+    padding-top: 150px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -109,7 +123,7 @@ const About = styled.div`
       align-items: center;
       justify-content: center;
       position: relative;
-      width: 75%;
+      width: 200px;
       svg {
         max-width: 350px;
       }
@@ -123,7 +137,9 @@ const Stuff = styled.div`
   overflow: hidden;
   min-height: 500px;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   position: relative;
   padding: 2rem;
   .stuffTitle {
@@ -135,17 +151,52 @@ const Stuff = styled.div`
     text-align: center;
     margin-bottom: 100px;
   }
+  .articleContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   .article {
     align-self: flex-start;
+    position: relative;
+    box-shadow: 1px 2px 5px -1px hsla(203, 58%, 6%, 1);
     display: flex;
+    padding: 2rem 2.2rem;
+    border-radius: 2px;
+    background: linear-gradient(
+      -4deg,
+      hsla(205, 57%, 5%, 1),
+      hsl(205, 73%, 14%)
+    );
+    flex-basis: 367px;
+    min-height: 134px;
     word-wrap: break-word;
     flex-direction: column;
-    margin-bottom: 3rem;
+    justify-content: center;
+    margin: 1.2rem 0.4rem;
+    @media (min-width: 900px) {
+      margin: 1.6rem 1rem;
+    }
+    @media (min-width: 1300px) {
+      margin: 2.5rem 1.5rem;
+    }
+    p {
+      padding-bottom: 5px;
+    }
     a {
       color: lightblue;
       word-break: break-all;
       font-size: 10px;
       line-height: 1.5;
+    }
+    .articleIcon > svg {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      @media (min-width: 400px) {
+        top: 15px;
+        right: 15px;
+      }
     }
   }
 `;
@@ -162,9 +213,16 @@ const Contact = styled.div`
   h2 {
     text-align: center;
     letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+  > svg {
+    margin: 20px;
+    @media (min-width: 400px) {
+      margin: 40px;
+    }
   }
   .but {
-    margin-top: 80px;
+    margin-top: 40px;
     color: white;
     background: red;
     width: 170px;
@@ -182,6 +240,22 @@ const Contact = styled.div`
     &:active {
       transform: translateY(3px);
       box-shadow: none;
+    }
+  }
+`;
+
+const EndLinkBlock = styled.div`
+  margin-top: 50px;
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+  > a svg {
+    opacity: 0.7;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    &:hover {
+      opacity: 1;
     }
   }
 `;
@@ -234,22 +308,6 @@ const Slider = ({ toggle, show }) => {
     </SliderContainer>
   );
 };
-
-const EndLinkBlock = styled.div`
-  margin-top: 100px;
-  display: flex;
-  width: 200px;
-  justify-content: space-around;
-  > a svg {
-    opacity: 0.7;
-    transition: all 0.2s;
-    width: 40px;
-    height: 40px;
-    &:hover {
-      opacity: 1;
-    }
-  }
-`;
 
 class App extends Component {
   state = {
@@ -311,101 +369,127 @@ class App extends Component {
         <Slider toggle={this.handleMenuToggle} show={this.state.openMenu} />
         <About id="aboutHandle">
           <h2 className="about">ABOUT</h2>
-          <div className="infoLogoBlock">
-            <p className="info">
-              Based in London, I have a passion for designing and building
-              elegant and engaging web solutions.
-            </p>
-            <div className="logoContainer">
-              <LogoStack width={"70%"} />
+          <div className="aboutContainer">
+            <div className="infoLogoBlock">
+              <p className="info">
+                Based in London, I have a passion for designing and building
+                elegant and engaging web solutions.
+              </p>
+              <div className="logoContainer">
+                <LogoStack width={"70%"} />
+              </div>
             </div>
-          </div>
-          <div className="skills">
-            <p>
-              In unison with my expertise of the web landscape I enjoy being
-              able to leverage a formal blend of skills in computer science,
-              business and design to solve big problems.
-            </p>
-            <div className="skillIconsContainer">
-              <Trio />
+            <div className="skills">
+              <p>
+                In unison with my expertise of the web landscape I enjoy being
+                able to leverage a formal blend of skills in computer science,
+                business and design to solve big problems.
+              </p>
+              <div className="skillIconsContainer">
+                <Trio />
+              </div>
             </div>
           </div>
         </About>
         <Stuff id="stuffHandle">
           <h2 className="stuffTitle">RECENT PICKS</h2>
-          <div className="article">
-            <p>The new syntax on top of javascript: ReasonML</p>
-            <a
-              rel="noopener noreferrer"
-              arget="_blank"
-              href="https://reasonml.github.io/"
-            >
-              https://reasonml.github.io/
-            </a>
-          </div>
-          <div className="article">
-            <p>Designing Perceptions Instead of Solutions</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5"
-            >
-              https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5
-            </a>
-          </div>
-          <div className="article">
-            <p>You Probably Don't Need Derived State</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html"
-            >
-              https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-            </a>
-          </div>
-          <div className="article">
-            <p>Web Performance with Webpack</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://frontendmasters.com/courses/performance-webpack/"
-            >
-              https://frontendmasters.com/courses/performance-webpack/
-            </a>
-          </div>
-          <div className="article">
-            <p>How To Sell Strategy Without Design or Visuals</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.youtube.com/watch?v=dKIyObgkBVI"
-            >
-              https://www.youtube.com/watch?v=dKIyObgkBVI
-            </a>
-          </div>
-          <div className="article">
-            <p>JavaScript&#8202;: The Hard Parts</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://frontendmasters.com/courses/javascript-hard-parts/"
-            >
-              https://frontendmasters.com/courses/javascript-hard-parts/
-            </a>
-          </div>
-          <div className="article">
-            <p>Advanced SVG Animation</p>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://frontendmasters.com/courses/svg-animation/"
-            >
-              https://frontendmasters.com/courses/svg-animation/
-            </a>
+          <div className="articleContainer">
+            <div className="article">
+              <div className="articleIcon">
+                <BookIcon />
+              </div>
+              <p>The new syntax on top of javascript: ReasonML</p>
+              <a
+                rel="noopener noreferrer"
+                arget="_blank"
+                href="https://reasonml.github.io/"
+              >
+                https://reasonml.github.io/
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <BookIcon />
+              </div>
+              <p>Designing Perceptions Instead of Solutions</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5"
+              >
+                https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <BookIcon />
+              </div>
+              <p>You Probably Don't Need Derived State</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html"
+              >
+                https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <VideoIcon />
+              </div>
+              <p>Web Performance with Webpack</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://frontendmasters.com/courses/performance-webpack/"
+              >
+                https://frontendmasters.com/courses/performance-webpack/
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <VideoIcon />
+              </div>
+              <p>How To Sell Strategy Without Design or Visuals</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.youtube.com/watch?v=dKIyObgkBVI"
+              >
+                https://www.youtube.com/watch?v=dKIyObgkBVI
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <VideoIcon />
+              </div>
+              <p>JavaScript&#8202;: The Hard Parts</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://frontendmasters.com/courses/javascript-hard-parts/"
+              >
+                https://frontendmasters.com/courses/javascript-hard-parts/
+              </a>
+            </div>
+            <div className="article">
+              <div className="articleIcon">
+                <VideoIcon />
+              </div>
+              <p>Advanced SVG Animation</p>
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://frontendmasters.com/courses/svg-animation/"
+              >
+                https://frontendmasters.com/courses/svg-animation/
+              </a>
+            </div>
           </div>
         </Stuff>
         <Contact id="contactHandle">
-          <h2>SO WILL THAT BE CASH OR CARD?</h2>
+          <h2>THANKS FOR VISITING, SAY HI!</h2>
+          <ContactIcon />
           <a
             className="but"
             href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
