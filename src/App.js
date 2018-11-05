@@ -5,6 +5,7 @@ import LogoStack from "./LogoStack";
 import FirstVec from "./FirstVec";
 import LastVec from "./LastVec";
 import Hamburger from "./Hamburger";
+import IERepelant from "./IERepelant";
 import {
   GitHubIcon,
   LinkedInIcon,
@@ -369,6 +370,7 @@ const Slider = ({ toggle, show }) => {
 
 class App extends Component {
   state = {
+    inIE: false || !!document.documentMode,
     openMenu: false
   };
 
@@ -386,8 +388,10 @@ class App extends Component {
       };
     });
   };
-
   render() {
+    if (this.state.inIE) {
+      return <IERepelant />;
+    }
     return (
       <Main lock={this.state.openMenu}>
         <FirstVec />
