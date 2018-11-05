@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import HoveringShapeBackground from "./hoveringShape";
 import LogoStack from "./LogoStack";
 import FirstVec from "./FirstVec";
@@ -30,7 +30,28 @@ const Main = styled.main`
   }
 `;
 
+const leftIn = keyframes`
+  from {
+    transform: translateX(-240px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+`;
+
+const upIn = keyframes`
+  from {
+    transform: translateY(200px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+`;
+
 const LinkBlock = styled.div`
+  animation: ${leftIn} 4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   display: flex;
   justify-content: space-around;
   position: absolute;
@@ -48,6 +69,7 @@ const LinkBlock = styled.div`
 
 const Introduction = styled.div`
   width: 100%;
+  animation: ${upIn} 6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -137,7 +159,7 @@ const About = styled.div`
       align-items: center;
       justify-content: center;
       position: relative;
-      width: 200px;
+      width: 230px;
       svg {
         max-width: 350px;
       }
@@ -171,6 +193,25 @@ const Stuff = styled.div`
     justify-content: center;
   }
   .article {
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: hsla(205, 57%, 25%, 1);
+      position: absolute;
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      &:after {
+        opacity: 1;
+      }
+    }
+    transition: all 0.15s ease-in-out;
     align-self: flex-start;
     position: relative;
     box-shadow: 1px 2px 5px -1px hsla(203, 58%, 6%, 1);
@@ -196,15 +237,18 @@ const Stuff = styled.div`
     }
     p {
       padding-bottom: 5px;
+      z-index: 2;
     }
     a {
       color: lightblue;
       word-break: break-all;
       font-size: 10px;
+      z-index: 2;
       line-height: 1.5;
     }
     .articleIcon > svg {
       position: absolute;
+      z-index: 2;
       top: 6px;
       right: 6px;
       @media (min-width: 400px) {
@@ -428,6 +472,7 @@ class App extends Component {
                   }}
                 >
                   design
+                  <br />
                 </span>{" "}
                 to solve big problems.
               </p>

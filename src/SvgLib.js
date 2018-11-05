@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+import { TimelineMax, Power1 } from "gsap";
 
 export const GitHubIcon = () => {
   return (
@@ -500,325 +501,371 @@ export const ComputuerIcon = () => {
   );
 };
 
-export const Trio = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="100%"
-      viewBox="0 0 420 335"
-      style={{
-        transform: "translateX(-3px)"
-      }}
-      preserveAspectRatio="xMidYMid meet"
-      fill="none"
-    >
-      <path
-        fill="url(#paintTrio0_linear)"
-        d="M152.7 10.2H23.3c-7.8 0-14.20002 6.3-14.20002 14.2v200.2c0 7.8 6.30002 14.2 14.20002 14.2h129.5c7.8 0 14.2-6.3 14.2-14.2V24.4c-.1-7.8-6.4-14.2-14.3-14.2zm-7.2 15.7c0 .9-.7 1.6-1.6 1.6h-31c-.9 0-1.6-.7-1.6-1.6v-3.6c0-.9.7-1.6 1.6-1.6h31c.9 0 1.6.7 1.6 1.6v3.6z"
-      />
-      <path
-        fill="url(#paintTrio1_linear)"
-        d="M19 217.2V48c0-6.7 5.5-12.2 12.2-12.2h113.6c6.7 0 12.2 5.5 12.2 12.2v169.2c0 6.7-5.5 12.2-12.2 12.2H31.2c-6.7 0-12.2-5.4-12.2-12.2z"
-      />
-      <path
-        fill="url(#paintTrio2_linear)"
-        d="M58.1 46.9c1.2.7 1.6 2.2.8 3.5L47.7 67.5l-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1.1z"
-      />
-      <path
-        fill="url(#paintTrio3_linear)"
-        d="M57.9 81.8c1.2.7 1.6 2.2.8 3.4l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.5l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1L53 81.4c.7-1.2 2.2-1.5 3.4-.8l1.5 1.2z"
-      />
-      <path
-        fill="url(#paintTrio4_linear)"
-        d="M57.8 116.7c1.2.7 1.6 2.2.8 3.5l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.2-1.5 3.4-.8l1.5 1z"
-      />
-      <path
-        fill="url(#paintTrio5_linear)"
-        d="M58.4 186.6c1.2.7 1.6 2.2.8 3.5L48 207.4l-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.5l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1z"
-      />
-      <path
-        fill="url(#paintTrio6_linear)"
-        d="M57.8 151.7c1.2.7 1.6 2.2.8 3.5l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1z"
-      />
-      <path
-        fill="url(#paintTrio7_linear)"
-        d="M71.6 205.9v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3-.1-2.4-1.1-2.4-2.4z"
-      />
-      <path
-        fill="url(#paintTrio8_linear)"
-        d="M71.6 168.6v-2c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3-.1-2.4-1.2-2.4-2.5z"
-      />
-      <path
-        fill="url(#paintTrio9_linear)"
-        d="M71.6 131.4v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
-      />
-      <path
-        fill="url(#paintTrio10_linear)"
-        d="M71.6 94.1V92c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
-      />
-      <path
-        fill="url(#paintTrio11_linear)"
-        d="M71.6 56.9v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
-      />
-      <path
-        fill="url(#paintTrio12_linear)"
-        d="M411.2 129.2L373 42.7l-14.3-32.4c-1.8-4.09999-7.6-3.99999-9.4 0l-21.1 48.3-30.8 70.6c-.3.6-.5 1.3-.5 2.1v99.5c0 2.9 2.3 5.2 5.2 5.2h104.3c2.9 0 5.2-2.3 5.2-5.2v-99.4c.1-.8 0-1.5-.4-2.2zm-6.7 95.6c0 2-1.6 3.6-3.6 3.6h-11.2v-33.9c0-1.2-1-2.2-2.2-2.2h-2.8c-1.2 0-2.2 1-2.2 2.2v33.9h-40.6v-31.5c0-1.3-1-2.2-2.2-2.2h-2.8c-1.2 0-2.2 1-2.2 2.2v31.5h-13.2v-49.8c0-1.5-1.2-2.7-2.8-2.7H317c-1.5 0-2.7 1.2-2.7 2.7v49.8h-6.6c-2 0-3.6-1.6-3.6-3.6v-85.9c0-2 1.6-3.6 3.6-3.6H359c-.1.2-.1.3-.1.5v53.4c0 1.5 1.3 2.8 2.8 2.8h1.7c1.5 0 2.8-1.2 2.8-2.8v-53.4c0-.2 0-.3-.1-.5h34.8c2 0 3.6 1.6 3.6 3.6v85.9z"
-      />
-      <path
-        fill="#0B3242"
-        d="M363.3 41.1l-20.8 7.5c-1.9.7-3.7-1.3-2.9-3.1l11.1-25.6c1.1-2.6 4.8-2.6 5.9 0l7.9 18.2c.7 1.1.1 2.5-1.2 3z"
-      />
-      <path
-        fill="url(#paintTrio13_linear)"
-        d="M304.2 224.8v-85.9c0-2 1.6-3.6 3.6-3.6h51.3c-.1.2-.1.2-.1.4v53.5c0 1.5 1.3 2.8 2.8 2.8h1.7c1.5 0 2.8-1.3 2.8-2.8v-53.5c0-.2 0-.3-.1-.4H401c2 0 3.6 1.6 3.6 3.6v85.9c0 2-1.6 3.6-3.6 3.6h-11.2v-33.9c0-1.3-1-2.2-2.2-2.2h-2.8c-1.3 0-2.2 1-2.2 2.2v33.9H342v-31.5c0-1.3-1-2.2-2.2-2.2H337c-1.3 0-2.2 1-2.2 2.2v31.5h-13.2v-49.8c0-1.5-1.2-2.7-2.7-2.7H317c-1.5 0-2.7 1.2-2.7 2.7v49.8h-6.6c-1.9 0-3.5-1.6-3.5-3.6z"
-      />
-      <path
-        fill="url(#paintTrio14_linear)"
-        d="M396.5 126.2h-84.4c-2.7 0-4.6-2.8-3.5-5.3L335.3 60c.3-.8 1-1.3 1.7-1.7l27.4-9.9c1.5-.6 3.2.2 3.8 1.7l31.6 70.9c1.3 2.4-.5 5.2-3.3 5.2z"
-      />
-      <path
-        fill="url(#paintTrio15_linear)"
-        d="M328.4 157v128c0 8.8-7.1 15.9-15.9 15.9H245c-1.1 0-2 1-2 2v8.2c0 1.1 1 2 2 2h50.1c3.5 0 6.4 2.9 6.4 6.4v3.9c0 2.4-2 4.3-4.4 4.3H143.9c-2.4 0-4.3-2-4.3-4.3v-3.9c0-3.5 2.9-6.4 6.4-6.4h49.8c1.1 0 2-1 2-2v-8.2c0-1.1-1-2-2-2h-67.9c-8.8 0-15.9-7.1-15.9-15.9V157c0-8.8 7.1-15.9 15.9-15.9h184.7c8.7 0 15.8 7.1 15.8 15.9z"
-      />
-      <path
-        fill="url(#paintTrio16_linear)"
-        d="M134.5 152.7h170.4c6.7 0 12.2 5.5 12.2 12.2V276c0 6.7-5.5 12.2-12.2 12.2H134.5c-6.7 0-12.2-5.5-12.2-12.2V164.9c.2-6.7 5.5-12.2 12.2-12.2z"
-      />
-      <path
-        fill="url(#paintTrio17_linear)"
-        d="M153.3 183.5c-1.8-1.8-3-4.3-3-7.2 0-5.5 4.5-10.1 10.1-10.1 4.6 0 8.3 3 9.7 7.1h10c1.2-4.1 5.1-7.1 9.7-7.1 4.5 0 8.3 3 9.7 7.1h59.4c1 0 1.8.5 2.3 1.2l3.4 5 16.6 23.5c.9-.3 1.8-.4 2.8-.4 5.5 0 10.1 4.5 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.8-1.8-3-4.4-3-7.2 0-2.4.9-4.6 2.2-6.3l-18.1-25.7c-.5-.8-1.3-1.2-2.3-1.2h-56.3c-1.2 4.1-5.2 7.1-9.7 7.1-2.8 0-5.3-1.1-7.2-3-1.1-1.1-2-2.5-2.5-4.1h-9.9c-.3.9-.7 1.7-1.1 2.4l17 20.1c1-.3 1.9-.4 3-.4 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.3 3-7.2 3-2.8 0-5.4-1.1-7.2-3-1.1-1.1-2-2.5-2.5-4.1h-9.9c-.5 1.5-1.3 3-2.5 4.1-1.8 1.8-4.3 3-7.2 3-2.8 0-5.3-1.1-7.2-3-1.8-1.8-3-4.3-3-7.2 0-2.9 1.1-5.4 3-7.2 1.8-1.8 4.4-3 7.2-3 4.5 0 8.3 3 9.7 7.1h10c.4-1.1.9-2.2 1.6-3.1L164 185.6c-1.1.5-2.5.8-3.8.8-2.5.1-5.1-1.1-6.9-2.9z"
-      />
-      <path
-        fill="url(#paintTrio18_linear)"
-        d="M179.2 240c0-2.8 1.1-5.3 3-7.2 1.8-1.8 4.4-3 7.2-3 4.6 0 8.5 3.2 9.8 7.4h75.4c.5-1.2 1.2-2.4 2.2-3.3 1.8-1.8 4.4-3 7.2-3 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.3-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.2-1.3-2.2-3-2.7-4.8h-75.2c-.5 1.4-1.3 2.7-2.4 3.7-1.8 1.8-4.4 3-7.2 3s-5.4-1.1-7.2-3c-1.6-1.9-2.8-4.4-2.8-7.1z"
-      />
-      <path
-        fill="url(#paintTrio19_linear)"
-        d="M179.2 265.9c0-2.8 1.1-5.4 3-7.2 1.9-1.8 4.4-3 7.2-3 4.6 0 8.5 3.2 9.8 7.4h75.4c.5-1.2 1.2-2.4 2.2-3.3 1.8-1.8 4.4-3 7.2-3 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.2-1.2-2.2-3-2.7-4.8h-75.2c-.5 1.4-1.3 2.7-2.4 3.7-1.8 1.8-4.4 3-7.2 3s-5.4-1.1-7.2-3c-1.6-1.8-2.8-4.3-2.8-7.1z"
-      />
-      <defs>
-        <linearGradient
-          id="paintTrio0_linear"
-          x1="9.09568"
-          x2="166.898"
-          y1="124.502"
-          y2="124.502"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio1_linear"
-          x1="88"
-          x2="88"
-          y1="35.8"
-          y2="229.4"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop />
-          <stop offset=".756906" stopColor="#1E4A6A" />
-          <stop offset="1" stopColor="#296591" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio2_linear"
-          x1="33.448"
-          x2="59.2981"
-          y1="58.6456"
-          y2="58.6456"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio3_linear"
-          x1="33.1754"
-          x2="59.0409"
-          y1="93.5651"
-          y2="93.5651"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio4_linear"
-          x1="33.1754"
-          x2="59.0256"
-          y1="128.553"
-          y2="128.553"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio5_linear"
-          x1="33.7205"
-          x2="59.5707"
-          y1="198.426"
-          y2="198.426"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio6_linear"
-          x1="33.1754"
-          x2="59.0256"
-          y1="163.506"
-          y2="163.506"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio7_linear"
-          x1="71.5762"
-          x2="145.095"
-          y1="204.8"
-          y2="204.8"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio8_linear"
-          x1="71.5762"
-          x2="145.095"
-          y1="167.598"
-          y2="167.598"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio9_linear"
-          x1="71.5762"
-          x2="145.095"
-          y1="130.328"
-          y2="130.328"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio10_linear"
-          x1="71.5762"
-          x2="145.095"
-          y1="93.0578"
-          y2="93.0578"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio11_linear"
-          x1="71.5762"
-          x2="145.095"
-          y1="55.8557"
-          y2="55.8557"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio12_linear"
-          x1="296.901"
-          x2="411.655"
-          y1="121.565"
-          y2="121.565"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio13_linear"
-          x1="354.4"
-          x2="354.4"
-          y1="135.3"
-          y2="228.4"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#031A24" />
-          <stop offset="1" stopColor="#107BA8" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio14_linear"
-          x1="354.257"
-          x2="354.257"
-          y1="48.1996"
-          y2="126.2"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#031A24" />
-          <stop offset=".98718" stopColor="#0A4863" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio15_linear"
-          x1="111.963"
-          x2="328.383"
-          y1="234.462"
-          y2="234.462"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio16_linear"
-          x1="219.7"
-          x2="219.7"
-          y1="152.7"
-          y2="288.2"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#010101" />
-          <stop offset="1" stopColor="#0F7099" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio17_linear"
-          x1="149.659"
-          x2="294.035"
-          y1="194.565"
-          y2="194.565"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio18_linear"
-          x1="179.223"
-          x2="294.035"
-          y1="240.489"
-          y2="240.489"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-        <linearGradient
-          id="paintTrio19_linear"
-          x1="179.223"
-          x2="294.035"
-          y1="266.418"
-          y2="266.418"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#D2D3D4" />
-          <stop offset="1" stopColor="#63C8D3" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
+const levitate = function(cb) {
+  const targets = [".board", ".pencil", ".computer"];
+  targets.forEach((target, i) => {
+    new TimelineMax({
+      delay: i * 0.33,
+      repeat: -1
+    })
+      .fromTo(
+        target,
+        1,
+        { y: -8, ease: Power1.easeInOut },
+        { y: 8, ease: Power1.easeInOut }
+      )
+      .to(target, 1, {
+        y: -8,
+        ease: Power1.easeInOut
+      });
+  });
 };
+
+export class Trio extends Component {
+  componentDidMount() {
+    levitate();
+  }
+  render() {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100%"
+        viewBox="0 0 420 335"
+        style={{
+          transform: "translateX(-3px)"
+        }}
+        preserveAspectRatio="xMidYMid meet"
+        fill="none"
+      >
+        <path
+          class="board"
+          fill="url(#paintTrio0_linear)"
+          d="M152.7 10.2H23.3c-7.8 0-14.20002 6.3-14.20002 14.2v200.2c0 7.8 6.30002 14.2 14.20002 14.2h129.5c7.8 0 14.2-6.3 14.2-14.2V24.4c-.1-7.8-6.4-14.2-14.3-14.2zm-7.2 15.7c0 .9-.7 1.6-1.6 1.6h-31c-.9 0-1.6-.7-1.6-1.6v-3.6c0-.9.7-1.6 1.6-1.6h31c.9 0 1.6.7 1.6 1.6v3.6z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio1_linear)"
+          d="M19 217.2V48c0-6.7 5.5-12.2 12.2-12.2h113.6c6.7 0 12.2 5.5 12.2 12.2v169.2c0 6.7-5.5 12.2-12.2 12.2H31.2c-6.7 0-12.2-5.4-12.2-12.2z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio2_linear)"
+          d="M58.1 46.9c1.2.7 1.6 2.2.8 3.5L47.7 67.5l-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1.1z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio3_linear)"
+          d="M57.9 81.8c1.2.7 1.6 2.2.8 3.4l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.5l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1L53 81.4c.7-1.2 2.2-1.5 3.4-.8l1.5 1.2z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio4_linear)"
+          d="M57.8 116.7c1.2.7 1.6 2.2.8 3.5l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.2-1.5 3.4-.8l1.5 1z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio5_linear)"
+          d="M58.4 186.6c1.2.7 1.6 2.2.8 3.5L48 207.4l-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.5l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio6_linear)"
+          d="M57.8 151.7c1.2.7 1.6 2.2.8 3.5l-11.2 17.2-1.9 2.9c-1 1.5-3.2 1.6-4.2.1l-2-2.9-5.7-8c-.8-1.2-.5-2.7.7-3.4l1.5-1c1.2-.7 2.7-.4 3.5.7l1.8 2.5c1 1.5 3.3 1.4 4.2-.1l7.6-11.7c.7-1.2 2.3-1.5 3.5-.8l1.4 1z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio7_linear)"
+          d="M71.6 205.9v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3-.1-2.4-1.1-2.4-2.4z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio8_linear)"
+          d="M71.6 168.6v-2c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3-.1-2.4-1.2-2.4-2.5z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio9_linear)"
+          d="M71.6 131.4v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio10_linear)"
+          d="M71.6 94.1V92c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
+        />
+        <path
+          class="board"
+          fill="url(#paintTrio11_linear)"
+          d="M71.6 56.9v-2.1c0-1.3 1.1-2.4 2.4-2.4h68.7c1.3 0 2.4 1.1 2.4 2.4v2.1c0 1.3-1.1 2.4-2.4 2.4H74c-1.3 0-2.4-1.1-2.4-2.4z"
+        />
+        <path
+          class="pencil"
+          fill="url(#paintTrio12_linear)"
+          d="M411.2 129.2L373 42.7l-14.3-32.4c-1.8-4.09999-7.6-3.99999-9.4 0l-21.1 48.3-30.8 70.6c-.3.6-.5 1.3-.5 2.1v99.5c0 2.9 2.3 5.2 5.2 5.2h104.3c2.9 0 5.2-2.3 5.2-5.2v-99.4c.1-.8 0-1.5-.4-2.2zm-6.7 95.6c0 2-1.6 3.6-3.6 3.6h-11.2v-33.9c0-1.2-1-2.2-2.2-2.2h-2.8c-1.2 0-2.2 1-2.2 2.2v33.9h-40.6v-31.5c0-1.3-1-2.2-2.2-2.2h-2.8c-1.2 0-2.2 1-2.2 2.2v31.5h-13.2v-49.8c0-1.5-1.2-2.7-2.8-2.7H317c-1.5 0-2.7 1.2-2.7 2.7v49.8h-6.6c-2 0-3.6-1.6-3.6-3.6v-85.9c0-2 1.6-3.6 3.6-3.6H359c-.1.2-.1.3-.1.5v53.4c0 1.5 1.3 2.8 2.8 2.8h1.7c1.5 0 2.8-1.2 2.8-2.8v-53.4c0-.2 0-.3-.1-.5h34.8c2 0 3.6 1.6 3.6 3.6v85.9z"
+        />
+        <path
+          class="pencil"
+          fill="#0B3242"
+          d="M363.3 41.1l-20.8 7.5c-1.9.7-3.7-1.3-2.9-3.1l11.1-25.6c1.1-2.6 4.8-2.6 5.9 0l7.9 18.2c.7 1.1.1 2.5-1.2 3z"
+        />
+        <path
+          class="pencil"
+          fill="url(#paintTrio13_linear)"
+          d="M304.2 224.8v-85.9c0-2 1.6-3.6 3.6-3.6h51.3c-.1.2-.1.2-.1.4v53.5c0 1.5 1.3 2.8 2.8 2.8h1.7c1.5 0 2.8-1.3 2.8-2.8v-53.5c0-.2 0-.3-.1-.4H401c2 0 3.6 1.6 3.6 3.6v85.9c0 2-1.6 3.6-3.6 3.6h-11.2v-33.9c0-1.3-1-2.2-2.2-2.2h-2.8c-1.3 0-2.2 1-2.2 2.2v33.9H342v-31.5c0-1.3-1-2.2-2.2-2.2H337c-1.3 0-2.2 1-2.2 2.2v31.5h-13.2v-49.8c0-1.5-1.2-2.7-2.7-2.7H317c-1.5 0-2.7 1.2-2.7 2.7v49.8h-6.6c-1.9 0-3.5-1.6-3.5-3.6z"
+        />
+        <path
+          class="pencil"
+          fill="url(#paintTrio14_linear)"
+          d="M396.5 126.2h-84.4c-2.7 0-4.6-2.8-3.5-5.3L335.3 60c.3-.8 1-1.3 1.7-1.7l27.4-9.9c1.5-.6 3.2.2 3.8 1.7l31.6 70.9c1.3 2.4-.5 5.2-3.3 5.2z"
+        />
+        <path
+          class="computer"
+          fill="url(#paintTrio15_linear)"
+          d="M328.4 157v128c0 8.8-7.1 15.9-15.9 15.9H245c-1.1 0-2 1-2 2v8.2c0 1.1 1 2 2 2h50.1c3.5 0 6.4 2.9 6.4 6.4v3.9c0 2.4-2 4.3-4.4 4.3H143.9c-2.4 0-4.3-2-4.3-4.3v-3.9c0-3.5 2.9-6.4 6.4-6.4h49.8c1.1 0 2-1 2-2v-8.2c0-1.1-1-2-2-2h-67.9c-8.8 0-15.9-7.1-15.9-15.9V157c0-8.8 7.1-15.9 15.9-15.9h184.7c8.7 0 15.8 7.1 15.8 15.9z"
+        />
+        <path
+          class="computer"
+          fill="url(#paintTrio16_linear)"
+          d="M134.5 152.7h170.4c6.7 0 12.2 5.5 12.2 12.2V276c0 6.7-5.5 12.2-12.2 12.2H134.5c-6.7 0-12.2-5.5-12.2-12.2V164.9c.2-6.7 5.5-12.2 12.2-12.2z"
+        />
+        <path
+          class="computer"
+          fill="url(#paintTrio17_linear)"
+          d="M153.3 183.5c-1.8-1.8-3-4.3-3-7.2 0-5.5 4.5-10.1 10.1-10.1 4.6 0 8.3 3 9.7 7.1h10c1.2-4.1 5.1-7.1 9.7-7.1 4.5 0 8.3 3 9.7 7.1h59.4c1 0 1.8.5 2.3 1.2l3.4 5 16.6 23.5c.9-.3 1.8-.4 2.8-.4 5.5 0 10.1 4.5 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.8-1.8-3-4.4-3-7.2 0-2.4.9-4.6 2.2-6.3l-18.1-25.7c-.5-.8-1.3-1.2-2.3-1.2h-56.3c-1.2 4.1-5.2 7.1-9.7 7.1-2.8 0-5.3-1.1-7.2-3-1.1-1.1-2-2.5-2.5-4.1h-9.9c-.3.9-.7 1.7-1.1 2.4l17 20.1c1-.3 1.9-.4 3-.4 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.3 3-7.2 3-2.8 0-5.4-1.1-7.2-3-1.1-1.1-2-2.5-2.5-4.1h-9.9c-.5 1.5-1.3 3-2.5 4.1-1.8 1.8-4.3 3-7.2 3-2.8 0-5.3-1.1-7.2-3-1.8-1.8-3-4.3-3-7.2 0-2.9 1.1-5.4 3-7.2 1.8-1.8 4.4-3 7.2-3 4.5 0 8.3 3 9.7 7.1h10c.4-1.1.9-2.2 1.6-3.1L164 185.6c-1.1.5-2.5.8-3.8.8-2.5.1-5.1-1.1-6.9-2.9z"
+        />
+        <path
+          class="computer"
+          fill="url(#paintTrio18_linear)"
+          d="M179.2 240c0-2.8 1.1-5.3 3-7.2 1.8-1.8 4.4-3 7.2-3 4.6 0 8.5 3.2 9.8 7.4h75.4c.5-1.2 1.2-2.4 2.2-3.3 1.8-1.8 4.4-3 7.2-3 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.3-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.2-1.3-2.2-3-2.7-4.8h-75.2c-.5 1.4-1.3 2.7-2.4 3.7-1.8 1.8-4.4 3-7.2 3s-5.4-1.1-7.2-3c-1.6-1.9-2.8-4.4-2.8-7.1z"
+        />
+        <path
+          class="computer"
+          fill="url(#paintTrio19_linear)"
+          d="M179.2 265.9c0-2.8 1.1-5.4 3-7.2 1.9-1.8 4.4-3 7.2-3 4.6 0 8.5 3.2 9.8 7.4h75.4c.5-1.2 1.2-2.4 2.2-3.3 1.8-1.8 4.4-3 7.2-3 5.5 0 10.1 4.6 10.1 10.1 0 2.8-1.1 5.4-3 7.2-1.8 1.8-4.4 3-7.2 3s-5.3-1.1-7.2-3c-1.2-1.2-2.2-3-2.7-4.8h-75.2c-.5 1.4-1.3 2.7-2.4 3.7-1.8 1.8-4.4 3-7.2 13s-5.4-1.1-7.2-3c-1.6-1.8-2.8-4.3-2.8-7.1z"
+        />
+        <defs>
+          <linearGradient
+            id="paintTrio0_linear"
+            x1="9.09568"
+            x2="166.898"
+            y1="124.502"
+            y2="124.502"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio1_linear"
+            x1="88"
+            x2="88"
+            y1="35.8"
+            y2="229.4"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop />
+            <stop offset=".756906" stopColor="#1E4A6A" />
+            <stop offset="1" stopColor="#296591" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio2_linear"
+            x1="33.448"
+            x2="59.2981"
+            y1="58.6456"
+            y2="58.6456"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio3_linear"
+            x1="33.1754"
+            x2="59.0409"
+            y1="93.5651"
+            y2="93.5651"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio4_linear"
+            x1="33.1754"
+            x2="59.0256"
+            y1="128.553"
+            y2="128.553"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio5_linear"
+            x1="33.7205"
+            x2="59.5707"
+            y1="198.426"
+            y2="198.426"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio6_linear"
+            x1="33.1754"
+            x2="59.0256"
+            y1="163.506"
+            y2="163.506"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio7_linear"
+            x1="71.5762"
+            x2="145.095"
+            y1="204.8"
+            y2="204.8"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio8_linear"
+            x1="71.5762"
+            x2="145.095"
+            y1="167.598"
+            y2="167.598"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio9_linear"
+            x1="71.5762"
+            x2="145.095"
+            y1="130.328"
+            y2="130.328"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio10_linear"
+            x1="71.5762"
+            x2="145.095"
+            y1="93.0578"
+            y2="93.0578"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio11_linear"
+            x1="71.5762"
+            x2="145.095"
+            y1="55.8557"
+            y2="55.8557"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio12_linear"
+            x1="296.901"
+            x2="411.655"
+            y1="121.565"
+            y2="121.565"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio13_linear"
+            x1="354.4"
+            x2="354.4"
+            y1="135.3"
+            y2="228.4"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#031A24" />
+            <stop offset="1" stopColor="#107BA8" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio14_linear"
+            x1="354.257"
+            x2="354.257"
+            y1="48.1996"
+            y2="126.2"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#031A24" />
+            <stop offset=".98718" stopColor="#0A4863" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio15_linear"
+            x1="111.963"
+            x2="328.383"
+            y1="234.462"
+            y2="234.462"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio16_linear"
+            x1="219.7"
+            x2="219.7"
+            y1="152.7"
+            y2="288.2"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#010101" />
+            <stop offset="1" stopColor="#0F7099" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio17_linear"
+            x1="149.659"
+            x2="294.035"
+            y1="194.565"
+            y2="194.565"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio18_linear"
+            x1="179.223"
+            x2="294.035"
+            y1="240.489"
+            y2="240.489"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+          <linearGradient
+            id="paintTrio19_linear"
+            x1="179.223"
+            x2="294.035"
+            y1="266.418"
+            y2="266.418"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#D2D3D4" />
+            <stop offset="1" stopColor="#63C8D3" />
+          </linearGradient>
+        </defs>
+      </svg>
+    );
+  }
+}

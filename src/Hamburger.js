@@ -1,13 +1,27 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { TimelineMax, Power2 } from "gsap";
 
+const rightIn = keyframes`
+  from {
+    transform: translateX(100px);
+  }
+
+  to {
+    transform: translateX(0px);
+`;
+
 const Container = styled.div`
+  animation: ${rightIn} 4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   position: absolute;
   z-index: 4;
   top: 2.05rem;
   right: 2rem;
   width: 30px;
+  @media (min-width: 600px) {
+    top: 2.55rem;
+    right: 4.5rem;
+  }
 `;
 
 const Line = styled.div`
@@ -18,7 +32,7 @@ const Line = styled.div`
 `;
 
 class Hamburger extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.tlTop = new TimelineMax({ paused: true });
     this.tlBottom = new TimelineMax({ paused: true });
@@ -30,16 +44,21 @@ class Hamburger extends Component {
         rotation: "45deg",
         transformOrigin: "50% 50%",
         ease: Power2.easeInOut
-    }).pause(false).reversed(true);
-    this.tlBottom.to("#bottomline", 0.2, { y: -7 })
-    .to(["#bottomline", "#middleline"], 0.2, {
-      rotation: "-45deg",
-      transformOrigin: "50% 50%",
-      ease: Power2.easeInOut
-    }).pause(false).reversed(true);
+      })
+      .pause(false)
+      .reversed(true);
+    this.tlBottom
+      .to("#bottomline", 0.2, { y: -7 })
+      .to(["#bottomline", "#middleline"], 0.2, {
+        rotation: "-45deg",
+        transformOrigin: "50% 50%",
+        ease: Power2.easeInOut
+      })
+      .pause(false)
+      .reversed(true);
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     if (!this.props.isOpen) {
       this.tlTop.reverse();
       this.tlBottom.reverse();
