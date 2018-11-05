@@ -9,6 +9,7 @@ const rightIn = keyframes`
 
   to {
     transform: translateX(0px);
+  }
 `;
 
 const Container = styled.div`
