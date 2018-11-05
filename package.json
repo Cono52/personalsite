@@ -1,8 +1,10 @@
 {
   "name": "pportfolio",
   "version": "0.1.0",
+  "homepage": "https://cono52.github.io",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "gsap": "^2.0.2",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
@@ -17,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer build/static/js/main.*"
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
