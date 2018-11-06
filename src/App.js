@@ -78,7 +78,7 @@ const Introduction = styled.div`
   justify-content: center;
   top: 82vh;
   h1,
-  p {
+  h2 {
     font-family: Cabin, monospace;
     font-size: 16px;
     letter-spacing: 5px;
@@ -422,7 +422,7 @@ class App extends Component {
         </LinkBlock>
         <Introduction>
           <h1 className="name">CONOR O'FLANAGAN</h1>
-          <p className="tag">CLOUD ARTISAN</p>
+          <h2 className="tag">CLOUD ARTISAN</h2>
         </Introduction>
         <Hamburger
           isOpen={this.state.openMenu}
