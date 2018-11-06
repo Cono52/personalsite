@@ -6,13 +6,13 @@ import FirstVec from "./FirstVec";
 import LastVec from "./LastVec";
 import Hamburger from "./Hamburger";
 import IERepelant from "./IERepelant";
+import Article from "./Article";
+import recentPicksArray from "./recentPicksArray";
 import {
   GitHubIcon,
   LinkedInIcon,
   Trio,
   CodePenIcon,
-  BookIcon,
-  VideoIcon,
   ContactIcon
 } from "./SvgLib";
 
@@ -192,69 +192,14 @@ const Stuff = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .article {
-    &:after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-color: hsla(205, 57%, 25%, 1);
-      position: absolute;
-      opacity: 0;
-      transition: all 0.15s ease-in-out;
-    }
-
-    &:hover {
-      transform: scale(1.02);
-      &:after {
-        opacity: 1;
+    > * {
+      align-self: flex-start;
+      margin: 1.2rem 0.4rem;
+      @media (min-width: 900px) {
+        margin: 1.6rem 1rem;
       }
-    }
-    transition: all 0.15s ease-in-out;
-    align-self: flex-start;
-    position: relative;
-    box-shadow: 1px 2px 5px -1px hsla(203, 58%, 6%, 1);
-    display: flex;
-    padding: 2rem 2.2rem;
-    border-radius: 2px;
-    background: linear-gradient(
-      -4deg,
-      hsla(205, 57%, 5%, 1),
-      hsl(205, 73%, 14%)
-    );
-    flex-basis: 367px;
-    min-height: 134px;
-    word-wrap: break-word;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1.2rem 0.4rem;
-    @media (min-width: 900px) {
-      margin: 1.6rem 1rem;
-    }
-    @media (min-width: 1300px) {
-      margin: 2.5rem 1.5rem;
-    }
-    p {
-      padding-bottom: 5px;
-      z-index: 2;
-    }
-    a {
-      color: lightblue;
-      word-break: break-all;
-      font-size: 10px;
-      z-index: 2;
-      line-height: 1.5;
-    }
-    .articleIcon > svg {
-      position: absolute;
-      z-index: 2;
-      top: 6px;
-      right: 6px;
-      @media (min-width: 400px) {
-        top: 15px;
-        right: 15px;
+      @media (min-width: 1300px) {
+        margin: 2.5rem 1.5rem;
       }
     }
   }
@@ -489,110 +434,9 @@ class App extends Component {
         <Stuff id="stuffHandle">
           <h2 className="stuffTitle">RECENT PICKS</h2>
           <div className="articleContainer">
-            <div className="article">
-              <div className="articleIcon">
-                <BookIcon />
-              </div>
-              <p>React Docs: Introducing Hooks</p>
-              <a
-                rel="noopener noreferrer"
-                arget="_blank"
-                href="https://reasonml.github.io/"
-              >
-                https://reactjs.org/docs/hooks-intro.html
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <BookIcon />
-              </div>
-              <p>The new syntax on top of javascript: ReasonML</p>
-              <a
-                rel="noopener noreferrer"
-                arget="_blank"
-                href="https://reasonml.github.io/"
-              >
-                https://reasonml.github.io/
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <BookIcon />
-              </div>
-              <p>Designing Perceptions Instead of Solutions</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5"
-              >
-                https://uxplanet.org/designing-perspectives-instead-of-solutions-6afb4b03c1a5
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <BookIcon />
-              </div>
-              <p>You Probably Don't Need Derived State</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html"
-              >
-                https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <VideoIcon />
-              </div>
-              <p>Web Performance with Webpack</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://frontendmasters.com/courses/performance-webpack/"
-              >
-                https://frontendmasters.com/courses/performance-webpack/
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <VideoIcon />
-              </div>
-              <p>How To Sell Strategy Without Design or Visuals</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.youtube.com/watch?v=dKIyObgkBVI"
-              >
-                https://www.youtube.com/watch?v=dKIyObgkBVI
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <VideoIcon />
-              </div>
-              <p>JavaScript&#8202;: The Hard Parts</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://frontendmasters.com/courses/javascript-hard-parts/"
-              >
-                https://frontendmasters.com/courses/javascript-hard-parts/
-              </a>
-            </div>
-            <div className="article">
-              <div className="articleIcon">
-                <VideoIcon />
-              </div>
-              <p>Advanced SVG Animation</p>
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://frontendmasters.com/courses/svg-animation/"
-              >
-                https://frontendmasters.com/courses/svg-animation/
-              </a>
-            </div>
+            {recentPicksArray.map(({ title, link, type }) => (
+              <Article title={title} link={link} type={type} />
+            ))}
           </div>
         </Stuff>
         <Contact id="contactHandle">
