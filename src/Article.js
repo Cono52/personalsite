@@ -2,7 +2,8 @@ import React from "react";
 import { BookIcon, VideoIcon } from "./SvgLib";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.a`
+  text-decoration: none;
   &:after {
     content: "";
     width: 100%;
@@ -29,7 +30,7 @@ const Container = styled.div`
   border-radius: 2px;
   padding: 2rem 2.2rem;
   background: linear-gradient(-4deg, hsla(205, 57%, 5%, 1), hsl(205, 73%, 14%));
-  flex-basis: 367px;
+  flex-basis: 370px;
   min-height: 134px;
   word-wrap: break-word;
   flex-direction: column;
@@ -38,9 +39,14 @@ const Container = styled.div`
     padding-bottom: 5px;
     z-index: 2;
   }
-  a {
+  div {
     color: lightblue;
     word-break: break-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 236px;
+    text-decoration-line: underline;
     font-size: 10px;
     z-index: 2;
     line-height: 1.5;
@@ -58,15 +64,13 @@ const Container = styled.div`
 `;
 
 const Article = ({ title, link, type }) => (
-  <Container>
+  <Container rel="noopener noreferrer" target="_blank" href={link}>
     <div className="articleIcon">
       {type === "article" && <BookIcon />}
       {type === "video" && <VideoIcon />}
     </div>
     <p>{title}</p>
-    <a rel="noopener noreferrer" arget="_blank" href={link}>
-      {link}
-    </a>
+    <div>{link}</div>
   </Container>
 );
 

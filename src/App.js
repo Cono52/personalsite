@@ -219,11 +219,15 @@ const Contact = styled.div`
     letter-spacing: 2px;
     margin-bottom: 40px;
   }
-  > svg {
+  .contactIconContainer {
     margin: 20px;
     @media (min-width: 400px) {
       margin: 40px;
     }
+    &:hover {
+      transform: scale(1.1);
+    }
+    transition: all 0.1s ease-in;
   }
   .but {
     margin-top: 40px;
@@ -435,13 +439,19 @@ class App extends Component {
           <h2 className="stuffTitle">RECENT PICKS</h2>
           <div className="articleContainer">
             {recentPicksArray.map(({ title, link, type }) => (
-              <Article title={title} link={link} type={type} />
+              <Article key={title} title={title} link={link} type={type} />
             ))}
           </div>
         </Stuff>
         <Contact id="contactHandle">
           <h2>THANKS FOR VISITING, SAY HI!</h2>
-          <ContactIcon />
+          <a
+            className="contactIconContainer"
+            href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
+            target="_top"
+          >
+            <ContactIcon />
+          </a>
           <a
             className="but"
             href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"

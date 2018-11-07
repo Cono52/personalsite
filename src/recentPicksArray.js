@@ -32,7 +32,7 @@ export default [
     type: "video"
   },
   {
-    title: "JavaScript&#8202;: The Hard Parts",
+    title: `JavaScript: The Hard Parts`,
     link: "https://frontendmasters.com/courses/javascript-hard-parts/",
     type: "video"
   },
