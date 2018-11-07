@@ -30,7 +30,10 @@ const Container = styled.a`
   border-radius: 2px;
   padding: 2rem 2.2rem;
   background: linear-gradient(-4deg, hsla(205, 57%, 5%, 1), hsl(205, 73%, 14%));
-  flex-basis: 370px;
+  flex-basis: 270px;
+  @media (min-width: 370px) {
+    flex-basis: 370px;
+  }
   min-height: 134px;
   word-wrap: break-word;
   flex-direction: column;
@@ -45,7 +48,10 @@ const Container = styled.a`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: 236px;
+    max-width: 187px;
+    @media (min-width: 370px) {
+      max-width: 236px;
+    }
     text-decoration-line: underline;
     font-size: 10px;
     z-index: 2;

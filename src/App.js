@@ -194,12 +194,12 @@ const Stuff = styled.div`
     justify-content: center;
     > * {
       align-self: flex-start;
-      margin: 1.2rem 0.4rem;
+      margin: 1.2rem 1rem;
       @media (min-width: 900px) {
-        margin: 1.6rem 1rem;
+        margin: 1.2rem 1.2rem;
       }
       @media (min-width: 1300px) {
-        margin: 2.5rem 1.5rem;
+        margin: 1.3rem 1.3rem;
       }
     }
   }
