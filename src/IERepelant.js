@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -27,6 +28,11 @@ const IERepelant = () => {
         <br />
         .....stare into the abyss long enough ....and it will look back at you.
       </p>
+      <img
+        alt="eyes of the abyss"
+        style={{ "-webkit-user-select": "none" }}
+        src="https://i.giphy.com/media/mRMuTC4emhtD2/giphy.webp"
+      />
     </Container>
   );
 };

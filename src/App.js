@@ -110,7 +110,7 @@ const About = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    line-height: 1.3;
+    line-height: 1.6;
     align-items: flex-start;
     max-width: 1300px;
     margin: auto;
@@ -320,7 +320,16 @@ const Slider = ({ toggle, show }) => {
 class App extends Component {
   state = {
     inIE: false || !!document.documentMode,
-    openMenu: false
+    openMenu: false,
+    discoMode: false
+  };
+
+  toggleDisco = () => {
+    this.setState(prev => {
+      return {
+        discoMode: !prev.discoMode
+      };
+    });
   };
 
   handleMenuToggle = () => {
@@ -345,7 +354,7 @@ class App extends Component {
       <Main lock={this.state.openMenu}>
         <FirstVec />
         <LastVec className="lastVec" />
-        <HoveringShapeBackground />
+        <HoveringShapeBackground discoMode={this.state.discoMode} />
         <LinkBlock>
           <a
             href="https://github.com/Cono52"
@@ -370,7 +379,16 @@ class App extends Component {
           </a>
         </LinkBlock>
         <Introduction>
-          <h1 className="name">CONOR O'FLANAGAN</h1>
+          <h1 className="name">
+            CONOR{" "}
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => this.toggleDisco()}
+            >
+              O
+            </span>
+            'FLANAGAN
+          </h1>
           <h2 className="tag">CLOUD ARTISAN</h2>
         </Introduction>
         <Hamburger
