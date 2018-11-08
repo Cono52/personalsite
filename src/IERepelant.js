@@ -30,8 +30,12 @@ const IERepelant = () => {
       </p>
       <img
         alt="eyes of the abyss"
-        style={{ "-webkit-user-select": "none" }}
-        src="https://i.giphy.com/media/mRMuTC4emhtD2/giphy.webp"
+        style={{
+          "-webkit-user-select": "none",
+          maxHeight: "150px",
+          marginTop: "50px"
+        }}
+        src="http://100scopenotes.com/files/2017/10/tumblr_mchfiz0RzL1r9ko4ro1_400.gif"
       />
     </Container>
   );
