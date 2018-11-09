@@ -437,8 +437,8 @@ class App extends Component {
                 <span
                   style={{
                     fontFamily: "Helvetica",
-                    fontWeight: 1000,
-                    fontSize: "1.5rem",
+                    fontWeight: 'bold',
+                    fontSize: "1.6rem",
                     color: "hsl(4, 100%, 58%)"
                   }}
                 >
