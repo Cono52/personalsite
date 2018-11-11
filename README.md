@@ -1,1 +1,1 @@
-Portfolio site made with React
+Portfolio site.
