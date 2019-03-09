@@ -78,7 +78,8 @@ const Introduction = styled.div`
   justify-content: center;
   top: 82vh;
   h1,
-  h2 {
+  h2,
+  span {
     font-family: Cabin, monospace;
     font-size: 16px;
     letter-spacing: 5px;
@@ -437,7 +438,7 @@ class App extends Component {
                 <span
                   style={{
                     fontFamily: "Helvetica",
-                    fontWeight: 'bold',
+                    fontWeight: "bold",
                     fontSize: "1.6rem",
                     color: "hsl(4, 100%, 58%)"
                   }}
