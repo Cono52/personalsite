@@ -8,12 +8,13 @@ import Hamburger from "./Hamburger";
 import IERepelant from "./IERepelant";
 import Article from "./Article";
 import recentPicksArray from "./recentPicksArray";
+import prof from "./prof.png";
 import {
   GitHubIcon,
   LinkedInIcon,
   Trio,
   CodePenIcon,
-  ContactIcon
+  ContactIcon,
 } from "./SvgLib";
 
 const Main = styled.main`
@@ -109,12 +110,11 @@ const About = styled.div`
   }
   .aboutContainer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    line-height: 1.6;
-    align-items: flex-start;
-    max-width: 1300px;
-    margin: auto;
+    flex-wrap: wrap;
+    img {
+      height: calc(100px + 30vw);
+    }
   }
   .infoLogoBlock {
     flex-grow: 1;
@@ -130,32 +130,6 @@ const About = styled.div`
       margin-bottom: 50px;
       text-align: center;
     }
-
-    .logoContainer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 200px;
-      min-width: 200px;
-    }
-  }
-
-  .skills {
-    flex-grow: 1;
-    display: flex;
-    padding: 2rem;
-    padding-top: 150px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    p {
-      text-align: center;
-      max-width: 500px;
-      margin-bottom: 3rem;
-    }
-    span {
-      padding: 3px;
-    }
     .skillIconsContainer {
       display: flex;
       align-items: center;
@@ -165,6 +139,31 @@ const About = styled.div`
       svg {
         max-width: 350px;
       }
+    }
+  }
+
+  .skills {
+    flex-grow: 1;
+    display: flex;
+    padding: 2rem;
+    padding-top: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+      text-align: center;
+      max-width: 500px;
+      margin-bottom: 3rem;
+    }
+     .logoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      min-width: 200px;
+    }
+    span {
+      padding: 3px;
     }
   }
 `;
@@ -275,8 +274,8 @@ const SliderContainer = styled.div`
   left: 0;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
-  ${props =>
-    !props.show ? "transform: translate(100%)" : "transform: translate(0%)"};
+  ${(props) =>
+  !props.show ? "transform: translate(100%)" : "transform: translate(0%)"};
   min-width: 100%;
   min-height: 100vh;
   transition: all 0.6s ease;
@@ -322,13 +321,13 @@ class App extends Component {
   state = {
     inIE: false || !!document.documentMode,
     openMenu: false,
-    discoMode: false
+    discoMode: false,
   };
 
   toggleDisco = () => {
-    this.setState(prev => {
+    this.setState((prev) => {
       return {
-        discoMode: !prev.discoMode
+        discoMode: !prev.discoMode,
       };
     });
   };
@@ -341,9 +340,9 @@ class App extends Component {
     } else {
       el.style.overflowY = "hidden";
     }
-    this.setState(prev => {
+    this.setState((prev) => {
       return {
-        openMenu: !this.state.openMenu
+        openMenu: !this.state.openMenu,
       };
     });
   };
@@ -390,7 +389,7 @@ class App extends Component {
             </span>
             'FLANAGAN
           </h1>
-          <h2 className="tag">CLOUD ARTISAN</h2>
+          <h2 className="tag">SOFTWARE DEVELOPER</h2>
         </Introduction>
         <Hamburger
           isOpen={this.state.openMenu}
@@ -400,56 +399,25 @@ class App extends Component {
         <About id="aboutHandle">
           <h2 className="about">ABOUT</h2>
           <div className="aboutContainer">
-            <div className="infoLogoBlock">
-              <p className="info">
-                Based in London, I have a passion for designing and building
-                elegant and engaging web solutions.
-              </p>
-              <div className="logoContainer">
-                <LogoStack width={"70%"} />
+            <img src={prof} alt="profile" />
+            <div className="rightSideProfile">
+              <div className="infoLogoBlock">
+                <p className="info">
+                  Based in London, I really like designing and building
+                  performant and engaging web solutions.
+                </p>
+                <div className="skillIconsContainer">
+                  <Trio />
+                </div>
               </div>
-            </div>
-            <div className="skills">
-              <p>
-                In unison with my expertise of the web landscape I enjoy being
-                able to leverage a formal blend of skills in{" "}
-                <span
-                  style={{
-                    fontFamily: "'Press Start 2P', cursive",
-                    fontWeight: 1000,
-                    whiteSpace: "nowrap",
-                    color: "#05c205"
-                  }}
-                >
-                  computer&#8239;science
-                </span>
-                ,{" "}
-                <span
-                  style={{
-                    fontFamily: "Prata, serif",
-                    fontWeight: 1000,
-                    color: "hsla(28, 100%, 89%, 1)",
-                    fontSize: "1.5rem"
-                  }}
-                >
-                  business
-                </span>{" "}
-                and{" "}
-                <span
-                  style={{
-                    fontFamily: "Helvetica",
-                    fontWeight: "bold",
-                    fontSize: "1.6rem",
-                    color: "hsl(4, 100%, 58%)"
-                  }}
-                >
-                  design
-                  <br />
-                </span>{" "}
-                to solve big problems.
-              </p>
-              <div className="skillIconsContainer">
-                <Trio />
+              <div className="skills">
+                <p>
+                  My main expertise at the moment are in JavaScript, React.js
+                  and Node.js.
+                </p>
+                <div className="logoContainer">
+                  <LogoStack width={"100%"} />
+                </div>
               </div>
             </div>
           </div>
