@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { TimelineMax, Elastic } from "gsap";
+import { TimelineMax, Elastic, TweenLite } from "gsap";
 
 const LogoContainer = styled.div`
   position: relative;
@@ -31,6 +31,7 @@ class LogoStack extends Component {
   }
 
   componentDidMount() {
+    TweenLite.to(this.logos, 0, {autoAlpha:0});
     this.logos.forEach((logo, i) => {
       new TimelineMax({
         delay: i * 1,
@@ -38,7 +39,6 @@ class LogoStack extends Component {
         repeatDelay: this.logos.length - 2
       }).set(logo, {
         scale: 0,
-        autoAlpha: 0
       }).to(logo, 1, {
         scale: 1,
         autoAlpha: 1,
