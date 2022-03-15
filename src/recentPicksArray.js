@@ -1,5 +1,10 @@
 export default [
   {
+    title: "npm audit: Broken by Design",
+    link: "https://overreacted.io/npm-audit-broken-by-design/",
+    type: "article"
+  },
+  {
     title: "React Docs: Introducing Hooks",
     link: "https://reactjs.org/docs/hooks-intro.html",
     type: "article"

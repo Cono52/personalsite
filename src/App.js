@@ -8,7 +8,8 @@ import Hamburger from "./Hamburger";
 import IERepelant from "./IERepelant";
 import Article from "./Article";
 import recentPicksArray from "./recentPicksArray";
-import prof from "./prof.png";
+import prof from "./prof.webp";
+import metricSnip from "./personal-sitelighthouse.webp";
 import {
   GitHubIcon,
   LinkedInIcon,
@@ -106,7 +107,7 @@ const About = styled.div`
     text-align: center;
     padding-left: 20px;
     margin-bottom: 100px;
-    letter-spacing: 16px;
+    letter-spacing: 13px;
   }
   .aboutContainer {
     display: flex;
@@ -164,6 +165,57 @@ const About = styled.div`
     }
     span {
       padding: 3px;
+    }
+  }
+
+
+  `;
+
+const Services = styled.div`
+  position: relative;
+  min-height: 500px;
+  padding-top: 20px;
+  margin-top: 100px;
+  .services {
+    font-size: 1.7rem;
+    width: 100%;
+    text-align: center;
+    padding-left: 20px;
+    letter-spacing: 13px;
+  }
+  .serviceInfo {
+    font-size: 1rem;
+    padding: 2rem 2rem;
+    width: 100%;
+    color: white;
+    text-align: center;
+  }
+  .servicesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .servicesContainer img {
+    width: 100%;
+  }
+  .serviceBlock {
+    transition: all 0.15s ease-in-out;
+    background: linear-gradient(-4deg, hsla(205, 57%, 5%, 1), hsl(205, 73%, 14%));
+    border-radius: 2px;
+    padding: 1rem 2.5rem 4rem 2.5rem;
+    width: 600px;
+    margin: 25px;
+    line-height: 25px;
+  }
+
+  .serviceBlock h4 {
+    font-size: 22px;
+  }
+
+  .serviceBlock:hover {
+    transform: scale(1.02);
+    &:after {
+      opacity: 1;
     }
   }
 `;
@@ -232,9 +284,9 @@ const Contact = styled.div`
   .but {
     margin-top: 40px;
     color: white;
-    background: red;
+    background: #a50000;
     width: 170px;
-    box-shadow: 0px 3px 0px 0px #a80000;
+    box-shadow: 0px 3px 0px 0px #700000;
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -360,6 +412,7 @@ class App extends Component {
             href="https://github.com/Cono52"
             rel="noopener noreferrer"
             target="_blank"
+            aria-label="Github"
           >
             <GitHubIcon />
           </a>
@@ -367,6 +420,7 @@ class App extends Component {
             href="https://www.linkedin.com/in/conoroflanagan"
             rel="noopener noreferrer"
             target="_blank"
+            aria-label="LinkedIn"
           >
             <LinkedInIcon />
           </a>
@@ -374,6 +428,7 @@ class App extends Component {
             href="https://codepen.io/Cono52"
             rel="noopener noreferrer"
             target="_blank"
+            aria-label="codepen"
           >
             <CodePenIcon />
           </a>
@@ -422,6 +477,47 @@ class App extends Component {
             </div>
           </div>
         </About>
+        <Services>
+          <h2 className="services">SERVICES</h2>
+          <h6 className="serviceInfo">
+            Contact for quotes and availbility for any of the following services. Services are provided via standard single payments or subscription for longer-term maintenance.
+          </h6>
+          <div className="servicesContainer">
+            <div className="serviceBlock">
+                <h4>Build</h4>
+                <p>
+                  Any and all of the following services:
+                </p>
+                <ul>
+                  <li>Large Web Applications.</li>
+                  <li>Fast Static Websites (Blogs/Business Sites).</li>
+                  <li>Progressive Web Apps.</li>
+                  <li>Requirements gathering/vetting.</li>
+                  <li>Proof-of-Concepts.</li>
+                  <li>Chrome-Extensions and "drop-ins".</li>
+                  <li>Discord Bots</li>
+                  <li>Twitch/Streaming Overlays</li>
+                  <li>UI/UX Design.</li>
+                </ul>
+              </div>
+            <div className="serviceBlock">
+              <h4>Audit</h4>
+              <p>Having perfect metrics is critical for your sites ranking highly on search engines and getting the most traffic.</p>
+              <br />
+              <p>An audit will provide you with a report and clearly defined actions to allow you to have a top ranking web presence.</p>
+              <br />
+              <img src={metricSnip} alt={'Example Website Metrics'} />
+            </div>
+            <div className="serviceBlock">
+              <h4>Mentor</h4>
+              <p>
+                Are you a new developer? Want to switch career? Or maybe need a crash course in developing modern frontends?
+                <br /><br />Every person and team is different and a mentoring plan will help you fast-track your tech-career goals.
+                <br /><br />Alternatively, feel free to reach out to me informally to see what we can do if you simply need some advice.
+              </p>
+            </div>
+          </div>
+        </Services>
         <Stuff id="stuffHandle">
           <h2 className="stuffTitle">RECENT PICKS</h2>
           <div className="articleContainer">
@@ -436,6 +532,7 @@ class App extends Component {
             className="contactIconContainer"
             href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
             target="_top"
+            aria-label="Send Email"
           >
             <ContactIcon />
           </a>
@@ -443,6 +540,7 @@ class App extends Component {
             className="but"
             href="mailto:oflanac52@gmail.com?Subject=Hi%20Conor"
             target="_top"
+            aria-label="Send Email"
           >
             Send Email
           </a>
@@ -451,6 +549,7 @@ class App extends Component {
               href="https://github.com/Cono52"
               rel="noopener noreferrer"
               target="_blank"
+              aria-label="Github"
             >
               <GitHubIcon />
             </a>
@@ -458,6 +557,7 @@ class App extends Component {
               href="https://www.linkedin.com/in/conoroflanagan"
               rel="noopener noreferrer"
               target="_blank"
+              aria-label="LinkedIn"
             >
               <LinkedInIcon />
             </a>
@@ -465,6 +565,7 @@ class App extends Component {
               href="https://codepen.io/Cono52"
               rel="noopener noreferrer"
               target="_blank"
+              aria-label="CodePen"
             >
               <CodePenIcon />
             </a>
