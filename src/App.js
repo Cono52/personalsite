@@ -233,6 +233,11 @@ const Services = styled.div`
     font-size: 22px;
   }
 
+  .serviceBlock ul {
+    margin: 0;
+    padding: 20px;
+  }
+
   .serviceBlock:hover {
     transform: scale(1.02);
     &:after {
