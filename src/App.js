@@ -101,7 +101,8 @@ const About = styled.div`
   min-height: 500px;
   padding-top: 20px;
   margin-top: 400px;
-  .about {
+
+  .aboutTitle {
     font-size: 1.7rem;
     width: 100%;
     text-align: center;
@@ -109,14 +110,34 @@ const About = styled.div`
     margin-bottom: 100px;
     letter-spacing: 13px;
   }
+
   .aboutContainer {
     display: flex;
+    overflow: hidden;
+    width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    img {
-      height: calc(100px + 30vw);
-    }
   }
+
+  .profileImageContainer {
+    flex: 1;
+    display: flex;
+    min-width: 300px;
+    justify-content: center;
+  }
+
+  .profileImageContainer img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .rightSideProfile {
+    flex: 1;
+    min-width: 450px;
+    margin: 50px;
+  }
+
   .infoLogoBlock {
     flex-grow: 1;
     display: flex;
@@ -452,9 +473,11 @@ class App extends Component {
         />
         <Slider toggle={this.handleMenuToggle} show={this.state.openMenu} />
         <About id="aboutHandle">
-          <h2 className="about">ABOUT</h2>
+          <h2 className="aboutTitle">ABOUT</h2>
           <div className="aboutContainer">
-            <img src={prof} alt="profile" />
+            <div class="profileImageContainer">
+              <img src={prof} alt="profile" />
+            </div>
             <div className="rightSideProfile">
               <div className="infoLogoBlock">
                 <p className="info">
