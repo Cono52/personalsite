@@ -134,8 +134,8 @@ const About = styled.div`
 
   .rightSideProfile {
     flex: 1;
-    min-width: 450px;
-    margin: 50px;
+    min-width: 350px;
+    margin: 25px;
   }
 
   .infoLogoBlock {
