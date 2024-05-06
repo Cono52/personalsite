@@ -1,4 +1,4 @@
-Portfolio site.
+Personal Site.
 
 
 How to deploy:
