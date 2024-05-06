@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Personal site of Web/Software Developer - Conor O'Flanagan">
+    <meta name="keywords" content="Conor, Conor O'Flanagan, JavaScript, React, Full Stack, Web Developer, London">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conor O'Flanagan - Web Developer</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div id="controls">
+        <div class="socials">
+            <a href="/">Home</a>
+        </div>
+        <div class='toggle-switch'>
+            <label>
+                <input type='checkbox'>
+                <span class='slider'></span>
+            </label>
+        </div>
+    </div>
+    <h1 class="name">The Plague of "Idealism" in Software</h1>
+    <div class="mainContent">
+        <div class="dialogue">
+            <p>"We need more stability in the environments, bugs are getting into higher environments that shouldn't..."
+            </p>
+            <p>"Well we haven't got around to happy path automation...we have the QA suite but the QA guys are checking
+                more
+                so that the features are "done" to spec than a focus on stability and regressions."</p>
+            <p>"Ye..we have asked about setting up Cypress in pipelines to DevOps several times but nothing seems to have
+                materialise...maybe more unit tests?"</p>
+            <p>"We have plenty - and as you said, bugs are still moving upwards more often than not, stuff we should be
+                catching not
+                long after it leaves a developers machine"</p>
+        </div>
+        <br />
+        <br />
+        <p>There is plenty to unpack from the above conversation...which we won't be doing :)</p>
+        <p>So keeping at face value, the "ideal way" an engineer might think of would be for our end-to-end (Cypress)
+            suite to be always running
+            in our pipelines during deploys, maybe even additionaly in their own pipeline.
+            Always running, and pinging us when failures occurs. Running a <a href="https://en.wikipedia.org/wiki/Headless_browser">headless browser</a> in pipelines at any "enterprise" capacity might make business owners wince.</p>
+        </p>
+        <p>But business as usual - new products or features are made, deadlines are always tight, blind spots appear and
+            maybe not the most
+            productive patterns start appearing. Some are addressed, others linger on.
+            <br />Same old, same old.
+        </p>
+
+        <p>So by the end of the conversation, I decide "ideal" isn't happening...now I've waited long enough, in fact,
+            this waiting has probably caused everyone to be worse off.</p>
+        <p>What I ended up doing was writing a small-ish Cypress <a href="https://en.wikipedia.org/wiki/Happy_path">"happy path"</a> test and then an additional bash script to
+            run that Cypress test indefinitely and print out some stats - fails, passes, avg runtime, time test
+            finished...</p>
+        <p>Each run takes around 20 seconds.</p>
+        <p>E2E tests are notoriously flaky, which is why its better to keep them running until failures are continuous.
+        </p>
+        <p>10 fails in a row should be enough to think - "ok, something could be broken.", so let's also make the laptop
+            make a noise if/when we have 10 failures in a row. Additionally anything with the word "Error" in it, Cypress prints out will get shoved into a log file if I need to check some common failures or even tally them up.</p>
+        <br />
+        <p>Here is a version of the bash script:</p>
+        <pre class="codeBlock">
+echo "Starting Happy Path Watcher...."
+NOTIFICATION_FAILURE_LIMIT=10
+pass_count=0
+fail_count=0
+consecutive_fail_count=0
+
+total_time=0
+
+START_TIME=$(date +%s)
+
+# Get the log file path from the first script argument
+ERROR_LOG_FILE_PATH=$1
+
+function send_notification {
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OS
+    osascript -e "display notification \"Failed $consecutive_fail_count times consecutively!\" with title \"Happy Path Failing\""
+    afplay /System/Library/Sounds/Ping.aiff
+    elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    # Windows
+    powershell.exe -Command "New-BurntToastNotification -Text 'Happy Path Failing', 'Failed $consecutive_fail_count times consecutively!'"
+    fi
+}
+
+while true; do
+    START_RUN_TIME=$(date +%s)  
+    output=$(yarn run-e2e 2>&1)
+    if [ $? -eq 0 ]; then
+    ((pass_count++))
+    consecutive_fail_count=0
+    echo "$(date) - passed"
+    else
+    ((fail_count++))
+    ((consecutive_fail_count++))
+    echo "$output" | grep "Error"
+    if [ -n "$ERROR_LOG_FILE_PATH" ]; then
+        echo "$output" | sed 's/\x1b\[[0-9;]*m//g' >> "$ERROR_LOG_FILE_PATH"
+    fi
+    echo -e "$(date) - failed...\033[0m"
+    if [ $consecutive_fail_count -ge $NOTIFICATION_FAILURE_LIMIT ]; then
+        send_notification
+    fi
+    fi
+    END_RUN_TIME=$(date +%s)
+
+    # Calculate the running time of just one run.
+    RUN_TIME_OF_ONE_PASS=$((END_RUN_TIME - START_RUN_TIME))
+    total_time=$((total_time + RUN_TIME_OF_ONE_PASS))
+    average_time=$((total_time / (pass_count + fail_count)))
+
+    # Calculate scripts running time.
+    END_TIME=$(date +%s)
+    RUNNING_TIME=$((END_TIME - START_TIME))
+
+    # Convert the running time to hours, minutes, and seconds
+    HOURS=$((RUNNING_TIME / 3600))
+    MINUTES=$((RUNNING_TIME % 3600 / 60))
+    SECONDS=$((RUNNING_TIME % 60))
+
+    echo "(Total passes: $pass_count, Total fails: $fail_count, Consecutive fails: $consecutive_fail_count), Running time: ${HOURS}h ${MINUTES}m ${SECONDS}s)"
+    echo "Average run time: $average_time seconds"
+done
+    </pre>
+        </br>
+        <p>Yep, pretty ugly, I usually run it at the start of my work day if it isn't already running.
+             I might even get 2 other laptops and point them at our other environments.</p>
+        <p>"But but, what about maintainability, do they only work for you?, what about when you aren't here?, why did you use bash!?" - All valid concerns....
+            after a few days I had caught several issues within a few minutes of anyones deployments.</p>
+        <p>It's common for developers to be doing something when a collegue or manager points out the "ideal way"
+            to do whatever you were doing. Either to have the converstaion with the appropriate person/team or wait
+            until something that is "suppose" to happen,
+            happens because "o ye (some dev) is doing that, I think they are going to sort it out soon."
+            In fact you probably get this almost every single day in various forms, code reviews, standups, meetings etc.
+        </p>
+        </p>
+        <p>How well you make this call and can factor into the companies success or your own, sometimes at the cost of
+            each other.</p>
+    </div>
+</body>
+<script>
+    var checkbox = document.querySelector('.toggle-switch input[type="checkbox"]');
+    var root = document.documentElement;
+
+    // Load the theme preference from local storage, or use 'dark' by default
+    var theme = localStorage.getItem('theme') || 'dark';
+    root.setAttribute('data-theme', theme);
+    checkbox.checked = theme === 'dark';
+
+    // Add the event listener to the checkbox
+    checkbox.addEventListener('change', function () {
+        theme = this.checked ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+
+        // Save the theme preference
+        localStorage.setItem('theme', theme);
+    });
+</script>
+
+</html>

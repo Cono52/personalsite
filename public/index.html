@@ -5,63 +5,69 @@
   <meta charset="utf-8">
   <meta name="description" content="Personal site of Web/Software Developer - Conor O'Flanagan">
   <meta name="keywords" content="Conor, Conor O'Flanagan, JavaScript, React, Full Stack, Web Developer, London">
-  <meta name="robots" content="index, nofollow" />
-  <meta name="og:title" property="og:title" content="Conor O'Flanagan - Web Developer">
-  <meta property="og:description" content="Personal site of Web/Software Developer - Conor O'Flanagan" />
-  <meta property="og:type" content="website" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/images/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/images/android-icon-192x192.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/images/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/images/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="%PUBLIC_URL%/images/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="%PUBLIC_URL%/images/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="%PUBLIC_URL%/images/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="%PUBLIC_URL%/images/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="%PUBLIC_URL%/images/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/images/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/images/apple-icon-180x180.png">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/images/favicon.ico">
-  <meta name="msapplication-TileColor" content="#000000">
-  <meta name="msapplication-TileImage" content="%PUBLIC_URL%/images/ms-icon-144x144.png">
-  <meta name="theme-color" content="#000000">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Prata|Press+Start+2P" rel="stylesheet">
-  <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Conor O'Flanagan - Web Developer</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+  <div id="controls">
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/conoroflanagan/">My LinkedIn</a>
+      <a href="https://github.com/Cono52">My Github</a>
+    </div>
+    <div class='toggle-switch'>
+      <label>
+        <input type='checkbox'>
+        <span class='slider'></span>
+      </label>
+    </div>
+  </div>
+  <h1 class="name">Conor O'Flanagan</h1>
+  <p class="tagline">
+    Software Engineer -
+    <span style="font-size: 95%;">Web Developer -</span>
+    <span style="font-size: 90%;">Development Lead -</span>
+    <span style="font-size: 85%;">Consultant -</span>
+    <span style="font-size: 80%;">Contractor -</span>
+    <span style="font-size: 75%;">Hacker -</span>
+    <span style="font-size: 70%;">Problem Solver -</span>
+    <span style="font-size: 65%;">Mentor -</span>
+    <span style="font-size: 60%;">Feature Deliverer -</span>
+    <span style="font-size: 55%;">Technologist -</span>
+    <span style="font-size: 50%;">Business Strategist -</span>
+    <span style="font-size: 45%;">Pragmatist -</span>
+    <span style="font-size: 40%;">Algorithmatist -</span>
+    <span style="font-size: 35%;">CTO/PM Whisperer -</span>
+    <span style="font-size: 30%;">Booty Slayer -</span>
+    <span style="font-size: 25%;">...blah blah.</span>
+  </p>
+  <div class="mainContent">
+    <img class="headshot" alt="picture of my face" src="/headshot.png" />
+    <ul class="posts-list">
+      <li><a href="/posts/p1">The Plague of "Idealism" in Software</a></li>
+    </ul>
+    <p>Here is a <a href="/old/index.html">link</a> to my old site </a> (2020 - 2024) <span style="font-size: 9px; font-style: italic;">Your
+        laptop fans may become audible...</span></p>
+  </div>
 </body>
+<script>
+  var checkbox = document.querySelector('.toggle-switch input[type="checkbox"]');
+  var root = document.documentElement;
+
+  // Load the theme preference from local storage, or use 'dark' by default
+  var theme = localStorage.getItem('theme') || 'dark';
+  root.setAttribute('data-theme', theme);
+  checkbox.checked = theme === 'dark';
+
+  // Add the event listener to the checkbox
+  checkbox.addEventListener('change', function () {
+    theme = this.checked ? 'dark' : 'light';
+    root.setAttribute('data-theme', theme);
+
+    // Save the theme preference
+    localStorage.setItem('theme', theme);
+  });
+</script>
 
 </html>

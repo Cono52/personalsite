@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/old/static/css/main.1450324b.chunk.css",
+    "main.js": "/old/static/js/main.8aa3ddf8.chunk.js",
+    "main.js.map": "/old/static/js/main.8aa3ddf8.chunk.js.map",
+    "runtime-main.js": "/old/static/js/runtime-main.dd5ae82e.js",
+    "runtime-main.js.map": "/old/static/js/runtime-main.dd5ae82e.js.map",
+    "static/css/2.da08e5a2.chunk.css": "/old/static/css/2.da08e5a2.chunk.css",
+    "static/js/2.62feaa75.chunk.js": "/old/static/js/2.62feaa75.chunk.js",
+    "static/js/2.62feaa75.chunk.js.map": "/old/static/js/2.62feaa75.chunk.js.map",
+    "index.html": "/old/index.html",
+    "precache-manifest.8f380b02c615b3435aec10c74dbdf240.js": "/precache-manifest.8f380b02c615b3435aec10c74dbdf240.js",
+    "service-worker.js": "/old/service-worker.js",
+    "static/css/2.da08e5a2.chunk.css.map": "/old/static/css/2.da08e5a2.chunk.css.map",
+    "static/css/main.1450324b.chunk.css.map": "/old/static/css/main.1450324b.chunk.css.map",
+    "static/js/2.62feaa75.chunk.js.LICENSE.txt": "/old/static/js/2.62feaa75.chunk.js.LICENSE.txt",
+    "static/media/personal-sitelighthouse.webp": "/old/static/media/personal-sitelighthouse.1812b1ad.webp",
+    "static/media/prof.webp": "/old/static/media/prof.a4d6b05d.webp"
+  },
+  "entrypoints": [
+    "/old/static/js/runtime-main.dd5ae82e.js",
+    "/old/static/css/2.da08e5a2.chunk.css",
+    "/old/static/js/2.62feaa75.chunk.js",
+    "/old/static/css/main.1450324b.chunk.css",
+    "/old/static/js/main.8aa3ddf8.chunk.js"
+  ]
+}
